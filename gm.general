@@ -1,0 +1,12 @@
+file = /home/gmurphy/mhdvanleer-0.0.1/output/out_2d_00212
+grid = 200 x 200
+format = ascii
+interleaving = field
+majority = row
+field = V_sound, E_tot, Rho, Vel_X, Vel_Y, Pressure
+structure = scalar, scalar, scalar, scalar, scalar, scalar
+type = double, double, double, double, double, double
+dependency = positions, positions, positions, positions, positions, positions
+positions = regular, regular, 0, 1, 0, 1
+
+end

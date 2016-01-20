@@ -1,0 +1,16 @@
+1.0      /*density*/
+10.0     /*px*/
+0.0      /*py*/
+0        /*pz*/
+20    /*pressure*/
+5        /*bx*/
+5        /*by*/
+0        /*bz*/
+1.   /*densityright*/
+-10  /*px*/
+0 /*py*/
+0 /*pz*/
+1 /*pressure*/
+5 /*bx*/
+5 /*by*/
+0. /*bz*/

@@ -1,0 +1,25 @@
+512 /* Number of cells in x-direction" */
+1 /* Number of cells in y direction */
+500 /* Number of timesteps */
+0.8 /* Courant number */
+100  /* Print file every this number timesteps */
+0.002 /* delta x */
+1.66666667  /* Gamma */
+0.1  /* Max Time */
+Shock
+1.0      /*density*/
+0.0     /*px*/
+0.0      /*py*/
+0        /*pz*/
+1   /*pressure*/
+2.658680776        /*bx*/
+3.5449077        /*by*/
+0        /*bz*/
+0.125   /*densityright*/
+0  /*px*/
+0 /*py*/
+0 /*pz*/
+0.1 /*pressure*/
+2.658680776  /*bx*/
+-3.5449077 /*by*/
+0. /*bz*/
