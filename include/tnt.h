@@ -52,7 +52,6 @@
 #include "tnt_fortran_array2d_utils.h"
 #include "tnt_fortran_array3d_utils.h"
 
-#include "tnt_sparse_matrix_csr.h"
 
 #include "tnt_stopwatch.h"
 #include "tnt_subscript.h"
