@@ -20,5 +20,5 @@ falle_SOURCES = boundary.cpp \
 	riemann.cpp \
 	sgn.cpp \
 	molcool.cpp 
-INCLUDES = -I@top_srcdir@/src/headers -I${HOME}/hdf5/include -I@top_srcdir@/src/tnt -I${EXT_INCLUDES}
+INCLUDES = -I@top_srcdir@/src/headers -I/usr/include/hdf5/serial -I@top_srcdir@/src/tnt -I${EXT_INCLUDES}
 SUBDIRS = headers tnt

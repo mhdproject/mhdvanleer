@@ -100,7 +100,7 @@ output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
        * Create a new dataset within the file using defined dataspace and
        * datatype and default dataset creation properties.
        */
-      dataset = H5Dcreate (file, names[ll], datatype, dataspace, H5P_DEFAULT);
+      dataset = H5Dcreate (file, names[ll], datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
 
       for (jj = 0; jj < ny; jj++)
 	{
@@ -135,7 +135,7 @@ output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
    * Create a new dataset within the file using defined dataspace and
    * datatype and default dataset creation properties.
    */
-  dataset = H5Dcreate (file, "Pressure", datatype, dataspace, H5P_DEFAULT);
+  dataset = H5Dcreate (file, "Pressure", datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
 
   for (jj = 0; jj < ny; jj++)
     {
@@ -315,7 +315,7 @@ write_data_to_hdf5_file (int nx, int ny, double **data, hid_t file)
    * Create a new dataset within the file using defined dataspace and
    * datatype and default dataset creation properties.
    */
-  dataset = H5Dcreate (file, "Temperature", datatype, dataspace, H5P_DEFAULT);
+  dataset = H5Dcreate (file, "Temperature", datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
 
   /*
    * Write the data to the dataset using default transfer properties.
