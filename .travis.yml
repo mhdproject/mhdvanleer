@@ -18,6 +18,8 @@ script:
   - cd build
   - cmake ..
   - make
+  - ls
+  - which h5cc
   - ctest -VV
 
 after_success:
