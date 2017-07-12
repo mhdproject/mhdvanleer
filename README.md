@@ -1,6 +1,9 @@
-# MHDvanleer
+# MHDVanleer
 
-One Paragraph of project description goes here
+This is a serial version of a numerical code developed to solve the magnetohydrodynamics equations. It was developed primarily for jets in the interstellar medium. 
+
+
+
 
 ## Getting Started
 
@@ -11,7 +14,12 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+Docker
+cmake (minimum 2.8.7)
+gcc
+ctest
+Google Test
+hdf5
 ```
 
 ### Installing
@@ -21,36 +29,30 @@ A step by step series of examples that tell you have to get a development env ru
 Say what the step will be
 
 ```
-Give the example
+docker build -t mhd .
 ```
 
 And repeat
 
 ```
-until finished
+docker run -it mhd /bin/bash 
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+You can use 
+```
+python3 ../see.py 
+```
+to plot a file
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Google Test/ctest platform is used
 
 ```
-Give an example
+ctest -VV
 ```
 
-### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
@@ -58,9 +60,6 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
