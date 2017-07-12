@@ -1,0 +1,31 @@
+sudo: required
+
+language:
+  - cpp
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+
+before_install:
+  - pip install --user cpp-coveralls
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libhdf5-dev
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - ctest -VV
+
+after_success:
+  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
+
+notifications:
+  email:
+    recipients:
+      - garethcmurphy@gmail.com
+    on_success: always
+    on_failure: always
