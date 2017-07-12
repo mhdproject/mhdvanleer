@@ -1,2 +1,2 @@
-docker build -t mhd .
-docker run -it mhd /bin/bash 
+docker build -t mhdvanleer .
+docker run -it mhdvanleer /bin/bash 

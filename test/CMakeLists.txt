@@ -5,6 +5,8 @@ find_package(HDF5) # Find non-cmake built HDF5
 INCLUDE_DIRECTORIES(${HDF5_INCLUDE_DIR})
 include_directories(/opt/local/include/)
 
+SET(H5FLAGS "-DH5_USE_18_API")
+add_definitions(${H5FLAGS})
 
 include_directories(${HDF5_INCLUDE_PATH})
 
