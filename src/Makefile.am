@@ -1,24 +1,21 @@
-bin_PROGRAMS = falle
-falle_SOURCES = boundary.cpp \
-	initialise.cpp \
-	log.cpp \
-	maxspeed.cpp \
-	roe.cpp \
-	TwoDim.cpp \
-	vanleer.cpp \
-	flux.cpp \
-	hlld.cpp \
-	initialise_jet.cpp \
-	main.cpp \
-	output.cpp \
-	update.cpp \
-	vanleer_fvsplit.cpp \
-	cooling.cpp \
-	tabfind.cpp \
-	locate.cpp \
-	eigenvectors.cpp \
-	riemann.cpp \
-	sgn.cpp \
-	molcool.cpp 
-INCLUDES = -I@top_srcdir@/src/headers -I/usr/include/hdf5/serial -I@top_srcdir@/src/tnt -I${EXT_INCLUDES}
-SUBDIRS = headers tnt
+EXTRA_DIST = tnt_array1d.h \
+tnt_array1d_utils.h \
+tnt_array2d.h \
+tnt_array2d_utils.h \
+tnt_array3d.h \
+tnt_array3d_utils.h \
+tnt_cmat.h \
+tnt_fortran_array1d.h \
+tnt_fortran_array1d_utils.h \
+tnt_fortran_array2d.h \
+tnt_fortran_array2d_utils.h \
+tnt_fortran_array3d.h \
+tnt_fortran_array3d_utils.h \
+tnt.h \
+tnt_i_refvec.h \
+tnt_math_utils.h \
+tnt_sparse_matrix_csr.h \
+tnt_stopwatch.h \
+tnt_subscript.h \
+tnt_vec.h \
+tnt_version.h 

@@ -6,6 +6,7 @@
 #include <cmath>
 #include <ctime>
 
+#define USE_HDF5 1
 
 #ifdef HAVE_LIBMPICH
 #include "mpi.h"
