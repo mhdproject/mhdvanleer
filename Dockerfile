@@ -1,4 +1,4 @@
-FROM ubuntu:precise
+FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
   gnuplot \
   python3 \
@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
   make \
   g++ \
   git \
-  libhdf5-dev \
+  libhdf5-serial-dev \
   gcc
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp/build 
