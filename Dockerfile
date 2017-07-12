@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
+  gnuplot \
+  python3 \
+  vim \
   cmake \
   make \
   g++ \
