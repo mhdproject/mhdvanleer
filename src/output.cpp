@@ -10,10 +10,8 @@
 #endif
 
 
-#define H5FILE_NAME        "SDS.h5"
 #define RANK   2
 
-#define DATASETNAME "IntArray"
 
 
 int
@@ -27,7 +25,7 @@ output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
   hsize_t dimsf[2];		/* dataset dimensions */
   herr_t status;
   double data[nx][ny];
-  char *names[] =
+  const char *names[] =
     { "Density", "Velx", "Vely", "Velz", "Energy", "Bx", "By", "Bz" };
   int ll = 0;
   stringstream hdf5_stream_filename;
@@ -51,7 +49,7 @@ output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
   int ii = 0;
   int jj = 0;
   int kk = 0;
-  char outputdir[50] = "output/";
+  char outputdir[50] = "./";
 //      char            filename[50] = "out_2d_";
   stringstream s;
   stringstream stream_filename;
