@@ -2,7 +2,9 @@
 
 This is a serial version of a numerical code developed to solve the magnetohydrodynamics equations. It was developed primarily for jets in the interstellar medium. 
 
+## Status
 
+[![Build Status](https://travis-ci.org/garethcmurphy/mhdvanleer.svg?branch=master)](https://travis-ci.org/garethcmurphy/mhdvanleer)
 
 
 ## Getting Started
