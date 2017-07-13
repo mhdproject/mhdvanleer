@@ -37,7 +37,7 @@ main (int argc, char **argv)
   int inject_jet=0;
 
 
-  int ii = 0, jj = 0, kk = 0, hh = 0;
+  int ii = 0, jj = 0, kk = 0;
   int rc;
   int timestep = 0;
   int maxstep = 0;

@@ -86,7 +86,7 @@ output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
   for (ll = 0; ll < ne; ll++)
     {
       dimsf[0] = nx;
-      dimsf[1] = ny;
+      dimsf[1] = (hsize_t) ny;
       dataspace = H5Screate_simple (RANK, dimsf, NULL);
       /*
        * Define datatype for the data in the file.
@@ -120,8 +120,8 @@ output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
     }
 
 
-  dimsf[0] = nx;
-  dimsf[1] = ny;
+  dimsf[0] = (hsize_t) nx;
+  dimsf[1] = (hsize_t) ny;
   dataspace = H5Screate_simple (RANK, dimsf, NULL);
   /*
    * Define datatype for the data in the file.
@@ -300,8 +300,8 @@ write_data_to_hdf5_file (int nx, int ny, double **data, hid_t file)
   herr_t status;
 
 
-  dimsf[0] = nx;
-  dimsf[1] = ny;
+  dimsf[0] = (hsize_t) nx;
+  dimsf[1] = (hsize_t) ny;
   dataspace = H5Screate_simple (RANK, dimsf, NULL);
   /*
    * Define datatype for the data in the file.

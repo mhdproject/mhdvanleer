@@ -253,7 +253,7 @@ flux (Array3D < zone > oldgrid,
 
   // Unrotate fluxes
 
-  if (rc == 1)
+  if (rc != 0)
     {
       cout << "Location = " << ii << "," << jj << endl;
       exit (0);

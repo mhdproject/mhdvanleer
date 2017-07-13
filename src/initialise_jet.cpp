@@ -136,7 +136,7 @@ initialise_jet (char *filename, Array3D < zone > grid, int *maxstep,
 //   JET
 	  double xdist = ii - nx / 2;
 	  double ydist = jj - ny / 2;
-	  dist = sqrt ((double) (xdist * xdist + ydist * ydist));
+	  dist = sqrt (xdist * xdist + ydist * ydist);
 //	  dist = sqrt ((double) (xdist * xdist ));
 	  if (dist < 0.1 * nx )
 	    // if ( ii +jj < 0.5*nx ) 
@@ -310,7 +310,7 @@ initialise_blast (char *filename, Array3D < zone > grid, int *maxstep,
 //   JET
 	  double xdist = ii - nx / 2;
 	  double ydist = jj - ny / 2;
-	  dist = sqrt ((double) (xdist * xdist + ydist * ydist));
+	  dist = sqrt (xdist * xdist + ydist * ydist);
 //	  dist = sqrt ((double) (xdist * xdist ));
 	  if (dist < 0.1 * nx )
 	    // if ( ii +jj < 0.5*nx ) 

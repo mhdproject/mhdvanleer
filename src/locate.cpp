@@ -13,7 +13,7 @@ locate (float x, float *xx, int *j, int n)
   unsigned long ju, jm, jl;
   int ascnd;
   jl = 0;
-  ju = n + 1;
+  ju = (unsigned long) (n + 1);
   ascnd = (xx[n] > xx[1]);
   while (ju - jl > 1)
     {
@@ -23,5 +23,5 @@ locate (float x, float *xx, int *j, int n)
       else
 	ju = jm;
     }
-  *j = jl;
+  *j = (int) jl;
 }
