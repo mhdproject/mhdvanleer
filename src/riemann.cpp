@@ -258,7 +258,6 @@ riemann (double *leftstate,
   /* Compute fast and slow speeds */
   rho = rho_rl;
   rhoi = 1 / rho;
-  srhoi = 1 / sqrt (rho);
   u = u_rl;
   v = v_rl;
   w = w_rl;
@@ -266,7 +265,6 @@ riemann (double *leftstate,
   bv = bv_rl * sqrt (rhoi);
   bw = bw_rl * sqrt (rhoi);
   bsquared = (bu * bu + bv * bv + bw * bw);
-  vv2 = (u * u + v * v + w * w);
   p = p_rl;
   calfven2 = fabs (bu * bu);
   calfven = sqrt (calfven2);

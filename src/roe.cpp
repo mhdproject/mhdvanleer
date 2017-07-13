@@ -26,7 +26,7 @@ roe (double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
   double cc[ne];
   double lres_state_prim[ne];
   double rres_state_prim[ne];
-  double smallp = 1e-5;
+  double smallp;
   double rho_i_2_c = 0;
   double delta_w[ne];
   double delta_p;
@@ -152,10 +152,6 @@ roe (double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
   delta_v = (vr - vl);
 
   /* Arithmetic mean */
-  rho_rl = 0.5 * (rl + rr);
-  url = 0.5 * (ul + ur);
-  vrl = 0.5 * (vl + vr);
-  prl = 0.5 * (pl + pr);
 
   /* Compute Roe-average state */
   rho_rl = sqrt (rl * rr);
