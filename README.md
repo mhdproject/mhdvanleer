@@ -6,6 +6,8 @@ This is a serial version of a numerical code developed to solve the magnetohydro
 
 [![Build Status](https://travis-ci.org/garethcmurphy/mhdvanleer.svg?branch=master)](https://travis-ci.org/garethcmurphy/mhdvanleer)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b7d2877bde0435d897f31e8c50497e6)](https://www.codacy.com/app/garethcmurphy/mhdvanleer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=garethcmurphy/mhdvanleer&amp;utm_campaign=Badge_Grade)
+
 
 ## Getting Started
 
