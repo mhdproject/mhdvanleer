@@ -64,7 +64,6 @@ eigenvectors (double *sta, double **lev, double **rev, double **lec,
   u = sta[1];
   v = sta[2];
   w = sta[3];
-  BBu = sta[5];
   BBv = sta[6];
   BBw = sta[7];
   bu = sta[5] * sqrt_rhoi;
@@ -122,9 +121,7 @@ eigenvectors (double *sta, double **lev, double **rev, double **lec,
 	}
       else
 	{
-	  betay = 1 / sqrt (2.0);
-	  betaz = 1 / sqrt (2.0);
-	  betay = 0;
+      betay = 0;
 	  betaz = 0;
 	}
     }
@@ -140,16 +137,12 @@ eigenvectors (double *sta, double **lev, double **rev, double **lec,
   else if (fabs (calfven - csound) > 1e-7 * csound)
     {
       phi = atan (bperp / (fabs (bu) - csound));
-      alphas = cos (phi / 2) + deltas;
-      alphaf = sin (phi / 2) + deltaf;
       alphas = fabs (cos (phi / 2)) + deltas;
       alphaf = fabs (sin (phi / 2)) + deltaf;
     }
   else
     {
       phi = 0.25 * pie * sgn (calfven - csound);
-      alphas = 1 / sqrt (2.);
-      alphaf = 1 / sqrt (2.);
       alphas = fabs (cos (phi));
       alphaf = fabs (sin (phi));
 
@@ -554,27 +547,20 @@ eigenvalues (double *sta, double *eigenval)
   int k = 0;
   rho = sta[0];
   rhoi = 1 / rho;
-  sqrt_rho = sqrt (rho);
   sqrt_rhoi = sqrt (rhoi);
   u = sta[1];
   v = sta[2];
   w = sta[3];
-  BBu = sta[5];
-  BBv = sta[6];
-  BBw = sta[7];
   bu = sta[5] * sqrt_rhoi;
   bv = sta[6] * sqrt_rhoi;
   bw = sta[7] * sqrt_rhoi;
   p = sta[4];
   bsquared = (bu * bu + bv * bv + bw * bw);
-  vv2 = (u * u + v * v + w * w);
 
   calfven2 = bu * bu;
   calfven = sqrt (calfven2);
   csound2 = gammag * p * rhoi;
-  csound = sqrt (csound2);
   icsound2 = 1 / csound2;
-  icsound22 = icsound2 * 0.5;
 
 #ifdef DEBUG1
   cout << "eigenv: " << csound2

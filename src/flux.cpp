@@ -21,9 +21,9 @@ flux (Array3D < zone > oldgrid,
   int hh = 0;
   int rc;
 
-  double slope1 = 0.0;
-  double slope2 = 0.0;
-  double left = 0.0;
+  double slope1;
+  double slope2;
+  double left;
   double mid = 0.0;
   double right = 0.0;
 

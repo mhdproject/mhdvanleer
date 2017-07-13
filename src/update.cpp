@@ -41,9 +41,7 @@ update (Array3D < zone > NewGrid, Array3D < zone > oldg,
   double divb, bx1, bx2, by1, by2, bz1, bz2;
   double divv, qq, delu;
   double d[2];
-  double u1, u2, u3, u4;
   double v1, v2, v3, v4;
-  double w1, w2, w3, w4;
 
   double *fx1;
   double *fx2;
