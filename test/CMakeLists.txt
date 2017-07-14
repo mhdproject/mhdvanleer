@@ -34,7 +34,7 @@ set(PROJECT_LIB_NAME ${PROJECT_NAME_STR}_impl)
 
 include_directories(${COMMON_INCLUDES})
 set(SRC_FILES 
-${PROJECT_SOURCE_DIR}/src/TwoDim.cpp ${PROJECT_SOURCE_DIR}/src/boundary.cpp ${PROJECT_SOURCE_DIR}/src/cooling.cpp ${PROJECT_SOURCE_DIR}/src/eigenvectors.cpp ${PROJECT_SOURCE_DIR}/src/flux.cpp ${PROJECT_SOURCE_DIR}/src/hlld.cpp ${PROJECT_SOURCE_DIR}/src/initialise.cpp ${PROJECT_SOURCE_DIR}/src/initialise_jet.cpp ${PROJECT_SOURCE_DIR}/src/locate.cpp ${PROJECT_SOURCE_DIR}/src/log.cpp ${PROJECT_SOURCE_DIR}/src/maxspeed.cpp ${PROJECT_SOURCE_DIR}/src/molcool.cpp ${PROJECT_SOURCE_DIR}/src/output.cpp ${PROJECT_SOURCE_DIR}/src/riemann.cpp ${PROJECT_SOURCE_DIR}/src/roe.cpp ${PROJECT_SOURCE_DIR}/src/sgn.cpp ${PROJECT_SOURCE_DIR}/src/tabfind.cpp ${PROJECT_SOURCE_DIR}/src/update.cpp ${PROJECT_SOURCE_DIR}/src/vanleer.cpp ${PROJECT_SOURCE_DIR}/src/vanleer_fvsplit.cpp)
+${PROJECT_SOURCE_DIR}/src/TwoDim.cpp ${PROJECT_SOURCE_DIR}/src/boundary.cpp ${PROJECT_SOURCE_DIR}/src/cooling.cpp ${PROJECT_SOURCE_DIR}/src/eigenvectors.cpp ${PROJECT_SOURCE_DIR}/src/flux.cpp ${PROJECT_SOURCE_DIR}/src/hlld.cpp ${PROJECT_SOURCE_DIR}/src/initialise.cpp ${PROJECT_SOURCE_DIR}/src/initialise_jet.cpp ${PROJECT_SOURCE_DIR}/src/locate.cpp ${PROJECT_SOURCE_DIR}/src/log.cpp ${PROJECT_SOURCE_DIR}/src/maxspeed.cpp ${PROJECT_SOURCE_DIR}/src/molcool.cpp ${PROJECT_SOURCE_DIR}/src/output.cpp ${PROJECT_SOURCE_DIR}/src/riemann.cpp ${PROJECT_SOURCE_DIR}/src/roe.cpp ${PROJECT_SOURCE_DIR}/src/sgn.cpp ${PROJECT_SOURCE_DIR}/src/tabfind.cpp ${PROJECT_SOURCE_DIR}/src/update.cpp ${PROJECT_SOURCE_DIR}/src/vanleer.cpp)
 add_library(${PROJECT_LIB_NAME} ${SRC_FILES})
 
 add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
