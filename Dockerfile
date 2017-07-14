@@ -1,5 +1,6 @@
-FROM ubuntu:latest
-RUN apt-get update && apt-get install -y \
+FROM ubuntu:16.04
+MAINTAINER Gareth Murphy <garethcmurphy@gmail.com>
+RUN apt-get update && apt-get install -y --no-install-recommends  \
   gnuplot \
   python3 \
   vim \
