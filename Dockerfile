@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends  \
   cmake    \
   g++ \
   git \
-  libhdf5-serial-dev
+  libhdf5-serial-dev \
+  && apt-get clean \
+   && rm -rf /var/lib/apt/lists/*
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp/build 
 RUN cmake ..

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import h5py
 
-f = h5py.File('hdf5_0005.h5', 'r')
+files = glob.glob('hdf5_out_2d_*.h5')
+f = h5py.File('hdf5_out_2d_00000.h5', 'r')
 
 print (f['Bx'])
 import matplotlib.pyplot as plt

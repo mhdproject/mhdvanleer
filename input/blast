@@ -1,6 +1,6 @@
 200 /* Number of cells in x-direction" */
 200 /* Number of cells in y direction */
-9000 /* Number of timesteps */
+10 /* Number of timesteps */
 0.3 /* Courant number */
 1  /* Print file every this number timesteps */
 0.001 /* delta x */

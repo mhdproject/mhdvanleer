@@ -248,7 +248,7 @@ main (int argc, char **argv)
 		dtodx = 1.0/ *maximumspeed;
       time = time + delta_t;
 #ifdef VERBOSE_OUTPUT
-      cout << "Tstep= " << setiosflags (ios::scientific) << timestep;
+      cout << "Tstep= " << std::dec << setiosflags (ios::scientific) << timestep;
       cout << "\tTime= " << setiosflags (ios::scientific) << time;
       cout << "\tMaxspeed= " << setiosflags (ios::
 					     scientific) << *maximumspeed;

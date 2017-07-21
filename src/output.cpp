@@ -94,7 +94,7 @@ output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
        */
       datatype = H5Tcopy (H5T_NATIVE_DOUBLE);
       status = H5Tset_order (datatype, H5T_ORDER_LE);
-      assert(status != NULL);
+      assert(status == 0);
 
       /*
        * Create a new dataset within the file using defined dataspace and
