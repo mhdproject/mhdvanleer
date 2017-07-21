@@ -7,7 +7,7 @@ echo ./src/falle input/ryujones${i}
 ./src/falle input/ryujones${i} > /dev/null
 cd output 
 #ls -t hdf5* | head -1
-cp `ls -t out_2d_* | head -1` ryujones${i}.txt
+cp $(ls -t out_2d_* | head -1) ryujones${i}.txt
 #name=test${i}.h5
 #mv `ls -t hdf5* | head -1` name
 cd ..
