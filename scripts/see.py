@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import h5py
 
 f = h5py.File('hdf5_0005.h5', 'r')
