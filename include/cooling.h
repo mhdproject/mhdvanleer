@@ -2,7 +2,7 @@
 #include "tabfind.h"
 #include "molcool.h"
 int cooling(
-    double *zone,
+    const double *zone,
     double *Lcooling,
     double dt
 );

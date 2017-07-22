@@ -79,7 +79,7 @@ output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
   for (ll = 0; ll < ne; ll++) {
     dimsf[0] = nx;
     dimsf[1] = (hsize_t) ny;
-    dataspace = H5Screate_simple(RANK, dimsf, NULL);
+    dataspace = H5Screate_simple(RANK, dimsf, nullptr);
     /*
      * Define datatype for the data in the file.
      * We will store little endian DOUBLE numbers.
@@ -114,7 +114,7 @@ output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
 
   dimsf[0] = (hsize_t) nx;
   dimsf[1] = (hsize_t) ny;
-  dataspace = H5Screate_simple(RANK, dimsf, NULL);
+  dataspace = H5Screate_simple(RANK, dimsf, nullptr);
   /*
    * Define datatype for the data in the file.
    * We will store little endian DOUBLE numbers.
@@ -279,7 +279,7 @@ write_data_to_hdf5_file(int nx, int ny, double **data, hid_t file) {
 
   dimsf[0] = (hsize_t) nx;
   dimsf[1] = (hsize_t) ny;
-  dataspace = H5Screate_simple(RANK, dimsf, NULL);
+  dataspace = H5Screate_simple(RANK, dimsf, nullptr);
   /*
    * Define datatype for the data in the file.
    * We will store little endian DOUBLE numbers.

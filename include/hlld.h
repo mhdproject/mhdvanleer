@@ -1,8 +1,8 @@
 #include "global.h"
 #include "eigenvectors.h"
 int hlld(
-    double *leftstate,
-    double *rightstate,
+    const double *leftstate,
+    const double *rightstate,
     double *fhlld,
     double *Res_state,
     int time_step,

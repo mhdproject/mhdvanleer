@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 3.1)
+set(CMAKE_CXX_STANDARD 11)
 set(PROJECT_NAME_STR mhdvanleer)
 project(${PROJECT_NAME_STR} C CXX)
 find_package(HDF5) # Find non-cmake built HDF5

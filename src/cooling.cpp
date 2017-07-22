@@ -11,7 +11,7 @@ float atomic_temp_tab[50] = {
 };
 
 int
-cooling(double *zone, double *Lcooling, double dt) {
+cooling(const double *zone, double *Lcooling, double dt) {
 
   double gammam1 = gammag - 1;
   double gammam1i = gammag - 1;
