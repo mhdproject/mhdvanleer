@@ -13,7 +13,7 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
        int second) {
   int hh = 0;
   int kk = 0;
-  int rc = 0;
+  int status = 0;
 
   double rho, rhoi;
   double px;
@@ -80,8 +80,8 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
             - delta * (fx2[hh] - fx1[hh]);
 #ifdef TWODIM
         NewGrid[ii][jj][kk].array[hh] = oldg[ii][jj][kk].array[hh]
-      - delta * (fx2[hh] - fx1[hh])
-      - delta * (fy2[hh] - fy1[hh]);
+            - delta * (fx2[hh] - fx1[hh])
+            - delta * (fy2[hh] - fy1[hh]);
 #endif
       }
       if (false && oldg[ii][jj][kk]_MOMX != oldg[ii + 1][jj][kk]_MOMX) {
@@ -114,11 +114,11 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
       coolvar[2] = oldg[ii][jj][kk] _MOMY;
       coolvar[3] = oldg[ii][jj][kk] _ENER;
 
-      rc = cooling (coolvar, &Lcooling, dt);
+      status = cooling (coolvar, &Lcooling, dt);
+  assert(status == 0);
       NewGrid[ii][jj][kk] _ENER = NewGrid[ii][jj][kk] _ENER + Lcooling;
       NewGrid[ii][jj][kk] _COOLING = Lcooling;
 #endif /* COOLING */
-
 
 #endif       /*ROE*/
 #ifdef VANLEER_XXX
@@ -127,9 +127,12 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
 
 
 
-             rc = flux (oldg, fp,  fn,  ii+1, jj,timestep, idir);
-             rc = flux (oldg, fp1, fn1, ii  , jj,timestep, idir);
-             rc = flux (oldg, fp2, fn2, ii-1, jj,timestep, idir);
+            status = flux (oldg, fp,  fn,  ii+1, jj,timestep, idir);
+            assert(status == 0);
+            status = flux (oldg, fp1, fn1, ii  , jj,timestep, idir);
+            assert(status == 0);
+            status = flux (oldg, fp2, fn2, ii-1, jj,timestep, idir);
+            assert(status == 0);
 
                if ( jj==5)
                {

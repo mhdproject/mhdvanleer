@@ -10,7 +10,6 @@ hlld(const double *leftstate,
      int time_step, double *max_speed, int idir) {
 
   ofstream outFile;
-  char outfilename[50] = "output/hlld.log";
 
   double rl = leftstate[0];
   double ul = leftstate[1];
@@ -61,6 +60,8 @@ hlld(const double *leftstate,
   double S_l, S_m, S_r, cfast_r, cfast_l;
 
 #ifdef DEBUG_HLLD
+
+  char outfilename[50] = "output/hlld.log";
   outFile.open (outfilename, ofstream::app);
   if (outFile.fail())
     {

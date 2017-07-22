@@ -54,9 +54,6 @@ output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
 
   double ki = 24296.3696;
   double mp = 1.67262158;
-  double mpi = 1.0 / mp;
-  double nt = 0;
-  double nt2 = 0;
   double temperature = 0;
 
   s.clear();
@@ -148,8 +145,9 @@ output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
       pressure = et - ke - 0.5 * bsquared;
       pressure = pressure * gammam1;
       al = sqrt(gammag * pressure * ri);
+      double mpi = 1.0 / mp;
+      double nt = 0;
       nt = 2 * mpi * rl;
-      nt2 = nt * nt;
       temperature = ki * pressure / nt;
       temperature = log10(temperature);
 
