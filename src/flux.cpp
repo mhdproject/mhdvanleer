@@ -18,7 +18,7 @@ flux(Array3D<zone> oldgrid,
   int d[2];
   int kk = 0;
   int hh = 0;
-  int rc;
+  int status;
 
   double slope1;
   double slope2;
@@ -65,8 +65,12 @@ flux(Array3D<zone> oldgrid,
 //               cout << "flux:" << leftstate[hh] << " " << rightstate[hh] << endl;
   }
 
-  rc = ctop(leftstate, leftprim);
-  rc = ctop(rightstate, rightprim);
+  status = ctop(leftstate, leftprim);
+  assert(status == 0);
+
+  status = ctop(rightstate, rightprim);
+  assert(status == 0);
+
 //     Need a 2nd order in space correction and a non-linear flux limiter here
 
 #ifdef SECOND_ORDER_SPACE
@@ -74,26 +78,33 @@ flux(Array3D<zone> oldgrid,
 //  if (1)
   {
 
-    rc = ctop(oldgrid[ii - 2 * d[0]][jj - 2 * d[1]][kk].array, pll);
-    if (rc == 1) {
+    status = ctop(oldgrid[ii - 2 * d[0]][jj - 2 * d[1]][kk].array, pll);
+    assert(status == 0);
+
+    if (status == 1) {
       cout << "Location: " << ii << ", " << jj << endl;
       exit(0);
     }
     pll[4] = (max)(pmin, pll[4]);
-    rc = ctop(oldgrid[ii - d[0]][jj - d[1]][kk].array, plm);
-    if (rc == 1) {
+    status = ctop(oldgrid[ii - d[0]][jj - d[1]][kk].array, plm);
+    assert(status == 0);
+
+    if (status == 1) {
       cout << "Location: " << ii << ", " << jj << endl;
       exit(0);
     }
     plm[4] = (max)(pmin, plm[4]);
-    rc = ctop(oldgrid[ii][jj][kk].array, plr);
-    if (rc == 1) {
+    status = ctop(oldgrid[ii][jj][kk].array, plr);
+    assert(status == 0);
+    if (status == 1) {
       cout << "Location: " << ii << ", " << jj << endl;
       exit(0);
     }
     plr[4] = (max)(pmin, plr[4]);
-    rc = ctop(oldgrid[ii + d[0]][jj + d[1]][kk].array, prr);
-    if (rc == 1) {
+    status = ctop(oldgrid[ii + d[0]][jj + d[1]][kk].array, prr);
+    assert(status == 0);
+
+    if (status == 1) {
       cout << "Location: " << ii << ", " << jj << endl;
       exit(0);
     }
@@ -122,8 +133,11 @@ flux(Array3D<zone> oldgrid,
 
     // Flatten slopes here?
 
-    rc = ptoc(leftprim, leftstate);
-    rc = ptoc(rightprim, rightstate);
+    status = ptoc(leftprim, leftstate);
+    assert(status == 0);
+
+    status = ptoc(rightprim, rightstate);
+    assert(status == 0);
     if (leftprim[4] < 1e-10) {
       cout << "leftprim[4] < 1e-10 " << leftprim[4]
            << " " << oldgrid[ii - d[0]][jj - d[1]][kk].array[hh]
@@ -187,12 +201,11 @@ flux(Array3D<zone> oldgrid,
   }
 
 
-//rc = riemann (leftstate, rightstate, InterfaceFlux, ResolvedState, timestep, &unused, idir);
-//  rc = riemann (lstate, rstate, iflux, Res_state, timestep, &unused, 1);
-  rc = hlld(leftprim, rightprim, iflux, Res_state, timestep, &unused, 1);
-//  rc = riemann (lstate, rstate, iflux, Res_state, timestep, &unused, 1);
+//status = riemann (leftstate, rightstate, InterfaceFlux, ResolvedState, timestep, &unused, idir);
+  status = hlld(leftprim, rightprim, iflux, Res_state, timestep, &unused, 1);
+  assert(status == 0);
 
-  if (rc == 1) {
+  if (status == 1) {
     cout << "location " << ii << jj << endl;
     exit(0);
   }
@@ -224,7 +237,7 @@ flux(Array3D<zone> oldgrid,
 
   // Unrotate fluxes
 
-  if (rc != 0) {
+  if (status != 0) {
     cout << "Location = " << ii << "," << jj << endl;
     exit(0);
   }
@@ -255,10 +268,6 @@ flux(Array3D<zone> oldgrid,
 
 #endif /* ROE */
 
-#ifdef VANLEER
-  rc =
-    vanleer_flux_vector_split (rightstate, rightstate, fp, fn, ii, jj, idir);
-#endif
 
   delete[] leftstate;
   delete[] rightstate;
