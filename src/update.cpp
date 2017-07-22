@@ -34,7 +34,6 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
   double coolvar[ne];
   double source_term[ne];
 
-  double leftstate[ne], rightstate[ne];
   double Lcooling;
   double d[2];
   double v2;
