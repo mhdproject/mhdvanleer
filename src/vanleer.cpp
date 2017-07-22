@@ -1,11 +1,11 @@
 #include "vanleer.h"
 double
-vanleer (double a, double b)
-{
+vanleer(double a, double b) {
   double temp = 0;
   temp = a * a + b * b;
-  if (temp > 0.0)
+  if (temp > 0.0) {
     return (a * a * b + b * b * a) / temp;
-  else
+  } else {
     return 0;
+  }
 }

@@ -21,7 +21,6 @@ double delta_x = 1.0;
 double gammag = 1.666666666666667;
 double pmin = 0.01;
 
-double max(double a, double b);
 
 void print_initial_condition(ofstream &fin, int ii, int jj, int kk, const Array3D<zone> &grid);
 int
@@ -394,12 +393,4 @@ void print_initial_condition(ofstream &fin,
   fin.close();
 }
 
-double
-max(double a, double b) {
-//      cout << a << " " << b << endl;
-  if (a >= b) {
-    return a;
-  } else {
-    return b;
-  }
-}
+

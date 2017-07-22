@@ -16,10 +16,11 @@ locate(float x, float *xx, int *j, int n) {
   ascnd = (xx[n] > xx[1]);
   while (ju - jl > 1) {
     jm = (ju + jl) >> 1;
-    if (x > xx[jm] == ascnd)
+    if (x > xx[jm] == ascnd) {
       jl = jm;
-    else
+    } else {
       ju = jm;
+    }
   }
   *j = (int) jl;
 }

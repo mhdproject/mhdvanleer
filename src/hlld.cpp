@@ -136,10 +136,8 @@ hlld(const double *leftstate,
   cfast2 = 0.5 * (a_Star2 + term);
   cfast_r = sqrt(cfast2);
 
-//  S_l = min (lstate[1] - cfast_l, rstate[1] - cfast_r);
-//  S_r = max (lstate[1] + cfast_l, rstate[1] + cfast_r);
-  S_l = min(lstate[1], rstate[1]) - max(cfast_l, cfast_r);
-  S_r = max(lstate[1], rstate[1]) + max(cfast_l, cfast_r);
+  S_l = (min)(lstate[1], rstate[1]) - max(cfast_l, cfast_r);
+  S_r = (max)(lstate[1], rstate[1]) + max(cfast_l, cfast_r);
 
   double vldotbl = ul * Bx + vl * Bvl + wl * Bwl;
   double vrdotbr = ur * Bx + vr * Bvr + wr * Bwr;
@@ -349,20 +347,24 @@ else {
 */
   if (S_l <= 0 && S_lStar >= 0) {
     // L Star
-    for (int q = 0; q < 8; q++)
+    for (int q = 0; q < 8; q++) {
       fhlld[q] = fl[q] + S_l * UlStar[q] - S_l * Ul[q];
+    }
   } else if (S_rStar <= 0 && S_r >= 0) {
     // R Star
-    for (int q = 0; q < 8; q++)
+    for (int q = 0; q < 8; q++) {
       fhlld[q] = fr[q] + S_r * UrStar[q] - S_r * Ur[q];
+    }
   } else if (S_lStar <= 0 && S_m >= 0) {
     // L ss
-    for (int q = 0; q < 8; q++)
+    for (int q = 0; q < 8; q++) {
       fhlld[q] = fl[q] + S_lStar * Ulss[q] - (S_lStar - S_l) * UlStar[q] - S_l * Ul[q];
+    }
   } else if (S_m <= 0 && S_rStar >= 0) {
     // R ss
-    for (int q = 0; q < 8; q++)
+    for (int q = 0; q < 8; q++) {
       fhlld[q] = fr[q] + S_rStar * Urss[q] - (S_rStar - S_r) * UrStar[q] - S_r * Ur[q];
+    }
   }
 
 

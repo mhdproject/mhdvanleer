@@ -110,7 +110,7 @@ riemann(double *leftstate,
     vl = leftstate[3];
     wl = leftstate[1];
     pl = leftstate[4];
-    pl = max(pl, pmin);
+    pl = (max)(pl, pmin);
     bul = leftstate[6];
     bvl = leftstate[7];
     bwl = leftstate[5];
@@ -120,7 +120,7 @@ riemann(double *leftstate,
     vr = rightstate[3];
     wr = rightstate[1];
     pr = rightstate[4];
-    pr = max(pr, pmin);
+    pr = (max)(pr, pmin);
     bur = rightstate[6];
     bvr = rightstate[7];
     bwr = rightstate[5];
@@ -211,8 +211,9 @@ riemann(double *leftstate,
   cc[3] = (wr - wl);
   dvz = wr - wl;
   cc[4] = (pr - pl);
-  if (fabs(cc[4]) < 1e-10)
+  if (fabs(cc[4]) < 1e-10) {
     cc[4] = 0;
+  }
   cc[5] = (bvr - bvl);
   cc[6] = (bwr - bwl);
 
@@ -647,10 +648,14 @@ riemann(double *leftstate,
   if (ul != ur)
     {
       for (ii = 0; ii < 7; ii++)
+    {
     outFile << " " << fl[ii];
+    }
       outFile << endl;
       for (ii = 0; ii < 7; ii++)
+    {
     outFile << " " << fr[ii];
+    }
       outFile << endl;
     }
 #endif

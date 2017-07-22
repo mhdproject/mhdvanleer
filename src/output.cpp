@@ -95,8 +95,9 @@ output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
     dataset = H5Dcreate(file, names[ll], datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
 
     for (jj = 0; jj < ny; jj++) {
-      for (ii = 0; ii < nx; ii++)
+      for (ii = 0; ii < nx; ii++) {
         data[ii][jj] = grid[ii][jj][kk].array[ll];
+      }
     }
     /*
      * Write the data to the dataset using default transfer properties.

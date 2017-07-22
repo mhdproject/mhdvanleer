@@ -325,6 +325,7 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
   // Determine emf at cell corners
   // Average emf onto cell corners
   for (int i = 1; i < nx - 1; ++i)
+  {
     for (int j = 1; j < ny - 1; ++j)
       {
     emf[i][j] = 0.25 * (-xflux[i][j][0].array[6]
@@ -332,12 +333,14 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
                 + yflux[i][j][0].array[5]
                 + yflux[i - 1][j][0].array[5]);
       }
+      }
 
 
   // Update B field at cell edges
 
   double dtodx = dt/delta_x;
   for (int i = 2; i < nx - 2; ++i)
+      {
     for (int j = 2; j < ny - 2; ++j)
       {
 // Check divergence of resolved state
@@ -379,10 +382,12 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
       << " " << Bypos[i][j] << " " << Byneg[i][j] << endl;
 #endif /* DEBUG_STAGGER */
       }
+      }
 
 
   // Average B field onto cell centres
   for (int i = 4; i < nx - 4; ++i)
+      {
     for (int j = 4; j < ny - 4; ++j)
       {
     et = NewGrid[i][j][0].array[4];
@@ -397,6 +402,7 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
 
     NewGrid[i][j][0].array[4] = et + 0.5 * (bx * bx + by * by + bz * bz);
 
+      }
       }
 
 
