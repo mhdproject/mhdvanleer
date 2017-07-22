@@ -36,10 +36,8 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
 
   double leftstate[ne], rightstate[ne];
   double Lcooling;
-  double divb, bx1, bx2, by1, by2, bz1, bz2;
-  double divv, qq, delu;
   double d[2];
-  double v1, v2, v3, v4;
+  double v2;
 
   double *fx1;
   double *fx2;
@@ -122,32 +120,6 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
       NewGrid[ii][jj][kk] _COOLING = Lcooling;
 #endif /* COOLING */
 
-#ifdef POWELL
-      /* Determine divb from fields used to compute the fluxes */
-      bx1 =
-        0.5 * (fluxgrid[ii][jj][kk] _B_X + fluxgrid[ii - 1][jj][kk] _B_X);
-      bx2 =
-        0.5 * (fluxgrid[ii + 1][jj][kk] _B_X + fluxgrid[ii][jj][kk] _B_X);
-      by1 =
-        0.5 * (fluxgrid[ii][jj][kk] _B_Y + fluxgrid[ii][jj - 1][kk] _B_Y);
-      by2 =
-        0.5 * (fluxgrid[ii][jj + 1][kk] _B_Y + fluxgrid[ii][jj][kk] _B_Y);
-
-      bx1 = xResState[ii][jj][kk] _B_X;
-      bx2 = xResState[ii + 1][jj][kk] _B_X;
-      by1 = xResState[ii][jj][kk] _B_Y;
-      by2 = xResState[ii][jj + 1][kk] _B_Y;
-      //bz1 = 0.5*( fluxgrid[ii  ][jj  ][kk  ]_B_Z + fluxgrid[ii  ][jj  ][kk-1]_B_Z );
-      //bz2 = 0.5*( fluxgrid[ii  ][jj  ][kk+1]_B_Z + fluxgrid[ii  ][jj  ][kk  ]_B_Z );
-      //divb = (1/delta_x)*(bx2- bx1 + by2 -by1 +bz2 -bz1);
-      divb = (1 / delta_x) * (bx2 - bx1 + by2 - by1);
-      rc = monopole (source_term, oldg[ii][jj][kk].array, divb);
-      for (hh = 0; hh < ne; hh++)
-        {
-          NewGrid[ii][jj][kk].array[hh] =
-        NewGrid[ii][jj][kk].array[hh] - source_term[hh];
-        }
-#endif /* POWELL */
 
 #endif       /*ROE*/
 #ifdef VANLEER_XXX
