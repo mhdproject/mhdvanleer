@@ -285,13 +285,15 @@ eigenvectors(double *sta, double **lev, double **rev, double **lec,
 
   for (ii = 0; ii < 7; ii++) {
     for (jj = 0; jj < 7; jj++) {
-      if (isnan(lev[ii][jj])) {
+      double eigenvector_element = lev[ii][jj];
+      if (isnan(eigenvector_element)) {
         cout << "lev[" << ii << "," << jj << "] is nan " << endl;
         exit(0);
-        if (isnan(rev[ii][jj])) {
-          cout << "rev[" << ii << "," << jj << "] is nan " << endl;
-          exit(0);
-        }
+      }
+      eigenvector_element = rev[ii][jj];
+      if (isnan(eigenvector_element)) {
+        cout << "rev[" << ii << "," << jj << "] is nan " << endl;
+        exit(0);
       }
     }
   }
