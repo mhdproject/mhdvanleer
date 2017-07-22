@@ -1,5 +1,4 @@
 #include "tabfind.h"
-#include "locate.h"
 
 void
 tabfind(double temperature, double *rate, float *atomic_temp_tab) {
@@ -20,7 +19,7 @@ tabfind(double temperature, double *rate, float *atomic_temp_tab) {
 
   locate(temperature, atomic_temp_tab, &j, 50);    //  temperature is between j and j+1
 //      write(*,*) 'tab j', j
-  if (j == 50) {
+  if (j == 49) {
     *rate = cooling_tab[j];
   } else {
     temperature1 = atomic_temp_tab[j];

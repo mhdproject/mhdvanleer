@@ -69,11 +69,11 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
       fy1 = yflux[ii][jj][kk].array;
 #endif /* TWODIM */
 
-      if (isnan(oldg[ii][jj][kk]_MASS)) {
+      if (std::isnan(oldg[ii][jj][kk]_MASS)) {
         cout << "upd:Unphysical density" << endl;
         exit(0);
       }
-      if (isnan(oldg[ii][jj][kk]_ENER)) {
+      if (std::isnan(oldg[ii][jj][kk]_ENER)) {
         cout << "upd:Unphysical energy" << endl;
         exit(0);
       }
@@ -93,11 +93,11 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
              << " " << delta << " " << fx2[0] << " " << fx1[0] << endl;
       }
 
-      if (isnan(NewGrid[ii][jj][kk]_MASS)) {
+      if (std::isnan(NewGrid[ii][jj][kk]_MASS)) {
         cout << "upd:Unphysical density" << endl;
         exit(0);
       }
-      if (isnan(NewGrid[ii][jj][kk]_ENER)) {
+      if (std::isnan(NewGrid[ii][jj][kk]_ENER)) {
         cout << "upd:newg:Unphysical energy" << endl;
         cout
             << " " << NewGrid[ii][jj][kk]_ENER

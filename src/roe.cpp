@@ -240,7 +240,7 @@ roe(double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
 
   for (jj = 0; jj < ne; jj++) {
     roeflux[jj] = 0.5 * (lflux[jj] + rflux[jj]) - 0.5 * eigenwt[jj];
-    if (isnan(roeflux[jj])) {
+    if (std::isnan(roeflux[jj])) {
 
       cout << "roeflux[" << jj << "] go crazy! " << endl;
       cout << " rl " << rl
