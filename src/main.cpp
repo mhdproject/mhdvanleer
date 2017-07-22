@@ -21,7 +21,6 @@ double delta_x = 1.0;
 double gammag = 1.666666666666667;
 double pmin = 0.01;
 
-
 void print_initial_condition(ofstream &fin, int ii, int jj, int kk, const Array3D<zone> &grid);
 int
 main(int argc, char **argv) {
@@ -35,11 +34,10 @@ main(int argc, char **argv) {
   int inject_jet = 0;
 
   int ii = 0, jj = 0, kk = 0;
-  int rc;
+  int status;
   int timestep = 0;
   int maxstep = 0;
   int printtime = 10;
-  int second = 0;
   double max_speed = 0.0;
   double maxtime = 0.0;
   double *maximumspeed = &max_speed;
@@ -49,8 +47,6 @@ main(int argc, char **argv) {
   double del = 0.0;
   double delh = 0.0;
   double cfl = 0.80;
-  double gammam1 = gammag - 1;
-  double fn[8];
   zone maxvar;
   zone minvar;
 #ifdef DEBUG
@@ -59,7 +55,6 @@ main(int argc, char **argv) {
 
   clock_t start, end;
   double elapsed;
-  double den_temp[4];
   string probtype;
 
   start = clock();
@@ -107,8 +102,6 @@ main(int argc, char **argv) {
   init >> probtype;
   init.close();
 
-  gammam1 = gammag - 1;
-
   nz = 1;
   Array3D<zone> grid(nx, ny, nz);
   Array3D<zone> gridh(nx, ny, nz);
@@ -143,22 +136,29 @@ main(int argc, char **argv) {
 
   if (probtype == "Shock") {
     if (argc > 1) {
-      rc = initialise(argv[1], grid, &maxstep, &cfl);
+      status = initialise(argv[1], grid, &maxstep, &cfl);
+      assert(status == 0);
     } else {
-      rc = initialise("input/gaz1", grid, &maxstep, &cfl);
+      status = initialise("input/gaz1", grid, &maxstep, &cfl);
+      assert(status == 0);
+
     }
 
   } else if (probtype == "Jet") {
     if (argc > 1) {
-      rc = initialise_jet(argv[1], grid, &maxstep, &cfl);
+      status = initialise_jet(argv[1], grid, &maxstep, &cfl);
+      assert(status == 0);
     } else {
-      rc = initialise_jet("input/input.jet", grid, &maxstep, &cfl);
+      status = initialise_jet("input/input.jet", grid, &maxstep, &cfl);
+      assert(status == 0);
     }
   } else if (probtype == "Blast") {
     if (argc > 1) {
-      rc = initialise_blast(argv[1], grid, &maxstep, &cfl);
+      status = initialise_blast(argv[1], grid, &maxstep, &cfl);
+      assert(status == 0);
     } else {
-      rc = initialise_blast("input/input.jet", grid, &maxstep, &cfl);
+      status = initialise_blast("input/input.jet", grid, &maxstep, &cfl);
+      assert(status == 0);
     }
   }
   print_initial_condition(fin, ii, jj, kk, grid);
@@ -176,7 +176,7 @@ main(int argc, char **argv) {
 #endif
 /* Using a second order in time Runge-Kutta method, advect the array */
 
-  rc = output(grid, fx, fy, 0, "out_2d_");
+  status = output(grid, fx, fy, 0, "out_2d_");
   for (timestep = 1; timestep < maxstep; timestep++) {
     for (int k = 0; k < ne; k++) {
       maxvar.array[k] = 0.;
@@ -186,7 +186,8 @@ main(int argc, char **argv) {
     *maximumspeed = 0;
     /* Determine the maximum wave speed for use in
      * the time step */
-    rc = maxspeed(grid, maximumspeed);
+    status = maxspeed(grid, maximumspeed);
+    assert(status == 0);
 
     /* Determine a value for time advance and courant number based on the
      * maximum wave speed */
@@ -207,7 +208,7 @@ main(int argc, char **argv) {
 #endif /* VERBOSE_OUTPUT */
 
 
-//  rc = output ( grid, fx, fy, timestep, "oldg_2d_");
+//  status = output ( grid, fx, fy, timestep, "oldg_2d_");
 
 #ifdef SECOND_ORDER_TIME
     jj = 0;
@@ -217,11 +218,12 @@ main(int argc, char **argv) {
 #endif /* TWODIM */
     {
       for (ii = 2; ii < nx - 1; ii++) {
-        rc =
+        status =
             flux(grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, dtodx,
                  ii, jj, timestep, 1, 0);
+        assert(status == 0);
 #ifdef TWODIM
-        rc =
+        status =
       flux (grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array,dtodx,
             ii, jj, timestep, 2, 0);
 #endif /* TWODIM */
@@ -235,20 +237,23 @@ main(int argc, char **argv) {
     //      for (ii = 2; ii < nx - 2; ii++)
 //             {
 
-    rc =
+    status =
         update(gridh, grid, fx, fy, xResState, yResState, delh, ii, jj,
                timestep, grid, delta_t, 0);
+    assert(status == 0);
 
 //             }
 //        }
 
     /* Boundary Conditions */
-    rc = boundary(gridh, inject_jet);
+    status = boundary(gridh, inject_jet);
+    assert(status == 0);
     /* End Boundary Conditions */
 #ifdef DEBUG_HALFSTEP
     if (timestep % printtime == 0)
   {
-    rc = output (gridh, fx, fy, timestep, "hout_2d_");
+    status = output (gridh, fx, fy, timestep, "hout_2d_");
+      assert(status == 0);
   }
 #endif /* DEBUG HALFSTEP */
 
@@ -257,20 +262,21 @@ main(int argc, char **argv) {
 #endif /* TWODIM */
     {
       for (ii = 2; ii < nx - 1; ii++) {
-        rc =
+        status =
             flux(gridh, fx[ii][jj][kk].array,
                  xResState[ii][jj][kk].array, dtodx, ii, jj, timestep, 1, 1);
 #ifdef TWODIM
-        rc =
+        status =
       flux (gridh, fy[ii][jj][kk].array,
             yResState[ii][jj][kk].array,dtodx, ii, jj, timestep, 2, 1);
 #endif /* TWODIM */
       }
     }
 
-    rc =
+    status =
         update(gridn, grid, fx, fy, xResState, yResState, del, ii, jj,
                timestep, gridh, delta_t, 1);
+    assert(status == 0);
 #ifdef TWODIM
     for (jj = 2; jj < ny - 2; jj++)
 #endif /* TWODIM */
@@ -290,7 +296,7 @@ main(int argc, char **argv) {
       }
     }
     grid = gridn.copy();
-//      rc = output ( gridh, fx, fy, timestep, "hout_2d_");
+//      status = output ( gridh, fx, fy, timestep, "hout_2d_");
 #else /* First order */
 
 
@@ -300,18 +306,18 @@ main(int argc, char **argv) {
   {
     for (ii = 2; ii < nx - 1; ii++)
       {
-        rc =
+        status =
       flux (grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array,dtodx,
             ii, jj, timestep, 1, 0);
 #ifdef TWODIM
-        rc =
+        status =
       flux (grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array,dtodx,
             ii, jj, timestep, 2, 0);
 #endif /* TWODIM */
       }
   }
 
-    rc =
+    status =
   update (gridn, grid, fx, fy, xResState, yResState, del, ii, jj,
       timestep, grid, delta_t, 0);
 #ifdef TWODIM
@@ -337,7 +343,7 @@ main(int argc, char **argv) {
     grid = gridn.copy ();
 #endif
     /* Boundary Conditions */
-    rc = boundary(grid, inject_jet);
+    status = boundary(grid, inject_jet);
     /* End Boundary Conditions */
 
     cout << dec << resetiosflags(ios::fixed);
@@ -348,10 +354,10 @@ main(int argc, char **argv) {
 
     if (timestep % printtime == 0) {
       // cout << "outputting " << endl;
-      rc = output(grid, fx, fy, timestep, "out_2d_");
+      status = output(grid, fx, fy, timestep, "out_2d_");
     }
     if (time > maxtime) {
-      rc = output(grid, fx, fy, timestep, "out_2d_");
+      status = output(grid, fx, fy, timestep, "out_2d_");
       break;
     }
 

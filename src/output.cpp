@@ -77,7 +77,7 @@ output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
                 H5P_DEFAULT);
 
   for (ll = 0; ll < ne; ll++) {
-    dimsf[0] = nx;
+    dimsf[0] = static_cast<hsize_t>(nx);
     dimsf[1] = (hsize_t) ny;
     dataspace = H5Screate_simple(RANK, dimsf, nullptr);
     /*
@@ -287,6 +287,7 @@ write_data_to_hdf5_file(int nx, int ny, double **data, hid_t file) {
    */
   datatype = H5Tcopy(H5T_NATIVE_DOUBLE);
   status = H5Tset_order(datatype, H5T_ORDER_LE);
+  assert(status == 0);
   /*
    * Create a new dataset within the file using defined dataspace and
    * datatype and default dataset creation properties.

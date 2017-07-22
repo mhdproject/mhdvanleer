@@ -388,13 +388,3 @@ ctop(double *c, double *p) {
   }
   return 0;
 }
-
-int
-flatten_slopes(Array2D<zone> oldgrid, double a_flat_r, double a_flat_l) {
-  // Flatten slopes of muscl reconstruction before going into the Riemann solver
-  double top;
-  double bottom;
-//  top = fabs ();
-  double chi = 0;
-  return 0;
-}

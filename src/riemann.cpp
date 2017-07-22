@@ -16,11 +16,9 @@ riemann(double *leftstate,
   ofstream outFile;
   char outfilename[50] = "output/riemann.log";
 
-  int rc = 0;
   int ii = 0;
   int jj = 0;
   int kk = 0;
-  int hh = 0;
 
   double av_state[8];
   double rl = leftstate[0];
@@ -64,14 +62,11 @@ riemann(double *leftstate,
   double rstate[7];
   double lrsp[7];
   double rrsp[7];
-  double fl[7], fr[7], fx[8];
   double eigenwt[7];
-  double temp;
 
   double rho = 0;
   double mass = 0;
   double rhoi = 0;
-  double srhoi = 0;
   double u = 0;
   double v = 0;
   double w = 0;
@@ -271,7 +266,7 @@ riemann(double *leftstate,
   cfast = sqrt(cfast2);
 
   /* compute left and right characteristic eigenvectors */
-  rc = eigenvectors(av_state, levec, revec, levc, revc, dvy, dvz);
+  eigenvectors(av_state, levec, revec, levc, revc, dvy, dvz);
 
   /* compute eigenvalues */
   lambda[0] = u_rl - cfast;
