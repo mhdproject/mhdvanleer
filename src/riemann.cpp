@@ -4,9 +4,7 @@
 #undef DEBUG_RIEMANN
 //#define CONS_FLUX
 //#define EINFELDT_FIX
-#define MINVAL(a,b) a<b?a:b
-#define MAXVAL(a,b) a>b?a:b
-/* 
+/*
 currently no entropy fix is in place 
 */
 int
@@ -694,12 +692,12 @@ riemann (double *leftstate,
     double eval_r[7];
     rc = eigenvalues (lstate, eval_l);
     rc = eigenvalues (rstate, eval_r);
-    double bplus = MAXVAL (eval_r[6], lambda[6]);
-    double bminus = MINVAL (eval_l[6], lambda[6]);
-    bplus = MAXVAL (bplus, 0.0);
-    bminus = MINVAL (bminus, 0.0);
-    double denom = cfast + 0.5 * fabs (MAXVAL (eval_r[6], lambda[6]) +
-				       MINVAL (eval_l[6], lambda[6]));
+    double bplus = (max) (eval_r[6], lambda[6]);
+    double bminus = (min) (eval_l[6], lambda[6]);
+    bplus = (max) (bplus, 0.0);
+    bminus = (min) (bminus, 0.0);
+    double denom = cfast + 0.5 * fabs ((max) (eval_r[6], lambda[6]) +
+				       (min) (eval_l[6], lambda[6]));
     double delta = cfast / denom;
     double coef0 = 1 / (bplus - bminus);
     double coef1 = (bplus + bminus) * coef0;

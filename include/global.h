@@ -22,7 +22,6 @@ using namespace std;
 #define N_Y 10
 #define N_E 4
 #define DEBUG 1
-#define MIN(a, b)  (((a) < (b)) ? (a) : (b))
 //#undef DEBUG
 #ifndef GLOBAL_VARIABLES
 #define GLOBAL_VARIABLES 1

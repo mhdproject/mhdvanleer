@@ -112,7 +112,7 @@ cooling (double *zone, double *Lcooling, double dt)
     }
   else if (temperature > 3000 && temperature < 12600)
     {
-      chi = MIN ((temperature - 3000) / 7000, 0.9);
+      chi = (min) ((temperature - 3000) / 7000, 0.9);
     }
   else
     {
@@ -153,7 +153,7 @@ cooling (double *zone, double *Lcooling, double dt)
     {
       w = dt - subttot;
       y = 0.05 * et / abs (eloss);	//    max timestep for 5% change in e
-      subdt = MIN (w, y);
+      subdt = (min) (w, y);
       elosstot = eloss * subdt;
 //        write(*,*) counter,temperature,'precool:t', e/elosstot
       et = et - elosstot;
@@ -166,7 +166,7 @@ cooling (double *zone, double *Lcooling, double dt)
 	}
       else if (temperature > 3000 && temperature < 12600)
 	{
-	  chi = MIN ((temperature - 3000) / 7000, 0.9);
+	  chi = (min) ((temperature - 3000) / 7000, 0.9);
 	}
       else
 	{

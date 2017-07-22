@@ -12,16 +12,6 @@ maxspeed (Array3D < zone > grid, double *maxspeed)
   double ri = 0, px = 0, py = 0, pz = 0, et = 0, ke = 0;
   double rl = 0, ul = 0, vl = 0, wl, pl = 0;
   double bu, bv, bw, bsquared;
-  double calfven2 = 0;
-  double cfast = 0;
-  double cfast2 = 0;
-  double csound2 = 0;
-  double term = 0;
-  double a_star2 = 0;
-  double vv2 = 0;
-  double speed1 = 0;
-  double speed2 = 0;
-  double speed3 = 0;
 
 
   /* Going through every cell in the grid, work out the sound speed and take the
@@ -35,6 +25,16 @@ maxspeed (Array3D < zone > grid, double *maxspeed)
       for (jj = 0; jj < ny - 1; jj++)
 #endif /* TWODIM */
 	{
+      double calfven2 = 0;
+      double cfast = 0;
+      double cfast2 = 0;
+      double csound2 = 0;
+      double term = 0;
+      double a_star2 = 0;
+      double vv2 = 0;
+      double speed1 = 0;
+      double speed2 = 0;
+      double speed3 = 0;
 	  rl = grid[ii][jj][kk] _MASS;
 	  px = grid[ii][jj][kk] _MOMX;
 	  py = grid[ii][jj][kk] _MOMY;
