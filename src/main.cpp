@@ -23,7 +23,8 @@ double pmin = 0.01;
 
 double max (double a, double b);
 
-int
+  void print_initial_condition(ofstream &fin, int ii, int jj, int kk, const Array3D<zone> &grid);
+  int
 main (int argc, char **argv)
 {
   /* Allocate a 2d array */
@@ -188,29 +189,7 @@ main (int argc, char **argv)
 	  rc = initialise_blast ("input/input.jet", grid, &maxstep, &cfl);
 	}
     }
-
-
-
-/* Print out the initial array */
-  fin.open ("infile.txt");
-  for (ii = 0; ii < nx; ii++)
-    {
-      for (jj = 0; jj < ny; jj++)
-	{
-	  fin << ii
-	    << " " << jj
-	    << " " << grid[ii][jj][kk] _MASS
-	    << " " << grid[ii][jj][kk] _MOMX
-	    << " " << grid[ii][jj][kk] _MOMY
-	    << " " << grid[ii][jj][kk] _MOMZ
-	    << " " << grid[ii][jj][kk] _ENER
-	    << " " << grid[ii][jj][kk] _B_X
-	    << " " << grid[ii][jj][kk] _B_Y
-	    << " " << grid[ii][jj][kk] _B_Z << endl;
-	}
-    }
-  fin.close ();
-
+    print_initial_condition(fin, ii, jj, kk, grid);
 
 #ifdef DEBUG1
   for (ii = 0; ii < nx; ii++)
@@ -397,7 +376,7 @@ main (int argc, char **argv)
       rc = boundary (grid, inject_jet);
       /* End Boundary Conditions */
 
-      cout << setiosflags (ios::fixed);
+      cout << dec << resetiosflags (ios::fixed);
       for (int k = 0; k < ne; k++)
 	{
 	  cout << k +
@@ -432,8 +411,28 @@ main (int argc, char **argv)
 
   return 0;
 }
+  void print_initial_condition(ofstream &fin, int ii, int jj, int kk, const Array3D<zone> &grid) {/* Print out the initial array */
+    fin.open ("infile.txt");
+    for (ii = 0; ii < nx; ii++)
+      {
+        for (jj = 0; jj < ny; jj++)
+      {
+        fin << ii
+          << " " << jj
+          << " " << grid[ii][jj][kk] _MASS
+          << " " << grid[ii][jj][kk] _MOMX
+          << " " << grid[ii][jj][kk] _MOMY
+          << " " << grid[ii][jj][kk] _MOMZ
+          << " " << grid[ii][jj][kk] _ENER
+          << " " << grid[ii][jj][kk] _B_X
+          << " " << grid[ii][jj][kk] _B_Y
+          << " " << grid[ii][jj][kk] _B_Z << endl;
+      }
+      }
+    fin.close ();
+  }
 
-double
+  double
 max (double a, double b)
 {
 //      cout << a << " " << b << endl;
