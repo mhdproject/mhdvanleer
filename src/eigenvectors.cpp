@@ -73,11 +73,6 @@ eigenvectors(const double *sta, double **lev, double **rev, double **lec,
   icsound2 = 1 / csound2;
   icsound22 = icsound2 * 0.5;
 
-#ifdef DEBUG1
-  cout << "eigenv: " << csound2
-    << " " << gammag << " " << p << " " << rhoi << endl;
-#endif /* DEBUG */
-
   a_star2 = (csound2 + bsquared);
   term = sqrt(a_star2 * a_star2 - 4 * csound2 * calfven2);
   cslow2 = 0.5 * (a_star2 - term);
@@ -85,9 +80,6 @@ eigenvectors(const double *sta, double **lev, double **rev, double **lec,
   cslow = sqrt(cslow2);
   cfast = sqrt(cfast2);
 
-#ifdef DEBUG1
-  cout << "eigenv: " << cslow2 << " " << csound2 << " " << bsquared << endl;
-#endif /* DEBUG */
 
   /* Now must check for triple point (see Roe-Balsara 1996 */
   bperp = sqrt(bv * bv + bw * bw);
@@ -130,35 +122,9 @@ eigenvectors(const double *sta, double **lev, double **rev, double **lec,
 
   }
 
-/*
-	 if ( cfast -cslow == 0) {
-		 alphaf=1.0;
-		 alphas=0.0;
-	 } else if ( csound - cslow <=0.){
-		 alphaf=1.0;
-		 alphas=0.0;
-	 } else if ( cslow - csound <=0.){
-		 alphaf=1.0;
-		 alphas=0.0;
-	 } else {
-      alphaf = (csound2 - cslow2) / (cfast2 - cslow2);
-      alphas = (cfast2 - csound2) / (cfast2 - cslow2);
-      alphaf = sqrt (abs (alphaf));
-      alphas = sqrt (abs (alphas));
-	 }
-*/
 
 
-#ifdef DEBUG1
-  cout << "eigenv: " << dels
-    << " " << delf << " " << betas << " " << betaf << endl;
-  exit (0);
-#endif /* DEBUG */
 
-#ifdef DEBUG1
-  cout << "eigenv: " << dels
-    << " " << rho << " " << cslow2 << " " << BBu << endl;
-#endif /* DEBUG */
 
   /* compute right eigenvectors */
   /* r u-cfast */
@@ -505,11 +471,6 @@ eigenvalues(const double *sta, double *eigenval) {
   calfven2 = bu * bu;
   calfven = sqrt(calfven2);
   csound2 = gammag * p * rhoi;
-
-#ifdef DEBUG1
-  cout << "eigenv: " << csound2
-    << " " << gammag << " " << p << " " << rhoi << endl;
-#endif /* DEBUG */
 
   a_star2 = (csound2 + bsquared);
   term = sqrt(a_star2 * a_star2 - 4 * csound2 * calfven2);

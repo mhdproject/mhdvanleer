@@ -15,13 +15,10 @@ cooling(const double *zone, double *Lcooling, double dt) {
 
   double gammam1 = gammag - 1;
   double gammam1i = gammag - 1;
-  double gammai = 1 / gammag;
-  double rhoi, px, py, et, ke, p;
-  double rho, velx, vely, pressure, vsnd, mach;
+  double rhoi, px, py, et, ke;
+  double rho, velx, vely, pressure, vsnd;
   double velx2;
   double vely2;
-  double massfluxp;
-  double massfluxn;
   double temperature;
 
   double ki = 24296.3696;
@@ -30,9 +27,8 @@ cooling(const double *zone, double *Lcooling, double dt) {
   double nt = 0;
 
   double rate = 0, eloss, nt2, de, w, y, subdt, cv;
-  double rate_temp = 0;
   double molrate = 0;
-  double min_dt, lowest_temperature, subttot, elosstot;
+  double lowest_temperature, subttot, elosstot;
   double e_init;
   int firststep;
   int counter;
@@ -92,7 +88,6 @@ cooling(const double *zone, double *Lcooling, double dt) {
 
 
 // Set the minimum subcycling step
-  min_dt = dt / 100.0;
   /* initialisation of cooling variables */
   lowest_temperature = atomic_temp_tab[0];    // lowest tabulated temp (LOG)
   subttot = 0.0;
@@ -143,7 +138,6 @@ cooling(const double *zone, double *Lcooling, double dt) {
     elosstot = eloss * subdt;
 //        write(*,*) counter,temperature,'precool:t', e/elosstot
     et = et - elosstot;
-    p = et / cv;
 
 #ifdef MOLCOOL
     if (temperature < 3000) {
