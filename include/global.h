@@ -1,4 +1,4 @@
-  /* Two-dimensional Upwind/Donor-cell code - taken from Hirsch II */
+/* Two-dimensional Upwind/Donor-cell code - taken from Hirsch II */
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -32,7 +32,6 @@ extern double delta_x;
 extern double gammag;
 extern double pmin;
 
-
 #define _MASS .array[0]
 #define _MOMX .array[1]
 #define _MOMY .array[2]
@@ -43,14 +42,10 @@ extern double pmin;
 #define _B_Z .array[7]
 #define _COOLING .temperature
 
-typedef struct
-{
-	     double array[8];
-		  double temperature;
-		  double cooling;
+typedef struct {
+  double array[8];
+  double temperature;
+  double cooling;
 } zone;
-
-
-
 
 #endif //  GLOBAL_VARIABLES

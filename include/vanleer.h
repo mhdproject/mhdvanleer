@@ -1,2 +1,2 @@
 #include "global.h"
-double vanleer ( double  , double );
+double vanleer(double, double);

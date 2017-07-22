@@ -1,4 +1,4 @@
-  /* Two-dimensional Upwind/Donor-cell code - taken from Hirsch II */
+/* Two-dimensional Upwind/Donor-cell code - taken from Hirsch II */
 #include <iostream>
 #include <iomanip>
 #include <fstream>
