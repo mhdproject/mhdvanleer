@@ -87,7 +87,7 @@ update(Array3D<zone> NewGrid, Array3D<zone> oldg,
       - delta * (fy2[hh] - fy1[hh]);
 #endif
       }
-      if (0 && oldg[ii][jj][kk]_MOMX != oldg[ii + 1][jj][kk]_MOMX) {
+      if (false && oldg[ii][jj][kk]_MOMX != oldg[ii + 1][jj][kk]_MOMX) {
         cout << NewGrid[ii][jj][kk]_MASS
              << " " << oldg[ii][jj][kk]_MASS
              << " " << delta << " " << fx2[0] << " " << fx1[0] << endl;

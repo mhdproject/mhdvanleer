@@ -110,7 +110,7 @@ eigenvectors(double *sta, double **lev, double **rev, double **lec,
      *
      * */
     vt = sqrt(dvy * dvy + dvz * dvz);
-    if (1 && vt > (0.00000001 * csound)) {
+    if (vt > (0.00000001 * csound)) {
       betay = sgn(bu) * dvy / vt;
       betaz = sgn(bu) * dvz / vt;
     } else {
