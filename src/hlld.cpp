@@ -136,8 +136,8 @@ hlld(const double *leftstate,
   cfast2 = 0.5 * (a_Star2 + term);
   cfast_r = sqrt(cfast2);
 
-  S_l = (min)(lstate[1], rstate[1]) - max(cfast_l, cfast_r);
-  S_r = (max)(lstate[1], rstate[1]) + max(cfast_l, cfast_r);
+  S_l = (min)(lstate[1], rstate[1]) - (max)(cfast_l, cfast_r);
+  S_r = (max)(lstate[1], rstate[1]) + (max)(cfast_l, cfast_r);
 
   double vldotbl = ul * Bx + vl * Bvl + wl * Bwl;
   double vrdotbr = ur * Bx + vr * Bvr + wr * Bwr;

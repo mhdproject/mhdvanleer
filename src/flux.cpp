@@ -249,7 +249,7 @@ flux(Array3D<zone> oldgrid,
    for (hh=0 ; hh<ne ; hh++)
    {
    delu=(oldgrid[ii][jj][0].array[hh]-oldgrid[ii -d[0]][jj -d[1] ][0].array[hh] );
-  InterfaceFlux[hh]=InterfaceFlux[hh]+ dtodx*0.1*min(0.0,divv)*delu;
+  InterfaceFlux[hh]=InterfaceFlux[hh]+ dtodx*0.1*i(min)(0.0,divv)*delu;
    }
 #endif  /* LAPIDUS_ARTIFICIAL_VISCOSITY */
 
