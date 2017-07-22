@@ -1,11 +1,8 @@
 
 
-#include "global.h"
 #include "riemann.h"
 #include "gtest/gtest.h"
 
-double gammag=1.4;
-double pmin=1.e-7;
 
 TEST(sgn_test, int_arr_sort
 ) {
