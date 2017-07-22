@@ -20,7 +20,6 @@ initialise(char *filename, Array3D<zone> grid, int *maxstep, double *cfl) {
   double bsquared = 0;
   double sqr4pie = 0;
   double sqr4piei = 0;
-  double unused = 0;
   sqr4pie = 2.0 * sqrt(3.14159);
   sqr4piei = 1.0 / sqr4pie;
 

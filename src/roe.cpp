@@ -72,7 +72,6 @@ roe(double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
         << " ul= " << ul
         << " vl= " << vl << " et= " << et << " pl= " << pl << endl;
     exit(0);
-    pl = smallp;
   }
 #endif /* DEBUG */
 
@@ -116,7 +115,6 @@ roe(double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
         << " Velx= " << ur
         << " Vely= " << vr << " Etot= " << et << " Pres= " << pr << endl;
     exit(0);
-    pr = smallp;
   }
   hr = ri * (et + pr);
   ar = sqrt(gammag * pr / rr);
