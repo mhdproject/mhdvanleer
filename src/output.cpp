@@ -172,7 +172,7 @@ output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
 #endif /* HDF5 or not  */
 
   fout.open(str_input_filename.c_str());
-  if (!fout) {
+  if (fout.fail()) {
     cerr << "unable to open file " << endl;
   }
 

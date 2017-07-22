@@ -268,7 +268,7 @@ roe(double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
   if (rl != rr)
     {
       outFile.open (outfilename, ofstream::out | ofstream::app);
-      if (!outFile)
+      if (outFile.fail())
     {
 
       cerr << "Unable to open file" << endl;

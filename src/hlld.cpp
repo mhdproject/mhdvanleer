@@ -62,7 +62,7 @@ hlld(const double *leftstate,
 
 #ifdef DEBUG_HLLD
   outFile.open (outfilename, ofstream::app);
-  if (!outFile)
+  if (outFile.fail())
     {
       cerr << "Unable to open file" << endl;
     }
