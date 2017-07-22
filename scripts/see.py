@@ -2,7 +2,12 @@
 import h5py
 import glob
 
+import matplotlib.pyplot as plt
+
 files = glob.glob('hdf5_out_2d_*.h5')
+
+def printname(name):
+    print(name)
 
 for file in files:
     # file = 'hdf5_out_2d_00000.h5'
@@ -10,11 +15,8 @@ for file in files:
     f = h5py.File(file, 'r')
 
     print (f['Bx'])
-    import matplotlib.pyplot as plt
 
 
-    def printname(name):
-        print(name)
 
 
     f.visit(printname)

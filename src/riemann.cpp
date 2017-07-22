@@ -15,7 +15,7 @@ riemann (double *leftstate,
 	 double *roe_flux,
 	 double *res_state, int time_step, double *max_speed, int idir)
 {
-1
+
   ofstream outFile;
   char outfilename[50] = "output/riemann.log";
 

@@ -290,11 +290,11 @@ flux (Array3D < zone > oldgrid,
     vanleer_flux_vector_split (rightstate, rightstate, fp, fn, ii, jj, idir);
 #endif
 
-  delete leftstate;
-  delete rightstate;
-  delete flux;
-  delete fp;
-  delete fn;
+  delete[] leftstate;
+  delete[] rightstate;
+  delete[] flux;
+  delete[] fp;
+  delete[] fn;
 
 
   return 0;
