@@ -82,7 +82,6 @@ riemann(double *leftstate,
   double csound2 = 0;
   double term = 0;
   double a_star2 = 0;
-  double vv2 = 0;
   double kinetic = 0;
   double p_magnetic = 0;
   double internal_energy = 0;

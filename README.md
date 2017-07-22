@@ -16,14 +16,19 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 What things you need to install the software and how to install them
-
+Everything is installed with
 ```
 Docker
-cmake (minimum 2.8.7)
-gcc
+```
+
+Otherwise, dependencies are:
+
+```
+cmake (minimum 3.1)
+g++, tested with v6.3, older versions may work
 ctest
 Google Test
-hdf5
+hdf5, v1.8
 ```
 
 ### Installing
