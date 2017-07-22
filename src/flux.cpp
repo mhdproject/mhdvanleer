@@ -28,9 +28,6 @@ flux(Array3D<zone> oldgrid,
 
   double *leftstate;
   double *rightstate;
-  double *flux;
-  double *fp;
-  double *fn;
 
   double pll[ne];
   double plm[ne];
@@ -44,9 +41,6 @@ flux(Array3D<zone> oldgrid,
 
   leftstate = new double[ne];
   rightstate = new double[ne];
-  flux = new double[ne];
-  fp = new double[ne];
-  fn = new double[ne];
 
   if (idir == 1) {
     d[0] = 1;
@@ -271,9 +265,6 @@ flux(Array3D<zone> oldgrid,
 
   delete[] leftstate;
   delete[] rightstate;
-  delete[] flux;
-  delete[] fp;
-  delete[] fn;
 
   return 0;
 
