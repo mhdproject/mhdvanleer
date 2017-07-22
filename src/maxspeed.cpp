@@ -10,14 +10,12 @@ maxspeed (Array3D < zone > grid, double *maxspeed)
   double gammam1 = gammag - 1;
 
   double ri = 0, px = 0, py = 0, pz = 0, et = 0, ke = 0;
-  double rl = 0, ul = 0, vl = 0, wl, pl = 0, al = 0, speed = 0;
+  double rl = 0, ul = 0, vl = 0, wl, pl = 0;
   double bu, bv, bw, bsquared;
-  double calfven = 0;
   double calfven2 = 0;
   double cfast = 0;
   double cfast2 = 0;
   double csound2 = 0;
-  double csound = 0;
   double term = 0;
   double a_star2 = 0;
   double vv2 = 0;
@@ -69,21 +67,21 @@ maxspeed (Array3D < zone > grid, double *maxspeed)
 	  cfast = sqrt (cfast2);
 
 		speed1 = fabs (ul) + cfast;
-	  *maxspeed = max (speed1, *maxspeed);
+	  *maxspeed = (max) (speed1, *maxspeed);
 
 	  calfven2 = bv * bv * ri;
 	  term = sqrt (a_star2 * a_star2 - 4 * csound2 * calfven2);
 	  cfast2 = 0.5 * (a_star2 + term);
 	  cfast = sqrt (cfast2);
 	  speed2 = fabs (vl) + cfast;
-	  *maxspeed = max (speed2, *maxspeed);
+	  *maxspeed = (max) (speed2, *maxspeed);
 
 	  calfven2 = bw * bw * ri;
 	  term = sqrt (a_star2 * a_star2 - 4 * csound2 * calfven2);
 	  cfast2 = 0.5 * (a_star2 + term);
 	  cfast = sqrt (cfast2);
 	  speed3 = fabs (wl) + cfast;
-	  *maxspeed = max (speed3, *maxspeed);
+	  *maxspeed = (max) (speed3, *maxspeed);
 
 
 	  /*
