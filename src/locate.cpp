@@ -1,8 +1,7 @@
 #include "locate.h"
 
 void
-locate (float x, float *xx, int *j, int n)
-{
+locate(float x, float *xx, int *j, int n) {
 //    From Numerical recipes:
 //    -----------------------
 //    Given an array XX of length N, and a given value of X, returns a
@@ -15,13 +14,12 @@ locate (float x, float *xx, int *j, int n)
   jl = 0;
   ju = (unsigned long) (n + 1);
   ascnd = (xx[n] > xx[1]);
-  while (ju - jl > 1)
-    {
-      jm = (ju + jl) >> 1;
-      if (x > xx[jm] == ascnd)
-	jl = jm;
-      else
-	ju = jm;
-    }
+  while (ju - jl > 1) {
+    jm = (ju + jl) >> 1;
+    if (x > xx[jm] == ascnd)
+      jl = jm;
+    else
+      ju = jm;
+  }
   *j = (int) jl;
 }

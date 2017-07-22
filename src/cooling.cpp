@@ -3,17 +3,15 @@
 //#undef MOLCOOL
 
 float atomic_temp_tab[50] = {
-  4.04, 4.08, 4.12, 4.17, 4.21, 4.25, 4.3, 4.34, 4.38, 4.44, 4.48, 4.53,
-  4.58, 4.62, 4.67, 4.71, 4.77, 4.82, 4.88, 4.93, 4.98, 5.04, 5.09, 5.14,
-  5.2, 5.25, 5.3, 5.36, 5.41, 5.46, 5.51, 5.57, 5.62, 5.67, 5.73, 5.78,
-  5.83, 5.88, 5.94, 5.99, 6.04, 6.09, 6.14, 6.2, 6.25, 6.3, 6.35, 6.4,
-  6.45, 6.5
+    4.04, 4.08, 4.12, 4.17, 4.21, 4.25, 4.3, 4.34, 4.38, 4.44, 4.48, 4.53,
+    4.58, 4.62, 4.67, 4.71, 4.77, 4.82, 4.88, 4.93, 4.98, 5.04, 5.09, 5.14,
+    5.2, 5.25, 5.3, 5.36, 5.41, 5.46, 5.51, 5.57, 5.62, 5.67, 5.73, 5.78,
+    5.83, 5.88, 5.94, 5.99, 6.04, 6.09, 6.14, 6.2, 6.25, 6.3, 6.35, 6.4,
+    6.45, 6.5
 };
 
-
 int
-cooling (double *zone, double *Lcooling, double dt)
-{
+cooling(double *zone, double *Lcooling, double dt) {
 
   double gammam1 = gammag - 1;
   double gammam1i = gammag - 1;
@@ -81,13 +79,13 @@ cooling (double *zone, double *Lcooling, double dt)
   pressure = pressure * (gammam1);
   vsnd = gammag;
   vsnd = vsnd * rhoi * pressure;
-  vsnd = sqrt (vsnd);
+  vsnd = sqrt(vsnd);
 
   nt = 2 * mpi * rho;
   nt2 = nt * nt;
   temperature = ki * pressure / nt;
   real_temp = ki * pressure / nt;
-  temperature = log10 (temperature);
+  temperature = log10(temperature);
   // set up initial values 
 
 // read cooling table
@@ -96,7 +94,7 @@ cooling (double *zone, double *Lcooling, double dt)
 // Set the minimum subcycling step
   min_dt = dt / 100.0;
   /* initialisation of cooling variables */
-  lowest_temperature = atomic_temp_tab[0];	// lowest tabulated temp (LOG)
+  lowest_temperature = atomic_temp_tab[0];    // lowest tabulated temp (LOG)
   subttot = 0.0;
   elosstot = 0.0;
   firststep = 1;
@@ -106,31 +104,23 @@ cooling (double *zone, double *Lcooling, double dt)
   et = et - ke;
 
 #ifdef MOLCOOL
-  if (temperature < 3000)
-    {
-      chi = 0;
-    }
-  else if (temperature > 3000 && temperature < 12600)
-    {
-      chi = (min) ((temperature - 3000) / 7000, 0.9);
-    }
-  else
-    {
-      chi = 0;
-    }
+  if (temperature < 3000) {
+    chi = 0;
+  } else if (temperature > 3000 && temperature < 12600) {
+    chi = (min)((temperature - 3000) / 7000, 0.9);
+  } else {
+    chi = 0;
+  }
   nH2 = nt * (1 - chi);
   nh = nt * chi;
-  rc = molcool (real_temp, nH2, nh, &molrate);
+  rc = molcool(real_temp, nH2, nh, &molrate);
 #endif /* MOLCOOL */
-  if (temperature <= lowest_temperature)
-    {
-      rate = 0.0;
-    }
-  else
-    {
+  if (temperature <= lowest_temperature) {
+    rate = 0.0;
+  } else {
 //    need to use lookup table here
-      tabfind (temperature, &rate, atomic_temp_tab);	// absorbed 10+94
-    }
+    tabfind(temperature, &rate, atomic_temp_tab);    // absorbed 10+94
+  }
 #ifdef MOLCOOL
   rate = rate + molrate;
 #endif /* MOLCOOL */
@@ -141,72 +131,58 @@ cooling (double *zone, double *Lcooling, double dt)
 // loop around the substeps 
   *Lcooling = 0;
 
-
   cv = gammam1i;
-
-
 
   counter = 0;
   de = 0.0;
   // Substepping
-  while (subttot < dt && temperature > lowest_temperature)
-    {
-      w = dt - subttot;
-      y = 0.05 * et / abs (eloss);	//    max timestep for 5% change in e
-      subdt = (min) (w, y);
-      elosstot = eloss * subdt;
+  while (subttot < dt && temperature > lowest_temperature) {
+    w = dt - subttot;
+    y = 0.05 * et / abs(eloss);    //    max timestep for 5% change in e
+    subdt = (min)(w, y);
+    elosstot = eloss * subdt;
 //        write(*,*) counter,temperature,'precool:t', e/elosstot
-      et = et - elosstot;
-      p = et / cv;
+    et = et - elosstot;
+    p = et / cv;
 
 #ifdef MOLCOOL
-      if (temperature < 3000)
-	{
-	  chi = 0;
-	}
-      else if (temperature > 3000 && temperature < 12600)
-	{
-	  chi = (min) ((temperature - 3000) / 7000, 0.9);
-	}
-      else
-	{
-	  chi = 0;
-	}
-      nH2 = nt * (1 - chi);
-      nh = nt * chi;
-      rc = molcool (real_temp, nH2, nh, &molrate);
+    if (temperature < 3000) {
+      chi = 0;
+    } else if (temperature > 3000 && temperature < 12600) {
+      chi = (min)((temperature - 3000) / 7000, 0.9);
+    } else {
+      chi = 0;
+    }
+    nH2 = nt * (1 - chi);
+    nh = nt * chi;
+    rc = molcool(real_temp, nH2, nh, &molrate);
 //   rc = molcool (pow(10,temperature),nH2, nh  ,&rate_temp );
 #endif /* MOLCOOL */
-      if (temperature <= lowest_temperature)
-	{
-	  eloss = 0.0;
-	}
-      else
-	{
-	  tabfind (temperature, &rate, atomic_temp_tab);
+    if (temperature <= lowest_temperature) {
+      eloss = 0.0;
+    } else {
+      tabfind(temperature, &rate, atomic_temp_tab);
 #ifdef MOLCOOL
-	  rate = rate + molrate;
+      rate = rate + molrate;
 #endif /* MOLCOOL */
-	  eloss = nt2 * rate;
-	}
+      eloss = nt2 * rate;
+    }
 
-      counter = counter + 1;
-      subttot = subttot + subdt;
+    counter = counter + 1;
+    subttot = subttot + subdt;
 
-      if (firststep == 0)
-	{
-	  firststep = 0;
-	}
+    if (firststep == 0) {
+      firststep = 0;
+    }
 
-    }				//     end of substepping
+  }                //     end of substepping
 
 //
 
-  if (counter > 0)
-    {
-      de = et - e_init;		//     energy correction
-      *Lcooling = de;
-    }
+  if (counter > 0) {
+    de = et - e_init;        //     energy correction
+    *Lcooling = de;
+  }
 
   return 0;
 }

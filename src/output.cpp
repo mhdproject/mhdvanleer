@@ -4,34 +4,28 @@
 #include "config.h"
 #endif
 
-
 #ifdef USE_HDF5
 #include "hdf5.h"
 #endif
 
-
 #define RANK   2
 
-
-
 int
-output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
-	int time, char *filename)
-{
+output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
+       int time, char *filename) {
 
 #ifdef USE_HDF5
-  hid_t file, dataset;		/* file and dataset handles */
-  hid_t datatype, dataspace;	/* handles */
-  hsize_t dimsf[2];		/* dataset dimensions */
+  hid_t file, dataset;        /* file and dataset handles */
+  hid_t datatype, dataspace;    /* handles */
+  hsize_t dimsf[2];        /* dataset dimensions */
   herr_t status;
   double data[nx][ny];
   const char *names[] =
-    { "Density", "Velx", "Vely", "Velz", "Energy", "Bx", "By", "Bz" };
+      {"Density", "Velx", "Vely", "Velz", "Energy", "Bx", "By", "Bz"};
   int ll = 0;
   stringstream hdf5_stream_filename;
   string hdf5_filename;
 #endif
-
 
   ofstream fout;
   ofstream gout;
@@ -58,7 +52,6 @@ output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
   string str_output_filename;
   string str_input_filename;
 
-
   double ki = 24296.3696;
   double mp = 1.67262158;
   double mpi = 1.0 / mp;
@@ -66,269 +59,251 @@ output (Array3D < zone > grid, Array3D < zone > fx, Array3D < zone > fy,
   double nt2 = 0;
   double temperature = 0;
 
-  s.clear ();
-  s.width (5);
-  s.fill ('0');
+  s.clear();
+  s.width(5);
+  s.fill('0');
   s << time;
   s >> str_file_tag;
-  stream_filename.clear ();
+  stream_filename.clear();
   stream_filename << outputdir << filename << str_file_tag;
   stream_filename >> str_input_filename;
 
 #ifdef USE_HDF5
   hdf5_stream_filename << outputdir << "hdf5_" << filename << str_file_tag <<
-    ".h5";
+                       ".h5";
   hdf5_stream_filename >> hdf5_filename;
   file =
-    H5Fcreate (hdf5_filename.c_str (), H5F_ACC_TRUNC, H5P_DEFAULT,
-	       H5P_DEFAULT);
+      H5Fcreate(hdf5_filename.c_str(), H5F_ACC_TRUNC, H5P_DEFAULT,
+                H5P_DEFAULT);
 
-  for (ll = 0; ll < ne; ll++)
-    {
-      dimsf[0] = nx;
-      dimsf[1] = (hsize_t) ny;
-      dataspace = H5Screate_simple (RANK, dimsf, NULL);
-      /*
-       * Define datatype for the data in the file.
-       * We will store little endian DOUBLE numbers.
-       */
-      datatype = H5Tcopy (H5T_NATIVE_DOUBLE);
-      status = H5Tset_order (datatype, H5T_ORDER_LE);
-      assert(status == 0);
+  for (ll = 0; ll < ne; ll++) {
+    dimsf[0] = nx;
+    dimsf[1] = (hsize_t) ny;
+    dataspace = H5Screate_simple(RANK, dimsf, NULL);
+    /*
+     * Define datatype for the data in the file.
+     * We will store little endian DOUBLE numbers.
+     */
+    datatype = H5Tcopy(H5T_NATIVE_DOUBLE);
+    status = H5Tset_order(datatype, H5T_ORDER_LE);
+    assert(status == 0);
 
-      /*
-       * Create a new dataset within the file using defined dataspace and
-       * datatype and default dataset creation properties.
-       */
-      dataset = H5Dcreate (file, names[ll], datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    /*
+     * Create a new dataset within the file using defined dataspace and
+     * datatype and default dataset creation properties.
+     */
+    dataset = H5Dcreate(file, names[ll], datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
 
-      for (jj = 0; jj < ny; jj++)
-	{
-	  for (ii = 0; ii < nx; ii++)
-	    data[ii][jj] = grid[ii][jj][kk].array[ll];
-	}
-      /*
-       * Write the data to the dataset using default transfer properties.
-       */
-      status = H5Dwrite (dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
-			 H5P_DEFAULT, data);
-
-      /*
-       * Close/release resources.
-       */
-      H5Sclose (dataspace);
-      H5Tclose (datatype);
-      H5Dclose (dataset);
+    for (jj = 0; jj < ny; jj++) {
+      for (ii = 0; ii < nx; ii++)
+        data[ii][jj] = grid[ii][jj][kk].array[ll];
     }
+    /*
+     * Write the data to the dataset using default transfer properties.
+     */
+    status = H5Dwrite(dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
+                      H5P_DEFAULT, data);
 
+    /*
+     * Close/release resources.
+     */
+    H5Sclose(dataspace);
+    H5Tclose(datatype);
+    H5Dclose(dataset);
+  }
 
   dimsf[0] = (hsize_t) nx;
   dimsf[1] = (hsize_t) ny;
-  dataspace = H5Screate_simple (RANK, dimsf, NULL);
+  dataspace = H5Screate_simple(RANK, dimsf, NULL);
   /*
    * Define datatype for the data in the file.
    * We will store little endian DOUBLE numbers.
    */
-  datatype = H5Tcopy (H5T_NATIVE_DOUBLE);
-  status = H5Tset_order (datatype, H5T_ORDER_LE);
+  datatype = H5Tcopy(H5T_NATIVE_DOUBLE);
+  status = H5Tset_order(datatype, H5T_ORDER_LE);
   /*
    * Create a new dataset within the file using defined dataspace and
    * datatype and default dataset creation properties.
    */
-  dataset = H5Dcreate (file, "Pressure", datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+  dataset = H5Dcreate(file, "Pressure", datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
 
-  for (jj = 0; jj < ny; jj++)
-    {
-      for (ii = 0; ii < nx; ii++)
-	{
+  for (jj = 0; jj < ny; jj++) {
+    for (ii = 0; ii < nx; ii++) {
 
-	  rl = grid[ii][jj][kk] _MASS;
-	  px = grid[ii][jj][kk] _MOMX;
-	  py = grid[ii][jj][kk] _MOMY;
-	  pz = grid[ii][jj][kk] _MOMZ;
-	  et = grid[ii][jj][kk] _ENER;
-	  bx = grid[ii][jj][kk] _B_X;
-	  by = grid[ii][jj][kk] _B_Y;
-	  bz = grid[ii][jj][kk] _B_Z;
-	  ri = 1.0 / rl;
-	  ul = px * ri;
-	  vl = py * ri;
-	  wl = pz * ri;
-	  ke = 0.5 * rl * (ul * ul + vl * vl + wl * wl);
-	  bsquared = bx * bx + by * by + bz * bz;
-	  pressure = et - ke - 0.5 * bsquared;
-	  pressure = pressure * gammam1;
-	  al = sqrt (gammag * pressure * ri);
-	  nt = 2 * mpi * rl;
-	  nt2 = nt * nt;
-	  temperature = ki * pressure / nt;
-	  temperature = log10 (temperature);
+      rl = grid[ii][jj][kk]_MASS;
+      px = grid[ii][jj][kk]_MOMX;
+      py = grid[ii][jj][kk]_MOMY;
+      pz = grid[ii][jj][kk]_MOMZ;
+      et = grid[ii][jj][kk]_ENER;
+      bx = grid[ii][jj][kk]_B_X;
+      by = grid[ii][jj][kk]_B_Y;
+      bz = grid[ii][jj][kk]_B_Z;
+      ri = 1.0 / rl;
+      ul = px * ri;
+      vl = py * ri;
+      wl = pz * ri;
+      ke = 0.5 * rl * (ul * ul + vl * vl + wl * wl);
+      bsquared = bx * bx + by * by + bz * bz;
+      pressure = et - ke - 0.5 * bsquared;
+      pressure = pressure * gammam1;
+      al = sqrt(gammag * pressure * ri);
+      nt = 2 * mpi * rl;
+      nt2 = nt * nt;
+      temperature = ki * pressure / nt;
+      temperature = log10(temperature);
 
-
-	  data[ii][jj] = pressure;
-	}
+      data[ii][jj] = pressure;
     }
+  }
   /*
    * Write the data to the dataset using default transfer properties.
    */
-  status = H5Dwrite (dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
-		     H5P_DEFAULT, data);
+  status = H5Dwrite(dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
+                    H5P_DEFAULT, data);
 
   /*
    * Close/release resources.
    */
-  H5Sclose (dataspace);
-  H5Tclose (datatype);
-  H5Dclose (dataset);
+  H5Sclose(dataspace);
+  H5Tclose(datatype);
+  H5Dclose(dataset);
 
-
-  H5Fclose (file);
+  H5Fclose(file);
 #endif /* HDF5 or not  */
 
-
-  fout.open (str_input_filename.c_str ());
-  if (!fout)
-    {
-      cerr << "unable to open file " << endl;
-    }
+  fout.open(str_input_filename.c_str());
+  if (!fout) {
+    cerr << "unable to open file " << endl;
+  }
 
   jj = 0;
   // Determine Div B
-  Array2D < double >divb (nx, ny);
+  Array2D<double> divb(nx, ny);
   double bx1, bx2, by1, by2, bz1, bz2;
-  for (ii = 1; ii < nx - 2; ii++)
-    {
-      for (jj = 1; jj < ny - 2; jj++)
-	{
+  for (ii = 1; ii < nx - 2; ii++) {
+    for (jj = 1; jj < ny - 2; jj++) {
 
-	  bx1 = (grid[ii][jj][kk] _B_X + grid[ii - 1][jj][kk] _B_X);
-	  bx2 = (grid[ii + 1][jj][kk] _B_X + grid[ii][jj][kk] _B_X);
-	  by1 = (grid[ii][jj][kk] _B_Y + grid[ii][jj - 1][kk] _B_Y);
-	  by2 = (grid[ii][jj + 1][kk] _B_Y + grid[ii][jj][kk] _B_Y);
-	  //     bz1 = ( grid[ii  ][jj  ][kk  ]_B_Z + grid[ii  ][jj  ][kk-1]_B_Z );
-	  //    bz2 = ( grid[ii  ][jj  ][kk+1]_B_Z + grid[ii  ][jj  ][kk  ]_B_Z );
-	  //divb = (1/delta_x)*(bx2- bx1 + by2 -by1 +bz2 -bz1);
-	  divb[ii][jj] = (0.5 / delta_x) * (bx2 - bx1 + by2 - by1);
+      bx1 = (grid[ii][jj][kk]_B_X + grid[ii - 1][jj][kk]_B_X);
+      bx2 = (grid[ii + 1][jj][kk]_B_X + grid[ii][jj][kk]_B_X);
+      by1 = (grid[ii][jj][kk]_B_Y + grid[ii][jj - 1][kk]_B_Y);
+      by2 = (grid[ii][jj + 1][kk]_B_Y + grid[ii][jj][kk]_B_Y);
+      //     bz1 = ( grid[ii  ][jj  ][kk  ]_B_Z + grid[ii  ][jj  ][kk-1]_B_Z );
+      //    bz2 = ( grid[ii  ][jj  ][kk+1]_B_Z + grid[ii  ][jj  ][kk  ]_B_Z );
+      //divb = (1/delta_x)*(bx2- bx1 + by2 -by1 +bz2 -bz1);
+      divb[ii][jj] = (0.5 / delta_x) * (bx2 - bx1 + by2 - by1);
 
-
-	}
     }
-  for (ii = 0; ii < nx; ii++)
-    {
-      for (jj = 0; jj < ny; jj++)
-	{
-	  rl = grid[ii][jj][kk] _MASS;
-	  px = grid[ii][jj][kk] _MOMX;
-	  py = grid[ii][jj][kk] _MOMY;
-	  pz = grid[ii][jj][kk] _MOMZ;
-	  et = grid[ii][jj][kk] _ENER;
-	  bx = grid[ii][jj][kk] _B_X;
-	  by = grid[ii][jj][kk] _B_Y;
-	  bz = grid[ii][jj][kk] _B_Z;
-	  ri = 1.0 / rl;
-	  ul = px * ri;
-	  vl = py * ri;
-	  wl = pz * ri;
-	  ke = 0.5 * rl * (ul * ul + vl * vl + wl * wl);
-	  bsquared = bx * bx + by * by + bz * bz;
-	  pressure = et - ke - 0.5 * bsquared;
-	  pressure = pressure * gammam1;
-	  al = sqrt (gammag * pressure * ri);
+  }
+  for (ii = 0; ii < nx; ii++) {
+    for (jj = 0; jj < ny; jj++) {
+      rl = grid[ii][jj][kk]_MASS;
+      px = grid[ii][jj][kk]_MOMX;
+      py = grid[ii][jj][kk]_MOMY;
+      pz = grid[ii][jj][kk]_MOMZ;
+      et = grid[ii][jj][kk]_ENER;
+      bx = grid[ii][jj][kk]_B_X;
+      by = grid[ii][jj][kk]_B_Y;
+      bz = grid[ii][jj][kk]_B_Z;
+      ri = 1.0 / rl;
+      ul = px * ri;
+      vl = py * ri;
+      wl = pz * ri;
+      ke = 0.5 * rl * (ul * ul + vl * vl + wl * wl);
+      bsquared = bx * bx + by * by + bz * bz;
+      pressure = et - ke - 0.5 * bsquared;
+      pressure = pressure * gammam1;
+      al = sqrt(gammag * pressure * ri);
 
 #ifdef DEBUG_BC
-	  if (ii == 2 && jj == 2 && px != 0)
-	    {
-	      cout << px << endl;
-	      cout << ul << endl;
-	      cout << "wtf?" << endl;
-	    }
+      if (ii == 2 && jj == 2 && px != 0)
+        {
+          cout << px << endl;
+          cout << ul << endl;
+          cout << "wtf?" << endl;
+        }
 #endif /* DEBUG_BC */
 
-	  fout
-		  << setiosflags (ios::scientific)
-	    << " " << (rl)
-	    << " " << ul
-	    << " " << vl
-	    << " " << wl
-	    << " " << et
-	    << " " << bx
-	    << " " << by
-	    << " " << bz
-	    << " " << (pressure)
-	    << " " << (al)
-		 << " " << divb[ii][jj]
-		 << endl;
-	}
+      fout
+          << setiosflags(ios::scientific)
+          << " " << (rl)
+          << " " << ul
+          << " " << vl
+          << " " << wl
+          << " " << et
+          << " " << bx
+          << " " << by
+          << " " << bz
+          << " " << (pressure)
+          << " " << (al)
+          << " " << divb[ii][jj]
+          << endl;
+    }
 
 #ifdef TWODIM
-      fout << endl;
+    fout << endl;
 #endif /* TWODIM */
-    }
-  fout.close ();
+  }
+  fout.close();
 
-  gout.open ("gm.general");
+  gout.open("gm.general");
   gout << "file = /home/gmurphy/mhdvanleer-0.0.1/" << str_input_filename <<
-    endl;
+       endl;
   gout << "grid = " << nx << " x " << ny << endl;
   gout << "format = ascii" << endl;
   gout << "interleaving = field" << endl;
   gout << "majority = row" << endl;
   gout << "field = V_sound, E_tot, Rho, Vel_X, Vel_Y, Pressure" << endl;
   gout << "structure = scalar, scalar, scalar, scalar, scalar, scalar" <<
-    endl;
+       endl;
   gout << "type = double, double, double, double, double, double" << endl;
   gout <<
-    "dependency = positions, positions, positions, positions, positions, positions"
-    << endl;
+       "dependency = positions, positions, positions, positions, positions, positions"
+       << endl;
   gout << "positions = regular, regular, 0, 1, 0, 1" << endl;
   gout << "" << endl;
   gout << "end" << endl;
-  gout.close ();
+  gout.close();
 
   return 0;
 }
 
-
-
 #ifdef USE_HDF5
 
 int
-write_data_to_hdf5_file (int nx, int ny, double **data, hid_t file)
-{
+write_data_to_hdf5_file(int nx, int ny, double **data, hid_t file) {
 
-  hid_t dataset;		/* file and dataset handles */
-  hid_t datatype, dataspace;	/* handles */
-  hsize_t dimsf[2];		/* dataset dimensions */
+  hid_t dataset;        /* file and dataset handles */
+  hid_t datatype, dataspace;    /* handles */
+  hsize_t dimsf[2];        /* dataset dimensions */
   herr_t status;
-
 
   dimsf[0] = (hsize_t) nx;
   dimsf[1] = (hsize_t) ny;
-  dataspace = H5Screate_simple (RANK, dimsf, NULL);
+  dataspace = H5Screate_simple(RANK, dimsf, NULL);
   /*
    * Define datatype for the data in the file.
    * We will store little endian DOUBLE numbers.
    */
-  datatype = H5Tcopy (H5T_NATIVE_DOUBLE);
-  status = H5Tset_order (datatype, H5T_ORDER_LE);
+  datatype = H5Tcopy(H5T_NATIVE_DOUBLE);
+  status = H5Tset_order(datatype, H5T_ORDER_LE);
   /*
    * Create a new dataset within the file using defined dataspace and
    * datatype and default dataset creation properties.
    */
-  dataset = H5Dcreate (file, "Temperature", datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+  dataset = H5Dcreate(file, "Temperature", datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
 
   /*
    * Write the data to the dataset using default transfer properties.
    */
-  status = H5Dwrite (dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
-		     H5P_DEFAULT, data);
+  status = H5Dwrite(dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
+                    H5P_DEFAULT, data);
 
   /*
    * Close/release resources.
    */
-  H5Sclose (dataspace);
-  H5Tclose (datatype);
-  H5Dclose (dataset);
+  H5Sclose(dataspace);
+  H5Tclose(datatype);
+  H5Dclose(dataset);
 
   return 0;
 }
