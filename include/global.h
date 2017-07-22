@@ -12,7 +12,7 @@
 #include "mpi.h"
 #endif
 
-//#define TWODIM
+#define TWODIM
 
 #include "tnt.h"
 using namespace TNT;

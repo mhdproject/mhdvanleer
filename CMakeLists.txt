@@ -38,6 +38,46 @@ set(PROJECT_LIB_NAME ${PROJECT_NAME_STR}_impl)
 
 include_directories(${COMMON_INCLUDES})
 set(SRC_FILES
+        ${PROJECT_SOURCE_DIR}/include/TwoDim.h
+        ${PROJECT_SOURCE_DIR}/include/boundary.h
+        ${PROJECT_SOURCE_DIR}/include/cooling.h
+        ${PROJECT_SOURCE_DIR}/include/eigenvectors.h
+        ${PROJECT_SOURCE_DIR}/include/flux.h
+        ${PROJECT_SOURCE_DIR}/include/global.h
+        ${PROJECT_SOURCE_DIR}/include/hlld.h
+        ${PROJECT_SOURCE_DIR}/include/initialise.h
+        ${PROJECT_SOURCE_DIR}/include/locate.h
+        ${PROJECT_SOURCE_DIR}/include/log.h
+        ${PROJECT_SOURCE_DIR}/include/main.h
+        ${PROJECT_SOURCE_DIR}/include/maxspeed.h
+        ${PROJECT_SOURCE_DIR}/include/mhd_godunov.h
+        ${PROJECT_SOURCE_DIR}/include/molcool.h
+        ${PROJECT_SOURCE_DIR}/include/output.h
+        ${PROJECT_SOURCE_DIR}/include/riemann.h
+        ${PROJECT_SOURCE_DIR}/include/roe.h
+        ${PROJECT_SOURCE_DIR}/include/sgn.h
+        ${PROJECT_SOURCE_DIR}/include/tabfind.h
+        ${PROJECT_SOURCE_DIR}/include/tnt.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_array1d.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_array1d_utils.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_array2d.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_array2d_utils.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_array3d.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_array3d_utils.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_cmat.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_fortran_array2d.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_fortran_array2d_utils.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_fortran_array3d.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_fortran_array3d_utils.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_i_refvec.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_math_utils.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_stopwatch.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_subscript.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_vec.h
+        ${PROJECT_SOURCE_DIR}/include/tnt_version.h
+        ${PROJECT_SOURCE_DIR}/include/update.h
+        ${PROJECT_SOURCE_DIR}/include/vanleer.h
+        ${PROJECT_SOURCE_DIR}/include/vanleer_fvsplit.h
         ${PROJECT_SOURCE_DIR}/src/TwoDim.cpp
         ${PROJECT_SOURCE_DIR}/src/boundary.cpp
         ${PROJECT_SOURCE_DIR}/src/cooling.cpp
@@ -58,46 +98,7 @@ set(SRC_FILES
         ${PROJECT_SOURCE_DIR}/src/tabfind.cpp
         ${PROJECT_SOURCE_DIR}/src/update.cpp
         ${PROJECT_SOURCE_DIR}/src/vanleer.cpp
-        ${PROJECT_SOURCE_DIR}/src/TwoDim.h
-        ${PROJECT_SOURCE_DIR}/src/boundary.h
-        ${PROJECT_SOURCE_DIR}/src/cooling.h
-        ${PROJECT_SOURCE_DIR}/src/eigenvectors.h
-        ${PROJECT_SOURCE_DIR}/src/flux.h
-        ${PROJECT_SOURCE_DIR}/src/global.h
-        ${PROJECT_SOURCE_DIR}/src/hlld.h
-        ${PROJECT_SOURCE_DIR}/src/initialise.h
-        ${PROJECT_SOURCE_DIR}/src/locate.h
-        ${PROJECT_SOURCE_DIR}/src/log.h
-        ${PROJECT_SOURCE_DIR}/src/main.h
-        ${PROJECT_SOURCE_DIR}/src/maxspeed.h
-        ${PROJECT_SOURCE_DIR}/src/mhd_godunov.h
-        ${PROJECT_SOURCE_DIR}/src/molcool.h
-        ${PROJECT_SOURCE_DIR}/src/output.h
-        ${PROJECT_SOURCE_DIR}/src/riemann.h
-        ${PROJECT_SOURCE_DIR}/src/roe.h
-        ${PROJECT_SOURCE_DIR}/src/sgn.h
-        ${PROJECT_SOURCE_DIR}/src/tabfind.h
-        ${PROJECT_SOURCE_DIR}/src/tnt.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_array1d.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_array1d_utils.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_array2d.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_array2d_utils.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_array3d.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_array3d_utils.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_cmat.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_fortran_array2d.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_fortran_array2d_utils.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_fortran_array3d.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_fortran_array3d_utils.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_i_refvec.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_math_utils.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_stopwatch.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_subscript.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_vec.h
-        ${PROJECT_SOURCE_DIR}/src/tnt_version.h
-        ${PROJECT_SOURCE_DIR}/src/update.h
-        ${PROJECT_SOURCE_DIR}/src/vanleer.h
-        ${PROJECT_SOURCE_DIR}/src/vanleer_fvsplit.h)
+        )
 add_library(${PROJECT_LIB_NAME} ${SRC_FILES})
 
 add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
