@@ -35,7 +35,7 @@ cooling(const double *zone, double *Lcooling, double dt) {
   double nH2 = 1;
   double nh = 1;
   double chi = 1;
-  double real_temp = 1;
+  double real_temp;
   int rc = 0;
 // Establish a system of units to work out the cooling
 //     Steve's system of units

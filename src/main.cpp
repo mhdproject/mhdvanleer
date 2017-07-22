@@ -224,8 +224,8 @@ main(int argc, char **argv) {
         assert(status == 0);
 #ifdef TWODIM
         status =
-      flux (grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array,dtodx,
-            ii, jj, timestep, 2, 0);
+            flux(grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, dtodx,
+                 ii, jj, timestep, 2, 0);
 #endif /* TWODIM */
       }
     }
@@ -265,10 +265,12 @@ main(int argc, char **argv) {
         status =
             flux(gridh, fx[ii][jj][kk].array,
                  xResState[ii][jj][kk].array, dtodx, ii, jj, timestep, 1, 1);
+        assert(status == 0);
 #ifdef TWODIM
         status =
-      flux (gridh, fy[ii][jj][kk].array,
-            yResState[ii][jj][kk].array,dtodx, ii, jj, timestep, 2, 1);
+            flux(gridh, fy[ii][jj][kk].array,
+                 yResState[ii][jj][kk].array, dtodx, ii, jj, timestep, 2, 1);
+        assert(status == 0);
 #endif /* TWODIM */
       }
     }

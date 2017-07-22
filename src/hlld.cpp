@@ -17,7 +17,7 @@ hlld(const double *leftstate,
   double vl = leftstate[2];
   double wl = leftstate[3];
   double pl = leftstate[4];
-  double el = leftstate[4];
+  double el;
   double Bul = leftstate[5];
   double Bvl = leftstate[6];
   double Bwl = leftstate[7];
@@ -53,7 +53,7 @@ hlld(const double *leftstate,
   double bu = 0;
   double bv = 0;
   double bw = 0;
-  double p = 0;
+  double p;
   double csound2 = 0;
   double term = 0;
   double a_Star2 = 0;
