@@ -5,12 +5,11 @@
 //#define STAGGER_MESH 
 //#define  POWELL
 int monopole(double *source_term, double *old, double divb);
-int
-update(Array3D<zone> NewGrid, Array3D<zone> oldg,
-       Array3D<zone> xflux, Array3D<zone> yflux,
-       Array3D<zone> xResState, Array3D<zone> yResState, double delta,
-       int ii, int jj, int timestep, Array3D<zone> fluxgrid, double dt,
-       int second) {
+int Updater::update(Array3D<zone> NewGrid, Array3D<zone> oldg,
+                    Array3D<zone> xflux, Array3D<zone> yflux,
+                    Array3D<zone> xResState, Array3D<zone> yResState, double delta,
+                    int ii, int jj, int timestep, Array3D<zone> fluxgrid, double dt,
+                    int second) {
   int hh = 0;
   int kk = 0;
   int status = 0;

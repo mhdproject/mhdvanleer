@@ -22,6 +22,7 @@ double gammag = 1.666666666666667;
 double pmin = 0.01;
 
 void print_initial_condition(ofstream &fin, int ii, int jj, int kk, const Array3D<zone> &grid);
+void show_banner(int maxstep, double cfl);
 int
 main(int argc, char **argv) {
   /* Allocate a 2d array */
@@ -69,9 +70,9 @@ main(int argc, char **argv) {
      init >> cfl;
      init.close ();
    */
-  logfile.open("output/roe.log");
+  logfile.open("roe.log");
   logfile.close();
-  logfile.open("output/falle.log");
+  logfile.open("falle.log");
   logfile.close();
   logfile.open("logfile.txt");
   logfile.close();
@@ -113,23 +114,7 @@ main(int argc, char **argv) {
 
   delta_x = 1.0 / nx;
 
-  cout << "\t\t\t2D Roe Solver Code" << endl;
-  cout << "\t\t\tVersion 2.0" << endl;
-  cout << "\t\t\tNo of steps =  " << maxstep << endl;
-  cout << "\t\t\tNX    =  " << nx << endl;
-  cout << "\t\t\tNY    =  " << ny << endl;
-  cout << "\t\t\tNE    =  " << ne << endl;
-  cout << "\t\t\tCFL   =  " << cfl << endl;
-  cout << "\t\t\tdel_x =  " << delta_x << endl;
-  cout << "\t\t\tGamma =  " << gammag << endl;
-#ifdef SECOND_ORDER_TIME
-  cout << "\t\t\t2nd Order Time and Space " << endl;
-#endif /* SECOND_ORDER_TIME */
-#ifdef LAPIDUS_VISCOSITY
-  cout << "\t\t\tLapidus Viscosity " << endl;
-#endif /* LAPIDUS_VISCOSITY */
-  cout << endl;
-  cout << endl;
+  show_banner(maxstep, cfl);
 
   // Set up initial values of conserved variables on the grid */
 
@@ -176,7 +161,8 @@ main(int argc, char **argv) {
 #endif
 /* Using a second order in time Runge-Kutta method, advect the array */
 
-  status = output(grid, fx, fy, 0, "out_2d_");
+  FileWriter writer;
+  status = writer.output(grid, fx, fy, 0, "out_2d_");
   for (timestep = 1; timestep < maxstep; timestep++) {
     for (int k = 0; k < ne; k++) {
       maxvar.array[k] = 0.;
@@ -237,9 +223,10 @@ main(int argc, char **argv) {
     //      for (ii = 2; ii < nx - 2; ii++)
 //             {
 
+    Updater upd;
     status =
-        update(gridh, grid, fx, fy, xResState, yResState, delh, ii, jj,
-               timestep, grid, delta_t, 0);
+        upd.update(gridh, grid, fx, fy, xResState, yResState, delh, ii, jj,
+                   timestep, grid, delta_t, 0);
     assert(status == 0);
 
 //             }
@@ -252,7 +239,7 @@ main(int argc, char **argv) {
 #ifdef DEBUG_HALFSTEP
     if (timestep % printtime == 0)
   {
-    status = output (gridh, fx, fy, timestep, "hout_2d_");
+    status = writer.output (gridh, fx, fy, timestep, "hout_2d_");
       assert(status == 0);
   }
 #endif /* DEBUG HALFSTEP */
@@ -276,8 +263,8 @@ main(int argc, char **argv) {
     }
 
     status =
-        update(gridn, grid, fx, fy, xResState, yResState, del, ii, jj,
-               timestep, gridh, delta_t, 1);
+        upd.update(gridn, grid, fx, fy, xResState, yResState, del, ii, jj,
+                   timestep, gridh, delta_t, 1);
     assert(status == 0);
 #ifdef TWODIM
     for (jj = 2; jj < ny - 2; jj++)
@@ -320,7 +307,7 @@ main(int argc, char **argv) {
   }
 
     status =
-  update (gridn, grid, fx, fy, xResState, yResState, del, ii, jj,
+  upd.update (gridn, grid, fx, fy, xResState, yResState, del, ii, jj,
       timestep, grid, delta_t, 0);
 #ifdef TWODIM
     for (jj = 2; jj < ny - 2; jj++)
@@ -356,10 +343,10 @@ main(int argc, char **argv) {
 
     if (timestep % printtime == 0) {
       // cout << "outputting " << endl;
-      status = output(grid, fx, fy, timestep, "out_2d_");
+      status = writer.output(grid, fx, fy, timestep, "out_2d_");
     }
     if (time > maxtime) {
-      status = output(grid, fx, fy, timestep, "out_2d_");
+      status = writer.output(grid, fx, fy, timestep, "out_2d_");
       break;
     }
 
@@ -377,6 +364,25 @@ main(int argc, char **argv) {
   cout << "\n\n Elapsed time = " << elapsed << " sec\n\n" << endl;
 
   return 0;
+}
+void show_banner(int maxstep, double cfl) {
+  cout << "\t\t\t2D Roe Solver Code" << endl;
+  cout << "\t\t\tVersion 2.0" << endl;
+  cout << "\t\t\tNo of steps =  " << maxstep << endl;
+  cout << "\t\t\tNX    =  " << nx << endl;
+  cout << "\t\t\tNY    =  " << ny << endl;
+  cout << "\t\t\tNE    =  " << ne << endl;
+  cout << "\t\t\tCFL   =  " << cfl << endl;
+  cout << "\t\t\tdel_x =  " << delta_x << endl;
+  cout << "\t\t\tGamma =  " << gammag << endl;
+#ifdef SECOND_ORDER_TIME
+  cout << "\t\t\t2nd Order Time and Space " << endl;
+#endif /* SECOND_ORDER_TIME */
+#ifdef LAPIDUS_VISCOSITY
+  cout << "\t\t\tLapidus Viscosity " << endl;
+#endif /* LAPIDUS_VISCOSITY */
+  cout << endl;
+  cout << endl;
 }
 void print_initial_condition(ofstream &fin,
                              int ii,
