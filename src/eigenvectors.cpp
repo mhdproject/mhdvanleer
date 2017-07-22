@@ -2,7 +2,7 @@
 /* Roe-Balsara system */
 
 int
-eigenvectors(double *sta, double **lev, double **rev, double **lec,
+eigenvectors(const double *sta, double **lev, double **rev, double **lec,
              double **rec, double dvy, double dvz) {
   int ii = 0;
   int jj = 0;
@@ -13,7 +13,6 @@ eigenvectors(double *sta, double **lev, double **rev, double **lec,
   double u = 0;
   double v = 0;
   double w = 0;
-  double BBu = 0;
   double BBv = 0;
   double BBw = 0;
   double bu = 0;
@@ -32,11 +31,6 @@ eigenvectors(double *sta, double **lev, double **rev, double **lec,
   double a_star2 = 0;
   double bsquared = 0;
   double vv2 = 0;
-  double dels = 0;
-  double delf = 0;
-  double betaf = 0;
-  double betas = 0;
-  double sqrt2 = sqrt(2.0);
 
   double betay = 0;
   double betaz = 0;
@@ -477,19 +471,10 @@ eigenvectors(double *sta, double **lev, double **rev, double **lec,
 }
 
 int
-eigenvalues(double *sta, double *eigenval) {
-  int ii = 0;
-  int jj = 0;
-  double gammam1 = gammag - 1;
-  double gammam1i = 1 / gammam1;
+eigenvalues(const double *sta, double *eigenval) {
   double rho = 0;
   double rhoi = 0;
   double u = 0;
-  double v = 0;
-  double w = 0;
-  double BBu = 0;
-  double BBv = 0;
-  double BBw = 0;
   double bu = 0;
   double bv = 0;
   double bw = 0;
@@ -501,39 +486,16 @@ eigenvalues(double *sta, double *eigenval) {
   double cslow2 = 0;
   double cfast2 = 0;
   double csound2 = 0;
-  double csound = 0;
   double term = 0;
   double a_star2 = 0;
   double bsquared = 0;
-  double vv2 = 0;
-  double dels = 0;
-  double delf = 0;
-  double betaf = 0;
-  double betas = 0;
-  double sqrt2 = sqrt(2.0);
 
-  double betay = 0;
-  double betaz = 0;
-  double alphaf = 0;
-  double alphas = 0;
-  double bperp = 0;
-  double icsound2 = 0;
-  double icsound22 = 0;
-  double phi = 0;
-  double deltas = 0;
-  double deltaf = 0;
-  double sqrt_rho = 0;
   double sqrt_rhoi = 0;
-  double pie = 3.14159;
-  double vt = 0;
 
-  int k = 0;
   rho = sta[0];
   rhoi = 1 / rho;
   sqrt_rhoi = sqrt(rhoi);
   u = sta[1];
-  v = sta[2];
-  w = sta[3];
   bu = sta[5] * sqrt_rhoi;
   bv = sta[6] * sqrt_rhoi;
   bw = sta[7] * sqrt_rhoi;
@@ -543,7 +505,6 @@ eigenvalues(double *sta, double *eigenval) {
   calfven2 = bu * bu;
   calfven = sqrt(calfven2);
   csound2 = gammag * p * rhoi;
-  icsound2 = 1 / csound2;
 
 #ifdef DEBUG1
   cout << "eigenv: " << csound2

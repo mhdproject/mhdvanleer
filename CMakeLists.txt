@@ -5,6 +5,9 @@ project(${PROJECT_NAME_STR} C CXX)
 find_package(HDF5) # Find non-cmake built HDF5
 INCLUDE_DIRECTORIES(${HDF5_INCLUDE_DIR})
 include_directories(/opt/local/include/)
+include_directories(${PROJECT_SOURCE_DIR}/include/)
+include_directories(.)
+
 
 SET(H5FLAGS "-DH5_USE_18_API")
 add_definitions(${H5FLAGS})
@@ -52,6 +55,7 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 add_executable(${PROJECT_TEST_NAME} ${TEST_SRC_FILES})
 add_dependencies(${PROJECT_TEST_NAME} googletest)
 add_executable(main ${PROJECT_SOURCE_DIR}/src/main.cpp ${SRC_FILES})
+target_include_directories(main PUBLIC ${PROJECT_SOURCE_DIR}/include/)
 if (APPLE)
     target_link_libraries(${PROJECT_TEST_NAME}
             ${PROJECT_LIB_NAME}
