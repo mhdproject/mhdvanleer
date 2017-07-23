@@ -26,7 +26,7 @@ cooling(const double *zone, double *Lcooling, double dt) {
   double mpi = 1.0 / mp;
   double nt = 0;
 
-  double rate = 0, eloss, nt2, de, w, y, subdt, cv;
+  double rate = 0, eloss, nt2, de, w, y, subdt;
   double molrate = 0;
   double lowest_temperature, subttot, elosstot;
   double e_init;
@@ -125,8 +125,6 @@ cooling(const double *zone, double *Lcooling, double dt) {
   eloss = nt2 * rate;
 // loop around the substeps 
   *Lcooling = 0;
-
-  cv = gammam1i;
 
   counter = 0;
   de = 0.0;

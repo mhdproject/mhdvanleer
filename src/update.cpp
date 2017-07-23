@@ -12,23 +12,16 @@ int Updater::update(Array3D<zone> NewGrid, Array3D<zone> oldg,
                     int second) {
   int hh = 0;
   int kk = 0;
-  int status = 0;
 
   double rho, rhoi;
   double px;
   double py;
   double pz;
-  double pl;
-  double et, velx, vely, ke, vsnd;
-
-  double gammam1 = gammag - 1;
+  double ke;
 
   int idir = 1;
 
-  double fp[ne], fn[ne];
-  double fp1[ne], fn1[ne];
-  double fp2[ne], fn2[ne];
-//      double fx2[ne],fx1[ne];
+  //      double fx2[ne],fx1[ne];
 //      double fy2[ne],fy1[ne];
   double d[2];
   double v2;
@@ -112,6 +105,7 @@ int Updater::update(Array3D<zone> NewGrid, Array3D<zone> oldg,
       coolvar[2] = oldg[ii][jj][kk] _MOMY;
       coolvar[3] = oldg[ii][jj][kk] _ENER;
 
+  int status = 0;
       status = cooling (coolvar, &Lcooling, dt);
   assert(status == 0);
       NewGrid[ii][jj][kk] _ENER = NewGrid[ii][jj][kk] _ENER + Lcooling;
