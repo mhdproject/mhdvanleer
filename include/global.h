@@ -25,6 +25,10 @@ using namespace std;
 //#undef DEBUG
 #ifndef GLOBAL_VARIABLES
 #define GLOBAL_VARIABLES 1
+
+#include "sgn.h"
+#include "eigenvectors.h"
+#include "hlld.h"
 extern int nx;
 extern int ny;
 extern int ne;

@@ -239,9 +239,6 @@ riemann(double *leftstate,
   /* Compute fast and slow speeds */
   rho = rho_rl;
   rhoi = 1 / rho;
-  u = u_rl;
-  v = v_rl;
-  w = w_rl;
   bu = bu_rl * sqrt(rhoi);
   bv = bv_rl * sqrt(rhoi);
   bw = bw_rl * sqrt(rhoi);
@@ -266,7 +263,8 @@ riemann(double *leftstate,
   cfast = sqrt(cfast2);
 
   /* compute left and right characteristic eigenvectors */
-  eigenvectors(av_state, levec, revec, levc, revc, dvy, dvz);
+  Eigen ev;
+  ev.eigenvectors(av_state, levec, revec, levc, revc, dvy, dvz);
 
   /* compute eigenvalues */
   lambda[0] = u_rl - cfast;
@@ -658,8 +656,8 @@ riemann(double *leftstate,
   {
     double eval_l[7];
     double eval_r[7];
-    rc = eigenvalues (lstate, eval_l);
-    rc = eigenvalues (rstate, eval_r);
+    rc = ev.eigenvalues (lstate, eval_l);
+    rc = ev.eigenvalues (rstate, eval_r);
     double bplus = (max) (eval_r[6], lambda[6]);
     double bminus = (min) (eval_l[6], lambda[6]);
     bplus = (max) (bplus, 0.0);

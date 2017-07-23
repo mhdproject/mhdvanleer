@@ -35,8 +35,6 @@ flux(Array3D<zone> oldgrid,
   double prr[ne];
   double leftprim[ne];
   double rightprim[ne];
-  double xx[ne];
-  double yy[ne];
   double unused;
 
   leftstate = new double[ne];
@@ -196,7 +194,8 @@ flux(Array3D<zone> oldgrid,
 
 
 //status = riemann (leftstate, rightstate, InterfaceFlux, ResolvedState, timestep, &unused, idir);
-  status = hlld(leftprim, rightprim, iflux, Res_state, timestep, &unused, 1);
+  Hlld hlld;
+  status = hlld.hlld(leftprim, rightprim, iflux, Res_state, timestep, &unused, 1);
   assert(status == 0);
 
   if (status == 1) {

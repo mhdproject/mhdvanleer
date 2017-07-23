@@ -1,9 +1,8 @@
-#include "eigenvectors.h"
+#include "global.h"
 /* Roe-Balsara system */
 
-int
-eigenvectors(const double *sta, double **lev, double **rev, double **lec,
-             double **rec, double dvy, double dvz) {
+int Eigen::eigenvectors(const double *sta, double **lev, double **rev, double **lec,
+                        double **rec, double dvy, double dvz) {
   int ii = 0;
   int jj = 0;
   double gammam1 = gammag - 1;
@@ -436,8 +435,7 @@ eigenvectors(const double *sta, double **lev, double **rev, double **lec,
   return 0;
 }
 
-int
-eigenvalues(const double *sta, double *eigenval) {
+int Eigen::eigenvalues(const double *sta, double *eigenval) {
   double rho = 0;
   double rhoi = 0;
   double u = 0;

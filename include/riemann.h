@@ -1,5 +1,4 @@
 #include "global.h"
-#include "eigenvectors.h"
 int      riemann (
 		double * leftstate, 
 		double * rightstate, 

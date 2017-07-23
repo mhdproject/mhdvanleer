@@ -3,11 +3,11 @@
 #define DEBUG_EV
 #undef DEBUG_HLLD
 int
-hlld(const double *leftstate,
-     const double *rightstate,
-     double *fhlld,
-     double *Res_state,
-     int time_step, double *max_speed, int idir) {
+Hlld::hlld(const double *leftstate,
+           const double *rightstate,
+           double *fhlld,
+           double *Res_state,
+           int time_step, double *max_speed, int idir) {
 
   ofstream outFile;
 
