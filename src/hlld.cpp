@@ -26,7 +26,6 @@ Hlld::hlld(const double *leftstate, const double *rightstate, double *fhlld) {
   double Bx = rightstate[5];
   double Bvr = rightstate[6];
   double Bwr = rightstate[7];
-  double calfven = 0;
   double calfven2 = 0;
   double cfast2 = 0;
   double bsquared = 0;

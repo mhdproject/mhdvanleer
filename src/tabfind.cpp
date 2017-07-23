@@ -1,7 +1,7 @@
 #include "tabfind.h"
 
 void
-tabfind(double temperature, double *rate, float *atomic_temp_tab) {
+tabfind(double temperature, double *rate, double *atomic_temp_tab) {
 
   double cooling_tab[50] = {
       -22.97, -22.87, -22.77, -22.64, -22.52, -22.42, -22.31, -22.22, -22.14,

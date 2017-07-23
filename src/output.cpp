@@ -101,6 +101,7 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
      */
     status = H5Dwrite(dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
                       H5P_DEFAULT, data);
+    assert(status == 0);
 
     /*
      * Close/release resources.
@@ -119,6 +120,7 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
    */
   datatype = H5Tcopy(H5T_NATIVE_DOUBLE);
   status = H5Tset_order(datatype, H5T_ORDER_LE);
+  assert(status == 0);
   /*
    * Create a new dataset within the file using defined dataspace and
    * datatype and default dataset creation properties.
@@ -159,6 +161,7 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
    */
   status = H5Dwrite(dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
                     H5P_DEFAULT, data);
+  assert(status == 0);
 
   /*
    * Close/release resources.
@@ -178,7 +181,7 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
   jj = 0;
   // Determine Div B
   Array2D<double> divb(nx, ny);
-  double bx1, bx2, by1, by2, bz1, bz2;
+  double bx1, bx2, by1, by2;
   for (ii = 1; ii < nx - 2; ii++) {
     for (jj = 1; jj < ny - 2; jj++) {
 
@@ -300,6 +303,7 @@ write_data_to_hdf5_file(int nx, int ny, double **data, hid_t file) {
    */
   status = H5Dwrite(dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
                     H5P_DEFAULT, data);
+  assert(status == 0);
 
   /*
    * Close/release resources.

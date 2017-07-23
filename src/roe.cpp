@@ -6,7 +6,6 @@ roe(double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
     int iii, int jjj, int timestep, int idir) {
 
   ofstream outFile;
-  char outfilename[50] = "output/roe.log";
   int ii, jj;
   int d[2];
 
