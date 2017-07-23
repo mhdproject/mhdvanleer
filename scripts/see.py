@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-import h5py
 import glob
-
+import h5py
 import matplotlib.pyplot as plt
 
 files = glob.glob('hdf5_out_2d_*.h5')
@@ -9,6 +8,8 @@ files = glob.glob('hdf5_out_2d_*.h5')
 def printname(name):
     print(name)
 
+
+fig = plt.figure()
 for file in files:
     # file = 'hdf5_out_2d_00000.h5'
 
@@ -21,7 +22,6 @@ for file in files:
 
     f.visit(printname)
     bx = f['Bx']
-    plt.figure()
     ax = plt.subplot(2, 3, 1)
     im = ax.pcolor(f['Velx'])
     ax = plt.subplot(2, 3, 2)
@@ -34,5 +34,5 @@ for file in files:
     im = ax.pcolor(f['Density'])
     ax = plt.subplot(2, 3, 6)
     im = ax.pcolor(f['Energy'])
-    plt.savefig('test_output.png', dpi=100)
-    plt.show()
+    fig.canvas.draw()
+    plt.savefig(file + '.png', dpi=100)

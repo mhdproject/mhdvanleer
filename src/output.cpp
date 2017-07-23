@@ -244,6 +244,11 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
   }
   fout.close();
 
+  write_general_file(gout, str_input_filename);
+
+  return 0;
+}
+void FileWriter::write_general_file(ofstream &gout, const string &str_input_filename) const {
   gout.open("gm.general");
   gout << "file = /home/gmurphy/mhdvanleer-0.0.1/" << str_input_filename <<
        endl;
@@ -262,8 +267,6 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
   gout << "" << endl;
   gout << "end" << endl;
   gout.close();
-
-  return 0;
 }
 
 #ifdef USE_HDF5
