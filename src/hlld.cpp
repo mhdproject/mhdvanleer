@@ -3,11 +3,7 @@
 #define DEBUG_EV
 #undef DEBUG_HLLD
 int
-Hlld::hlld(const double *leftstate,
-           const double *rightstate,
-           double *fhlld,
-           double *Res_state,
-           int time_step, double *max_speed, int idir) {
+Hlld::hlld(const double *leftstate, const double *rightstate, double *fhlld) {
 
   ofstream outFile;
 
@@ -26,7 +22,7 @@ Hlld::hlld(const double *leftstate,
   double vr = rightstate[2];
   double wr = rightstate[3];
   double pr = rightstate[4];
-  double er = rightstate[4];
+  double er;
   double Bx = rightstate[5];
   double Bvr = rightstate[6];
   double Bwr = rightstate[7];
@@ -52,7 +48,6 @@ Hlld::hlld(const double *leftstate,
   double bu = 0;
   double bv = 0;
   double bw = 0;
-  double p;
   double csound2 = 0;
   double term = 0;
   double a_Star2 = 0;
