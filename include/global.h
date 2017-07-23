@@ -18,11 +18,7 @@
 using namespace TNT;
 
 using namespace std;
-#define N_X 100
-#define N_Y 10
-#define N_E 4
 #define DEBUG 1
-//#undef DEBUG
 #ifndef GLOBAL_VARIABLES
 #define GLOBAL_VARIABLES 1
 

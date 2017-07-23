@@ -195,6 +195,7 @@ main(int argc, char **argv) {
 
 
 //  status = output ( grid, fx, fy, timestep, "oldg_2d_");
+    FluxCalc fluxcalc;
 
 #ifdef SECOND_ORDER_TIME
     jj = 0;
@@ -205,13 +206,13 @@ main(int argc, char **argv) {
     {
       for (ii = 2; ii < nx - 1; ii++) {
         status =
-            flux(grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, dtodx,
-                 ii, jj, timestep, 1, 0);
+            fluxcalc.flux(grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, dtodx,
+                          ii, jj, timestep, 1, 0);
         assert(status == 0);
 #ifdef TWODIM
         status =
-            flux(grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, dtodx,
-                 ii, jj, timestep, 2, 0);
+            fluxcalc.flux(grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, dtodx,
+                          ii, jj, timestep, 2, 0);
 #endif /* TWODIM */
       }
     }
@@ -250,13 +251,13 @@ main(int argc, char **argv) {
     {
       for (ii = 2; ii < nx - 1; ii++) {
         status =
-            flux(gridh, fx[ii][jj][kk].array,
-                 xResState[ii][jj][kk].array, dtodx, ii, jj, timestep, 1, 1);
+            fluxcalc.flux(gridh, fx[ii][jj][kk].array,
+                          xResState[ii][jj][kk].array, dtodx, ii, jj, timestep, 1, 1);
         assert(status == 0);
 #ifdef TWODIM
         status =
-            flux(gridh, fy[ii][jj][kk].array,
-                 yResState[ii][jj][kk].array, dtodx, ii, jj, timestep, 2, 1);
+            fluxcalc.flux(gridh, fy[ii][jj][kk].array,
+                          yResState[ii][jj][kk].array, dtodx, ii, jj, timestep, 2, 1);
         assert(status == 0);
 #endif /* TWODIM */
       }
@@ -296,11 +297,11 @@ main(int argc, char **argv) {
     for (ii = 2; ii < nx - 1; ii++)
       {
         status =
-      flux (grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array,dtodx,
+      fluxcalc.flux (grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array,dtodx,
             ii, jj, timestep, 1, 0);
 #ifdef TWODIM
         status =
-      flux (grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array,dtodx,
+      fluxcalc.flux (grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array,dtodx,
             ii, jj, timestep, 2, 0);
 #endif /* TWODIM */
       }

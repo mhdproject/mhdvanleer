@@ -6,15 +6,15 @@
 int ctop(double *c, double *p);
 int ptoc(double *p, double *c);
 int
-flux(Array3D<zone> oldgrid,
-     double *InterfaceFlux,
-     double *ResolvedState,
-     double dtodx,
-     int ii,
-     int jj,
-     int timestep,
-     int idir,
-     int second) {
+FluxCalc::flux(Array3D<zone> oldgrid,
+               double *InterfaceFlux,
+               double *ResolvedState,
+               double dtodx,
+               int ii,
+               int jj,
+               int timestep,
+               int idir,
+               int second) {
   int d[2];
   int kk = 0;
   int hh = 0;
@@ -23,8 +23,8 @@ flux(Array3D<zone> oldgrid,
   double slope1;
   double slope2;
   double left;
-  double mid = 0.0;
-  double right = 0.0;
+  double mid;
+  double right;
 
   double *leftstate;
   double *rightstate;
@@ -35,7 +35,6 @@ flux(Array3D<zone> oldgrid,
   double prr[ne];
   double leftprim[ne];
   double rightprim[ne];
-  double unused;
 
   leftstate = new double[ne];
   rightstate = new double[ne];

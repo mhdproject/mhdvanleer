@@ -9,6 +9,8 @@ This is a serial version of a numerical code developed to solve the magnetohydro
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b7d2877bde0435d897f31e8c50497e6)](https://www.codacy.com/app/garethcmurphy/mhdvanleer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=garethcmurphy/mhdvanleer&amp;utm_campaign=Badge_Grade)
 
 
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.

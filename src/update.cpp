@@ -30,10 +30,6 @@ int Updater::update(Array3D<zone> NewGrid, Array3D<zone> oldg,
   double fp2[ne], fn2[ne];
 //      double fx2[ne],fx1[ne];
 //      double fy2[ne],fy1[ne];
-  double coolvar[ne];
-  double source_term[ne];
-
-  double Lcooling;
   double d[2];
   double v2;
 
@@ -107,6 +103,9 @@ int Updater::update(Array3D<zone> NewGrid, Array3D<zone> oldg,
 
       // Can add a cooling source term here
 #ifdef COOLING
+      double coolvar[ne];
+  double source_term[ne];
+  double Lcooling;
 
       coolvar[0] = oldg[ii][jj][kk] _MASS;
       coolvar[1] = oldg[ii][jj][kk] _MOMX;

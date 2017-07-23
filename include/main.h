@@ -6,7 +6,6 @@
 using namespace std;
 //#undef DEBUG
 
-#include "flux.h"
 #include "roe.h"
 #include "vanleer_fvsplit.h"
 #include "boundary.h"
