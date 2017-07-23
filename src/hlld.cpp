@@ -115,7 +115,6 @@ Hlld::hlld(const double *leftstate,
   bv = lstate[5];
   bw = lstate[6];
   bsquared = (bu * bu + bv * bv + bw * bw) * rhoi;
-  p = pl;
   calfven2 = fabs(bu * bu * rhoi);
   csound2 = gammag * pl * rhoi;
   a_Star2 = csound2 + bsquared;
@@ -129,7 +128,6 @@ Hlld::hlld(const double *leftstate,
   bv = rstate[5];
   bw = rstate[6];
   bsquared = (bu * bu + bv * bv + bw * bw) * rhoi;
-  p = pr;
   calfven2 = fabs(bu * bu * rhoi);
   csound2 = gammag * pr * rhoi;
   a_Star2 = csound2 + bsquared;
