@@ -23,6 +23,7 @@ double pmin = 0.01;
 
 void print_initial_condition(ofstream &fin, int ii, int jj, int kk, const Array3D<zone> &grid);
 void show_banner(int maxstep, double cfl);
+void print_debug_info(int timestep, const double *maximumspeed, double time, double delta_t, double del);
 int
 main(int argc, char **argv) {
   /* Allocate a 2d array */
@@ -186,15 +187,7 @@ main(int argc, char **argv) {
     delta_t = del * delta_x;
     dtodx = 1.0 / *maximumspeed;
     time = time + delta_t;
-#ifdef VERBOSE_OUTPUT
-    cout << "Tstep= " << std::dec << setiosflags(ios::scientific) << timestep;
-    cout << "\tTime= " << setiosflags(ios::scientific) << time;
-    cout << "\tMaxspeed= " << setiosflags(ios::
-                                          scientific) << *maximumspeed;
-    cout << "\t dt = " << setiosflags(ios::scientific) << delta_t;
-    cout << "\tCFL= " << setiosflags(ios::scientific) << del;
-    cout << endl;
-#endif /* VERBOSE_OUTPUT */
+    print_debug_info(timestep, maximumspeed, time, delta_t, del);
 
 
 //  status = output ( grid, fx, fy, timestep, "oldg_2d_");
@@ -391,6 +384,18 @@ main(int argc, char **argv) {
   cout << "\n\n Elapsed time = " << elapsed << " sec\n\n" << endl;
 
   return 0;
+}
+void print_debug_info(int timestep, const double *maximumspeed, double time, double delta_t, double del) {
+#ifdef VERBOSE_OUTPUT
+  cout << "Tstep= " << dec << setiosflags(ios_base::scientific) << timestep;
+  cout << "\tTime= " << setiosflags(ios_base::scientific) << time;
+  cout << "\tMaxspeed= " << setiosflags(
+      ios_base::scientific) << *maximumspeed;
+  cout << "\t dt = " << setiosflags(ios_base::scientific) << delta_t;
+  cout << "\tCFL= " << setiosflags(ios_base::scientific) << del;
+  cout << endl;
+#endif /* VERBOSE_OUTPUT */
+
 }
 void show_banner(int maxstep, double cfl) {
   cout << "\t\t\t2D Roe Solver Code" << endl;
