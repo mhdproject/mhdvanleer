@@ -1,4 +1,38 @@
 #include "initialise.h"
+
+int InitFactory::make_init(string probtype, int argc, Array3D<zone> grid, int maxstep, double cfl, char **argv) {
+  int a = 1;
+  int status;
+  if (probtype == "Shock") {
+    if (argc > 1) {
+      status = initialise(argv[1], grid, &maxstep, &cfl);
+      assert(status == 0);
+    } else {
+      status = initialise("input/gaz1", grid, &maxstep, &cfl);
+      assert(status == 0);
+
+    }
+
+  } else if (probtype == "Jet") {
+    InitialJet Init;
+    if (argc > 1) {
+      status = Init.setup(argv[1], grid, &maxstep, &cfl);
+      assert(status == 0);
+    } else {
+      status = Init.setup("input/input.jet", grid, &maxstep, &cfl);
+      assert(status == 0);
+    }
+  } else if (probtype == "Blast") {
+    InitialBlast Init;
+    if (argc > 1) {
+      status = Init.setup(argv[1], grid, &maxstep, &cfl);
+      assert(status == 0);
+    } else {
+      status = Init.setup("input/input.jet", grid, &maxstep, &cfl);
+      assert(status == 0);
+    }
+  }
+}
 int
 InitialJet::setup(char *filename, Array3D<zone> grid, int *maxstep,
                   double *cfl) {
@@ -322,6 +356,3 @@ InitialBlast::setup(char *filename, Array3D<zone> grid, int *maxstep,
   return 0;
 }
 
-int InitFactory::make_init() {
-  return 0;
-}

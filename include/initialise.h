@@ -15,6 +15,6 @@ class InitialBlast {
 
 class InitFactory {
  public:
-  int make_init();
+  int make_init(string probtype, int argc, Array3D<zone> grid, int maxstep, double cfl, char **argv);
 
 };
