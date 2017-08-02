@@ -44,7 +44,6 @@ int Eigen::eigenvectors(const double *sta, double **lev, double **rev, double **
   double sqrt_rho = 0;
   double sqrt_rhoi = 0;
   double pie = 3.14159;
-  double vt = 0;
 
   int k = 0;
   Array2D<double> MI(7, 7);
@@ -94,6 +93,7 @@ int Eigen::eigenvectors(const double *sta, double **lev, double **rev, double **
     /* These quantities indeterminate if transverse field = 0
      *
      * */
+    double vt = 0;
     vt = sqrt(dvy * dvy + dvz * dvz);
     if (vt > (0.00000001 * csound)) {
       betay = sgn(bu) * dvy / vt;

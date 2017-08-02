@@ -1,6 +1,6 @@
 # MHDVanleer
 
-This is a serial version of a numerical code developed to solve the magnetohydrodynamics equations. It was developed primarily for jets in the interstellar medium. 
+Simulating magnetised gas dynamics using shock capturing
 
 ## Status
 
