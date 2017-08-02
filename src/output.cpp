@@ -146,12 +146,10 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
       bsquared = bx * bx + by * by + bz * bz;
       pressure = et - ke - 0.5 * bsquared;
       pressure = pressure * gammam1;
-      al = sqrt(gammag * pressure * ri);
       double mpi = 1.0 / mp;
       double nt = 0;
       nt = 2 * mpi * rl;
       temperature = ki * pressure / nt;
-      temperature = log10(temperature);
 
       data[ii][jj] = pressure;
     }
@@ -178,7 +176,6 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
     cerr << "unable to open file " << endl;
   }
 
-  jj = 0;
   // Determine Div B
   Array2D<double> divb(nx, ny);
   double bx1, bx2, by1, by2;

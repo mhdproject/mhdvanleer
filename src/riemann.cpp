@@ -8,10 +8,7 @@
 currently no entropy fix is in place 
 */
 int
-riemann(double *leftstate,
-        double *rightstate,
-        double *roe_flux,
-        double *res_state, int time_step, double *max_speed, int idir) {
+riemann(double *leftstate, double *rightstate, double *roe_flux, double *res_state, int time_step, int idir) {
 
   ofstream outFile;
   char outfilename[50] = "output/riemann.log";
@@ -489,7 +486,6 @@ riemann(double *leftstate,
   }
 #endif /* DEBUG_RIEMANN */
   }
-  bu = bul;
 
 #ifdef DEBUG_RIEMANN
   if (ul != ur)
@@ -515,7 +511,6 @@ riemann(double *leftstate,
           outFile << rrsp[jj] << "\t\t";
         }
 #endif /* DEBUG_RIEMANN */
-      bu = bur;
     }
 
 #ifdef DEBUG_RIEMANN

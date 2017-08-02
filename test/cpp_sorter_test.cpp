@@ -21,7 +21,7 @@ TEST(riemann_test, int_arr_sort
     double *max_speed;
     int idir;
     int time_step;
-    double result = riemann(lhs, rhs, flux, res_state, time_step, max_speed, idir);
+double result = riemann(lhs, rhs, flux, res_state, time_step, idir);
 EXPECT_FLOAT_EQ(exp_res_state[0], res_state[0]
 );
 }

@@ -1,7 +1,7 @@
 #include "locate.h"
 
 void
-locate(double x, double *xx, int *j, int n) {
+locate(double x, const double *xx, int *j, int n) {
 //    From Numerical recipes:
 //    -----------------------
 //    Given an array XX of length N, and a given value of X, returns a

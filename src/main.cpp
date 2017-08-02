@@ -43,10 +43,10 @@ main(int argc, char **argv) {
   double maxtime = 0.0;
   double *maximumspeed = &max_speed;
   double time = 0.0;
-  double delta_t = 0.0;
-  double dtodx = 0.0;
-  double del = 0.0;
-  double delh = 0.0;
+  double delta_t;
+  double dtodx;
+  double del;
+  double delh;
   double cfl = 0.80;
   zone maxvar;
   zone minvar;
@@ -163,6 +163,7 @@ main(int argc, char **argv) {
 
   FileWriter writer;
   status = writer.output(grid, fx, fy, 0, "out_2d_");
+  assert(status == 0);
   for (timestep = 1; timestep < maxstep; timestep++) {
     for (int k = 0; k < ne; k++) {
       maxvar.array[k] = 0.;
@@ -198,7 +199,6 @@ main(int argc, char **argv) {
     FluxCalc fluxcalc;
 
 #ifdef SECOND_ORDER_TIME
-    jj = 0;
 
 #ifdef TWODIM
     for (jj = 2; jj < ny - 1; jj++)
@@ -213,6 +213,7 @@ main(int argc, char **argv) {
         status =
             fluxcalc.flux(grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, dtodx,
                           ii, jj, timestep, 2, 0);
+        assert(status == 0);
 #endif /* TWODIM */
       }
     }
@@ -226,8 +227,18 @@ main(int argc, char **argv) {
 
     Updater upd;
     status =
-        upd.update(gridh, grid, fx, fy, xResState, yResState, delh, ii, jj,
-                   timestep, grid, delta_t, 0);
+        upd.update(gridh,
+                   grid,
+                   fx,
+                   fy,
+                   xResState,
+                   yResState,
+                   delh,
+                   ii,
+                   jj,
+                   timestep,
+                   grid,
+                   delta_t);
     assert(status == 0);
 
 //             }
@@ -264,8 +275,18 @@ main(int argc, char **argv) {
     }
 
     status =
-        upd.update(gridn, grid, fx, fy, xResState, yResState, del, ii, jj,
-                   timestep, gridh, delta_t, 1);
+        upd.update(gridn,
+                   grid,
+                   fx,
+                   fy,
+                   xResState,
+                   yResState,
+                   del,
+                   ii,
+                   jj,
+                   timestep,
+                   gridh,
+                   delta_t);
     assert(status == 0);
 #ifdef TWODIM
     for (jj = 2; jj < ny - 2; jj++)
@@ -334,6 +355,7 @@ main(int argc, char **argv) {
 #endif
     /* Boundary Conditions */
     status = boundary(grid, inject_jet);
+    assert(status == 0);
     /* End Boundary Conditions */
 
     cout << dec << resetiosflags(ios::fixed);
@@ -345,9 +367,11 @@ main(int argc, char **argv) {
     if (timestep % printtime == 0) {
       // cout << "outputting " << endl;
       status = writer.output(grid, fx, fy, timestep, "out_2d_");
+      assert(status == 0);
     }
     if (time > maxtime) {
       status = writer.output(grid, fx, fy, timestep, "out_2d_");
+      assert(status == 0);
       break;
     }
 

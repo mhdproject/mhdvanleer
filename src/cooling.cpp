@@ -32,9 +32,9 @@ cooling(const double *zone, double *Lcooling, double dt) {
   double e_init;
   int firststep;
   int counter;
-  double nH2 = 1;
-  double nh = 1;
-  double chi = 1;
+  double nH2;
+  double nh;
+  double chi;
   double real_temp;
   int rc = 0;
 // Establish a system of units to work out the cooling
@@ -75,7 +75,6 @@ cooling(const double *zone, double *Lcooling, double dt) {
   pressure = pressure * (gammam1);
   vsnd = gammag;
   vsnd = vsnd * rhoi * pressure;
-  vsnd = sqrt(vsnd);
 
   nt = 2 * mpi * rho;
   nt2 = nt * nt;
@@ -91,7 +90,6 @@ cooling(const double *zone, double *Lcooling, double dt) {
   /* initialisation of cooling variables */
   lowest_temperature = atomic_temp_tab[0];    // lowest tabulated temp (LOG)
   subttot = 0.0;
-  elosstot = 0.0;
   firststep = 1;
 
 // set the initial energy
@@ -109,6 +107,7 @@ cooling(const double *zone, double *Lcooling, double dt) {
   nH2 = nt * (1 - chi);
   nh = nt * chi;
   rc = molcool(real_temp, nH2, nh, &molrate);
+  assert(rc == 0);
 #endif /* MOLCOOL */
   if (temperature <= lowest_temperature) {
     rate = 0.0;
@@ -127,7 +126,6 @@ cooling(const double *zone, double *Lcooling, double dt) {
   *Lcooling = 0;
 
   counter = 0;
-  de = 0.0;
   // Substepping
   while (subttot < dt && temperature > lowest_temperature) {
     w = dt - subttot;
@@ -148,6 +146,7 @@ cooling(const double *zone, double *Lcooling, double dt) {
     nH2 = nt * (1 - chi);
     nh = nt * chi;
     rc = molcool(real_temp, nH2, nh, &molrate);
+    assert(rc == 0);
 //   rc = molcool (pow(10,temperature),nH2, nh  ,&rate_temp );
 #endif /* MOLCOOL */
     if (temperature <= lowest_temperature) {

@@ -5,11 +5,18 @@
 //#define STAGGER_MESH 
 //#define  POWELL
 int monopole(double *source_term, double *old, double divb);
-int Updater::update(Array3D<zone> NewGrid, Array3D<zone> oldg,
-                    Array3D<zone> xflux, Array3D<zone> yflux,
-                    Array3D<zone> xResState, Array3D<zone> yResState, double delta,
-                    int ii, int jj, int timestep, Array3D<zone> fluxgrid, double dt,
-                    int second) {
+int Updater::update(Array3D<zone> NewGrid,
+                    Array3D<zone> oldg,
+                    Array3D<zone> xflux,
+                    Array3D<zone> yflux,
+                    Array3D<zone> xResState,
+                    Array3D<zone> yResState,
+                    double delta,
+                    int ii,
+                    int jj,
+                    int timestep,
+                    Array3D<zone> fluxgrid,
+                    double dt) {
   int hh = 0;
   int kk = 0;
 
@@ -190,79 +197,7 @@ int Updater::update(Array3D<zone> NewGrid, Array3D<zone> oldg,
       double eint = energy - ke - 0.5 * b2;
       double pressure = eint * (gammag - 1);
 
-      if (pressure < 0.0) {
-        pressure = 0.001;
-        NewGrid[ii][jj][kk]_ENER = ke + b2 + pressure / (gammag - 1);
-      }
-      if (pressure < 0.0) {
-        cout << "Exiting on Negative pressure " << NewGrid[ii][jj][kk]
-        _MASS << endl;
-        cout << "hh fx2 fx1 fy2 fy1 " << endl;
-        for (hh = 0; hh < ne; hh++) {
-
-          cout << "upd: " << hh
-               << " " << fx2[hh]
-               << " " << fx1[hh]
-               << " " << fy2[hh] << " " << fy1[hh] << endl;
-        }
-        cout << "upd:" << "[" << ii << "," << jj << "]=" << endl;
-        cout << setiosflags(ios::fixed);
-        cout << "[" << ii + 1 << "," << jj << "]="
-             << " " << oldg[ii + 1][jj][kk]_MASS
-             << " " << oldg[ii + 1][jj][kk]_MOMX
-             << " " << oldg[ii + 1][jj][kk]_MOMY
-             << " " << oldg[ii + 1][jj][kk]_MOMZ
-             << " " << oldg[ii + 1][jj][kk]_ENER
-             << " " << oldg[ii + 1][jj][kk]_B_X
-             << " " << oldg[ii + 1][jj][kk]_B_Y
-             << " " << oldg[ii + 1][jj][kk]_B_Z << endl;
-        cout << "[" << ii - 1 << "," << jj << "]="
-             << " " << oldg[ii - 1][jj][kk]_MASS
-             << " " << oldg[ii - 1][jj][kk]_MOMX
-             << " " << oldg[ii - 1][jj][kk]_MOMY
-             << " " << oldg[ii - 1][jj][kk]_MOMZ
-             << " " << oldg[ii - 1][jj][kk]_ENER
-             << " " << oldg[ii - 1][jj][kk]_B_X
-             << " " << oldg[ii - 1][jj][kk]_B_Y
-             << " " << oldg[ii - 1][jj][kk]_B_Z << endl;
-        cout << "[" << ii << "," << jj << "]="
-             << " " << NewGrid[ii][jj][kk]_MASS
-             << " " << NewGrid[ii][jj][kk]_MOMX
-             << " " << NewGrid[ii][jj][kk]_MOMY
-             << " " << NewGrid[ii][jj][kk]_MOMZ
-             << " " << NewGrid[ii][jj][kk]_ENER
-             << " " << NewGrid[ii][jj][kk]_B_X
-             << " " << NewGrid[ii][jj][kk]_B_Y
-             << " " << NewGrid[ii][jj][kk]_B_Z << endl;
-        cout << "[" << ii << "," << jj << "]="
-             << " " << oldg[ii][jj][kk]_MASS
-             << " " << oldg[ii][jj][kk]_MOMX
-             << " " << oldg[ii][jj][kk]_MOMY
-             << " " << oldg[ii][jj][kk]_MOMZ
-             << " " << oldg[ii][jj][kk]_ENER
-             << " " << oldg[ii][jj][kk]_B_X
-             << " " << oldg[ii][jj][kk]_B_Y
-             << " " << oldg[ii][jj][kk]_B_Z << endl;
-        cout << "[" << ii << "," << jj + 1 << "]="
-             << " " << oldg[ii][jj + 1][kk]_MASS
-             << " " << oldg[ii][jj + 1][kk]_MOMX
-             << " " << oldg[ii][jj + 1][kk]_MOMY
-             << " " << oldg[ii][jj + 1][kk]_MOMZ
-             << " " << oldg[ii][jj + 1][kk]_ENER
-             << " " << oldg[ii][jj + 1][kk]_B_X
-             << " " << oldg[ii][jj + 1][kk]_B_Y
-             << " " << oldg[ii][jj + 1][kk]_B_Z << endl;
-        cout << "[" << ii << "," << jj - 1 << "]="
-             << " " << oldg[ii][jj - 1][kk]_MASS
-             << " " << oldg[ii][jj - 1][kk]_MOMX
-             << " " << oldg[ii][jj - 1][kk]_MOMY
-             << " " << oldg[ii][jj - 1][kk]_MOMZ
-             << " " << oldg[ii][jj - 1][kk]_ENER
-             << " " << oldg[ii][jj - 1][kk]_B_X
-             << " " << oldg[ii][jj - 1][kk]_B_Y
-             << " " << oldg[ii][jj - 1][kk]_B_Z << endl;
-        exit(0);
-      }
+      NewGrid = check_negative_pressure(NewGrid, oldg, ii, jj, hh, kk, ke, fx1, fx2, fy1, fy2, b2, pressure);
 
     }
   }
@@ -375,6 +310,93 @@ int Updater::update(Array3D<zone> NewGrid, Array3D<zone> oldg,
 #endif /*STAGGER_MESH */
 
   return 0;
+}
+Array3D<zone> &Updater::check_negative_pressure(Array3D<zone> &NewGrid,
+                                                const Array3D<zone> &oldg,
+                                                int ii,
+                                                int jj,
+                                                int hh,
+                                                int kk,
+                                                double ke,
+                                                const double *fx1,
+                                                const double *fx2,
+                                                const double *fy1,
+                                                const double *fy2,
+                                                double b2,
+                                                double pressure) const {
+  if (pressure < 0.0) {
+    pressure = 0.001;
+    NewGrid[ii][jj][kk]_ENER = ke + b2 + pressure / (gammag - 1);
+  }
+  if (pressure < 0.0) {
+    cout << "Exiting on Negative pressure " << NewGrid[ii][jj][kk]
+    _MASS << endl;
+    cout << "hh fx2 fx1 fy2 fy1 " << endl;
+    for (hh = 0; hh < ne; hh++) {
+
+      cout << "upd: " << hh
+           << " " << fx2[hh]
+           << " " << fx1[hh]
+           << " " << fy2[hh] << " " << fy1[hh] << endl;
+    }
+    cout << "upd:" << "[" << ii << "," << jj << "]=" << endl;
+    cout << setiosflags(ios_base::fixed);
+    cout << "[" << ii + 1 << "," << jj << "]="
+         << " " << oldg[ii + 1][jj][kk]_MASS
+         << " " << oldg[ii + 1][jj][kk]_MOMX
+         << " " << oldg[ii + 1][jj][kk]_MOMY
+         << " " << oldg[ii + 1][jj][kk]_MOMZ
+         << " " << oldg[ii + 1][jj][kk]_ENER
+         << " " << oldg[ii + 1][jj][kk]_B_X
+         << " " << oldg[ii + 1][jj][kk]_B_Y
+         << " " << oldg[ii + 1][jj][kk]_B_Z << endl;
+    cout << "[" << ii - 1 << "," << jj << "]="
+         << " " << oldg[ii - 1][jj][kk]_MASS
+         << " " << oldg[ii - 1][jj][kk]_MOMX
+         << " " << oldg[ii - 1][jj][kk]_MOMY
+         << " " << oldg[ii - 1][jj][kk]_MOMZ
+         << " " << oldg[ii - 1][jj][kk]_ENER
+         << " " << oldg[ii - 1][jj][kk]_B_X
+         << " " << oldg[ii - 1][jj][kk]_B_Y
+         << " " << oldg[ii - 1][jj][kk]_B_Z << endl;
+    cout << "[" << ii << "," << jj << "]="
+         << " " << NewGrid[ii][jj][kk]_MASS
+         << " " << NewGrid[ii][jj][kk]_MOMX
+         << " " << NewGrid[ii][jj][kk]_MOMY
+         << " " << NewGrid[ii][jj][kk]_MOMZ
+         << " " << NewGrid[ii][jj][kk]_ENER
+         << " " << NewGrid[ii][jj][kk]_B_X
+         << " " << NewGrid[ii][jj][kk]_B_Y
+         << " " << NewGrid[ii][jj][kk]_B_Z << endl;
+    cout << "[" << ii << "," << jj << "]="
+         << " " << oldg[ii][jj][kk]_MASS
+         << " " << oldg[ii][jj][kk]_MOMX
+         << " " << oldg[ii][jj][kk]_MOMY
+         << " " << oldg[ii][jj][kk]_MOMZ
+         << " " << oldg[ii][jj][kk]_ENER
+         << " " << oldg[ii][jj][kk]_B_X
+         << " " << oldg[ii][jj][kk]_B_Y
+         << " " << oldg[ii][jj][kk]_B_Z << endl;
+    cout << "[" << ii << "," << jj + 1 << "]="
+         << " " << oldg[ii][jj + 1][kk]_MASS
+         << " " << oldg[ii][jj + 1][kk]_MOMX
+         << " " << oldg[ii][jj + 1][kk]_MOMY
+         << " " << oldg[ii][jj + 1][kk]_MOMZ
+         << " " << oldg[ii][jj + 1][kk]_ENER
+         << " " << oldg[ii][jj + 1][kk]_B_X
+         << " " << oldg[ii][jj + 1][kk]_B_Y
+         << " " << oldg[ii][jj + 1][kk]_B_Z << endl;
+    cout << "[" << ii << "," << jj - 1 << "]="
+         << " " << oldg[ii][jj - 1][kk]_MASS
+         << " " << oldg[ii][jj - 1][kk]_MOMX
+         << " " << oldg[ii][jj - 1][kk]_MOMY
+         << " " << oldg[ii][jj - 1][kk]_MOMZ
+         << " " << oldg[ii][jj - 1][kk]_ENER
+         << " " << oldg[ii][jj - 1][kk]_B_X
+         << " " << oldg[ii][jj - 1][kk]_B_Y
+         << " " << oldg[ii][jj - 1][kk]_B_Z << endl;
+  }
+  return NewGrid;
 }
 
 int
