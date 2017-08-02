@@ -130,19 +130,21 @@ main(int argc, char **argv) {
     }
 
   } else if (probtype == "Jet") {
+    InitialJet Init;
     if (argc > 1) {
-      status = initialise_jet(argv[1], grid, &maxstep, &cfl);
+      status = Init.initialise_jet(argv[1], grid, &maxstep, &cfl);
       assert(status == 0);
     } else {
-      status = initialise_jet("input/input.jet", grid, &maxstep, &cfl);
+      status = Init.initialise_jet("input/input.jet", grid, &maxstep, &cfl);
       assert(status == 0);
     }
   } else if (probtype == "Blast") {
+    InitialBlast Init;
     if (argc > 1) {
-      status = initialise_blast(argv[1], grid, &maxstep, &cfl);
+      status = Init.initialise_blast(argv[1], grid, &maxstep, &cfl);
       assert(status == 0);
     } else {
-      status = initialise_blast("input/input.jet", grid, &maxstep, &cfl);
+      status = Init.initialise_blast("input/input.jet", grid, &maxstep, &cfl);
       assert(status == 0);
     }
   }

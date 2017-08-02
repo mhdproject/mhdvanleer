@@ -1,4 +1,20 @@
 #include "global.h"
 int initialise(char *filename, Array3D<zone> grid, int *, double *);
-int initialise_jet(char *filename, Array3D<zone> grid, int *, double *);
-int initialise_blast(char *filename, Array3D<zone> grid, int *, double *);
+
+class InitialJet {
+
+ public:
+  int initialise_jet(char *filename, Array3D<zone> grid, int *, double *);
+};
+
+class InitialBlast {
+
+ public:
+  int initialise_blast(char *filename, Array3D<zone> grid, int *, double *);
+};
+
+class InitFactory {
+ public:
+  int make_init();
+
+};

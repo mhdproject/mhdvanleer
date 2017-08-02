@@ -50,7 +50,6 @@ set(SRC_FILES
         ${PROJECT_SOURCE_DIR}/include/log.h
         ${PROJECT_SOURCE_DIR}/include/main.h
         ${PROJECT_SOURCE_DIR}/include/maxspeed.h
-        ${PROJECT_SOURCE_DIR}/include/mhd_godunov.h
         ${PROJECT_SOURCE_DIR}/include/molcool.h
         ${PROJECT_SOURCE_DIR}/include/output.h
         ${PROJECT_SOURCE_DIR}/include/riemann.h
