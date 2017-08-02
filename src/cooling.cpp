@@ -14,7 +14,6 @@ int
 cooling(const double *zone, double *Lcooling, double dt) {
 
   double gammam1 = gammag - 1;
-  double gammam1i = gammag - 1;
   double rhoi, px, py, et, ke;
   double rho, velx, vely, pressure, vsnd;
   double velx2;

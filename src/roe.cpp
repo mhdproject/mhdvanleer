@@ -23,7 +23,6 @@ roe(double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
   double cc[ne];
   double lres_state_prim[ne];
   double rres_state_prim[ne];
-  double smallp;
   double rho_i_2_c = 0;
   double delta_w[ne];
   double delta_p;

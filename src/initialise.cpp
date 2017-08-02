@@ -15,7 +15,6 @@ initialise(char *filename, Array3D<zone> grid, int *maxstep, double *cfl) {
 
   double gammam1 = gammag - 1;
   double gammam1i = 1.0 / gammam1;
-  double dist;
 
   double bsquared = 0;
   double sqr4pie = 0;
