@@ -1,7 +1,7 @@
 #include "initialise.h"
 int
-InitialJet::initialise_jet(char *filename, Array3D<zone> grid, int *maxstep,
-                           double *cfl) {
+InitialJet::setup(char *filename, Array3D<zone> grid, int *maxstep,
+                  double *cfl) {
   int ii = 0;
   int jj = 0;
   int kk = 0;
@@ -161,8 +161,8 @@ InitialJet::initialise_jet(char *filename, Array3D<zone> grid, int *maxstep,
   return 0;
 }
 int
-InitialBlast::setup_blast(char *filename, Array3D<zone> grid, int *maxstep,
-                          double *cfl) {
+InitialBlast::setup(char *filename, Array3D<zone> grid, int *maxstep,
+                    double *cfl) {
   int ii = 0;
   int jj = 0;
   int kk = 0;
@@ -319,5 +319,9 @@ InitialBlast::setup_blast(char *filename, Array3D<zone> grid, int *maxstep,
 
   }
 
+  return 0;
+}
+
+int InitFactory::make_init() {
   return 0;
 }
