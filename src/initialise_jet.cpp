@@ -161,8 +161,8 @@ InitialJet::initialise_jet(char *filename, Array3D<zone> grid, int *maxstep,
   return 0;
 }
 int
-InitialBlast::initialise_blast(char *filename, Array3D<zone> grid, int *maxstep,
-                               double *cfl) {
+InitialBlast::setup_blast(char *filename, Array3D<zone> grid, int *maxstep,
+                          double *cfl) {
   int ii = 0;
   int jj = 0;
   int kk = 0;

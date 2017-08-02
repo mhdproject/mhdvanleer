@@ -3,7 +3,7 @@
 #define DEBUG_EV
 #undef DEBUG_HLLD
 int
-Hlld::hlld(const double *leftstate, const double *rightstate, double *fhlld) {
+Hlld::solver(const double *leftstate, const double *rightstate, double *fhlld) {
 
   ofstream outFile;
 
@@ -70,7 +70,7 @@ Hlld::hlld(const double *leftstate, const double *rightstate, double *fhlld) {
   bsquared = Bul * Bul + Bvl * Bvl + Bwl * Bwl;
   el = pl / gammam1 + (double) 0.5 * (rl * v2) + 0.5 * bsquared;
   if (pl < 0) {
-    cout << "hlld:Negative pressure in roe solver!" << pl << endl;
+    cout << "solver:Negative pressure in roe solver!" << pl << endl;
     return (1);
   }
 
@@ -78,7 +78,7 @@ Hlld::hlld(const double *leftstate, const double *rightstate, double *fhlld) {
   bsquared = Bx * Bx + Bvr * Bvr + Bwr * Bwr;
   er = pr / gammam1 + (double) 0.5 * (rr * v2) + 0.5 * bsquared;
   if (pr < 0) {
-    cout << "hlld:Negative pressure in roe solver!" << pr << endl;
+    cout << "solver:Negative pressure in roe solver!" << pr << endl;
     return (1);
   }
 
