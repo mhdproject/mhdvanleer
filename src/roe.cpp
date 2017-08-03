@@ -16,19 +16,19 @@ roe(double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
   double rl, ul, vl, pl, hl, al;
   double ur, vr, pr, hr, ar;
   double rho_rl, url, vrl, prl, arl, hrl;
-  double lambda[ne];
   double kx = 0, ky = 0;
-  double eigenwt[ne];
-  double rev[ne][ne];
-  double cc[ne];
-  double lres_state_prim[ne];
-  double rres_state_prim[ne];
   double rho_i_2_c = 0;
-  double delta_w[ne];
   double delta_p;
   double delta_v;
   double delta_u;
   double delta_rho;
+  double lambda[ne];
+  double cc[ne];
+  double eigenwt[ne];
+  double rev[ne][ne];
+  double lres_state_prim[ne];
+  double rres_state_prim[ne];
+  double delta_w[ne];
   double rflux[ne];
   double lflux[ne];
 
