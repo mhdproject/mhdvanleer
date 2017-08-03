@@ -1,7 +1,7 @@
 #include "initialise.h"
 
 int
-initialise(char *filename, Array3D<zone> grid, int *maxstep, double *cfl) {
+initialise(char *filename, Array3D<zone> grid) {
   int ii = 0;
   int jj = 0;
   int kk = 0;

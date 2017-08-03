@@ -1,7 +1,6 @@
 #include "log.h"
 int
-log(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
-    double timestep, double maximumspeed, double time, double del) {
+log(Array3D<zone> grid, Array3D<zone> fx, double timestep, double maximumspeed, double time, double del) {
 
   int ii = 0;
   int jj = 0;

@@ -9,14 +9,9 @@ int Updater::update(Array3D<zone> NewGrid,
                     Array3D<zone> oldg,
                     Array3D<zone> xflux,
                     Array3D<zone> yflux,
-                    Array3D<zone> xResState,
-                    Array3D<zone> yResState,
                     double delta,
                     int ii,
-                    int jj,
-                    int timestep,
-                    Array3D<zone> fluxgrid,
-                    double dt) {
+                    int jj) {
   int hh = 0;
   int kk = 0;
 

@@ -12,7 +12,6 @@ FluxCalc::flux(Array3D<zone> oldgrid,
                double dtodx,
                int ii,
                int jj,
-               int timestep,
                int idir,
                int second) {
   int d[2];

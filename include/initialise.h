@@ -1,5 +1,5 @@
 #include "global.h"
-int initialise(char *filename, Array3D<zone> grid, int *, double *);
+int initialise(char *filename, Array3D<zone> grid);
 
 class InitialJet {
 

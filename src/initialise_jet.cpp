@@ -4,10 +4,10 @@ int InitFactory::make_init(string probtype, int argc, Array3D<zone> grid, int ma
   int status;
   if (probtype == "Shock") {
     if (argc > 1) {
-      status = initialise(argv[1], grid, &maxstep, &cfl);
+      status = initialise(argv[1], grid);
       assert(status == 0);
     } else {
-      status = initialise("input/gaz1", grid, &maxstep, &cfl);
+      status = initialise("input/gaz1", grid);
       assert(status == 0);
 
     }

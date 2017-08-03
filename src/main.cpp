@@ -122,10 +122,10 @@ main(int argc, char **argv) {
 
   if (probtype == "Shock") {
     if (argc > 1) {
-      status = initialise(argv[1], grid, &maxstep, &cfl);
+      status = initialise(argv[1], grid);
       assert(status == 0);
     } else {
-      status = initialise("input/gaz1", grid, &maxstep, &cfl);
+      status = initialise("input/gaz1", grid);
       assert(status == 0);
 
     }
@@ -201,13 +201,11 @@ main(int argc, char **argv) {
     {
       for (ii = 2; ii < nx - 1; ii++) {
         status =
-            fluxcalc.flux(grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, dtodx,
-                          ii, jj, timestep, 1, 0);
+            fluxcalc.flux(grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, dtodx, ii, jj, 1, 0);
         assert(status == 0);
 #ifdef TWODIM
         status =
-            fluxcalc.flux(grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, dtodx,
-                          ii, jj, timestep, 2, 0);
+            fluxcalc.flux(grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, dtodx, ii, jj, 2, 0);
         assert(status == 0);
 #endif /* TWODIM */
       }
@@ -222,18 +220,7 @@ main(int argc, char **argv) {
 
     Updater upd;
     status =
-        upd.update(gridh,
-                   grid,
-                   fx,
-                   fy,
-                   xResState,
-                   yResState,
-                   delh,
-                   ii,
-                   jj,
-                   timestep,
-                   grid,
-                   delta_t);
+        upd.update(gridh, grid, fx, fy, delh, ii, jj);
     assert(status == 0);
 
 //             }
@@ -257,31 +244,18 @@ main(int argc, char **argv) {
     {
       for (ii = 2; ii < nx - 1; ii++) {
         status =
-            fluxcalc.flux(gridh, fx[ii][jj][kk].array,
-                          xResState[ii][jj][kk].array, dtodx, ii, jj, timestep, 1, 1);
+            fluxcalc.flux(gridh, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, dtodx, ii, jj, 1, 1);
         assert(status == 0);
 #ifdef TWODIM
         status =
-            fluxcalc.flux(gridh, fy[ii][jj][kk].array,
-                          yResState[ii][jj][kk].array, dtodx, ii, jj, timestep, 2, 1);
+            fluxcalc.flux(gridh, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, dtodx, ii, jj, 2, 1);
         assert(status == 0);
 #endif /* TWODIM */
       }
     }
 
     status =
-        upd.update(gridn,
-                   grid,
-                   fx,
-                   fy,
-                   xResState,
-                   yResState,
-                   del,
-                   ii,
-                   jj,
-                   timestep,
-                   gridh,
-                   delta_t);
+        upd.update(gridn, grid, fx, fy, del, ii, jj);
     assert(status == 0);
 #ifdef TWODIM
     for (jj = 2; jj < ny - 2; jj++)
