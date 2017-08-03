@@ -18,7 +18,7 @@ include_directories(${HDF5_INCLUDE_PATH})
 find_package(Threads REQUIRED)
 
 if(CMAKE_COMPILER_IS_GNUCXX)
-    add_definitions(-Wall -ansi -Wno-deprecated -pthread)
+    add_definitions(-Wall -ansi -Wno-deprecated -pthread -pedantic)
 endif()
 
 if(MSVC)

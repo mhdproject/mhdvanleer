@@ -1,7 +1,6 @@
 #include "initialise.h"
 
 int InitFactory::make_init(string probtype, int argc, Array3D<zone> grid, int maxstep, double cfl, char **argv) {
-  int a = 1;
   int status;
   if (probtype == "Shock") {
     if (argc > 1) {

@@ -54,7 +54,6 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
 
   double ki = 24296.3696;
   double mp = 1.67262158;
-  double temperature = 0;
 
   s.clear();
   s.width(5);
@@ -149,7 +148,6 @@ FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
       double mpi = 1.0 / mp;
       double nt = 0;
       nt = 2 * mpi * rl;
-      temperature = ki * pressure / nt;
 
       data[ii][jj] = pressure;
     }
