@@ -9,7 +9,6 @@ int
 FluxCalc::flux(Array3D<zone> oldgrid,
                double *InterfaceFlux,
                double *ResolvedState,
-               double dtodx,
                int ii,
                int jj,
                int idir,

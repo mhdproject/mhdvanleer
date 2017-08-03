@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 import glob
+
 import h5py
 import matplotlib.pyplot as plt
 
 files = glob.glob('hdf5_out_2d_*.h5')
+
 
 def printname(name):
     print(name)
@@ -15,10 +17,7 @@ for file in files:
 
     f = h5py.File(file, 'r')
 
-    print (f['Bx'])
-
-
-
+    print(f['Bx'])
 
     f.visit(printname)
     bx = f['Bx']

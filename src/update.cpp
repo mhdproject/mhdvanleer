@@ -4,7 +4,7 @@
 #undef  VANLEER
 //#define STAGGER_MESH 
 //#define  POWELL
-int monopole(double *source_term, double *old, double divb);
+int monopole(double *source_term, const double *old, double divb);
 int Updater::update(Array3D<zone> NewGrid,
                     Array3D<zone> oldg,
                     Array3D<zone> xflux,
@@ -395,7 +395,7 @@ Array3D<zone> &Updater::check_negative_pressure(Array3D<zone> &NewGrid,
 }
 
 int
-monopole(double *source_term, double *old, double divb) {
+monopole(double *source_term, const double *old, double divb) {
   double bx, by, bz, vdotb;
   double vx, vy, vz;
   double rho, rhoi;

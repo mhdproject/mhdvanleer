@@ -138,10 +138,10 @@ main(int argc, char **argv) {
   } else if (probtype == "Blast") {
     InitialBlast Init;
     if (argc > 1) {
-      status = Init.setup(argv[1], grid, &maxstep, &cfl);
+      status = Init.setup(argv[1], grid, &maxstep);
       assert(status == 0);
     } else {
-      status = Init.setup("input/input.jet", grid, &maxstep, &cfl);
+      status = Init.setup("input/input.jet", grid, &maxstep);
       assert(status == 0);
     }
   }
@@ -161,7 +161,7 @@ main(int argc, char **argv) {
 /* Using a second order in time Runge-Kutta method, advect the array */
 
   FileWriter writer;
-  status = writer.output(grid, fx, fy, 0, "out_2d_");
+  status = writer.output(grid, 0, "out_2d_");
   assert(status == 0);
   for (timestep = 1; timestep < maxstep; timestep++) {
     for (int k = 0; k < ne; k++) {
@@ -201,11 +201,11 @@ main(int argc, char **argv) {
     {
       for (ii = 2; ii < nx - 1; ii++) {
         status =
-            fluxcalc.flux(grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, dtodx, ii, jj, 1, 0);
+            fluxcalc.flux(grid, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, ii, jj, 1, 0);
         assert(status == 0);
 #ifdef TWODIM
         status =
-            fluxcalc.flux(grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, dtodx, ii, jj, 2, 0);
+            fluxcalc.flux(grid, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, ii, jj, 2, 0);
         assert(status == 0);
 #endif /* TWODIM */
       }
@@ -244,11 +244,11 @@ main(int argc, char **argv) {
     {
       for (ii = 2; ii < nx - 1; ii++) {
         status =
-            fluxcalc.flux(gridh, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, dtodx, ii, jj, 1, 1);
+            fluxcalc.flux(gridh, fx[ii][jj][kk].array, xResState[ii][jj][kk].array, ii, jj, 1, 1);
         assert(status == 0);
 #ifdef TWODIM
         status =
-            fluxcalc.flux(gridh, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, dtodx, ii, jj, 2, 1);
+            fluxcalc.flux(gridh, fy[ii][jj][kk].array, yResState[ii][jj][kk].array, ii, jj, 2, 1);
         assert(status == 0);
 #endif /* TWODIM */
       }
@@ -335,11 +335,11 @@ main(int argc, char **argv) {
 
     if (timestep % printtime == 0) {
       // cout << "outputting " << endl;
-      status = writer.output(grid, fx, fy, timestep, "out_2d_");
+      status = writer.output(grid, timestep, "out_2d_");
       assert(status == 0);
     }
     if (time > maxtime) {
-      status = writer.output(grid, fx, fy, timestep, "out_2d_");
+      status = writer.output(grid, timestep, "out_2d_");
       assert(status == 0);
       break;
     }

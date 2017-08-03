@@ -11,8 +11,7 @@
 #define RANK   2
 
 int
-FileWriter::output(Array3D<zone> grid, Array3D<zone> fx, Array3D<zone> fy,
-                   int time, const char *filename) {
+FileWriter::output(Array3D<zone> grid, int time, const char *filename) {
 
 #ifdef USE_HDF5
   hid_t file, dataset;        /* file and dataset handles */

@@ -7,6 +7,6 @@
 class FluxCalc {
  public:
 
-  int flux(Array3D<zone> grid, double *fp, double *fn, double dtodx, int iii, int jjj, int idir, int second);
+  int flux(Array3D<zone> grid, double *fp, double *fn, int iii, int jjj, int idir, int second);
 };
 
