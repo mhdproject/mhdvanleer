@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends  \
   cmake=3.8.0-1 \
   g++=4:6.3.0-2ubuntu2 \
   git=1:2.11.0-4 \
+  libboost-all-dev=1.62.0.1  \
   libhdf5-serial-dev=1.10.0-patch1+docs-3 \
   make=4.1-9.1 \
   python3=3.5.3-1ubuntu3 \

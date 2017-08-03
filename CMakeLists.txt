@@ -77,7 +77,6 @@ set(SRC_FILES
         ${PROJECT_SOURCE_DIR}/include/update.h
         ${PROJECT_SOURCE_DIR}/include/vanleer.h
         ${PROJECT_SOURCE_DIR}/include/vanleer_fvsplit.h
-        ${PROJECT_SOURCE_DIR}/src/TwoDim.cpp
         ${PROJECT_SOURCE_DIR}/src/boundary.cpp
         ${PROJECT_SOURCE_DIR}/src/cooling.cpp
         ${PROJECT_SOURCE_DIR}/src/eigenvectors.cpp

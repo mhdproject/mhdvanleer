@@ -19,11 +19,7 @@ FluxCalc::flux(Array3D<zone> oldgrid,
   int hh = 0;
   int status;
 
-  double slope1;
-  double slope2;
   double left;
-  double mid;
-  double right;
 
   double *leftstate;
   double *rightstate;
@@ -101,6 +97,10 @@ FluxCalc::flux(Array3D<zone> oldgrid,
     prr[4] = (max)(pmin, prr[4]);
 
     for (hh = 0; hh < ne; hh++) {
+      double slope1;
+      double slope2;
+      double mid;
+      double right;
 //               left  = oldgrid[ii - 2 * d[0]][jj - 2 * d[1]][kk].array[hh];
 //               mid   = oldgrid[ii -     d[0]][jj - d[1]][kk].array[hh];
 //               right = oldgrid[ii           ][jj][kk].array[hh];

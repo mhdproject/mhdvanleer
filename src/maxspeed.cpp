@@ -7,9 +7,9 @@ maxspeed(Array3D<zone> grid, double *maxspeed) {
 
   double gammam1 = gammag - 1;
 
-  double ri = 0, px = 0, py = 0, pz = 0, et = 0, ke = 0;
+  double px = 0, py = 0, pz = 0, et = 0, ke = 0;
   double rl = 0, ul = 0, vl = 0, wl, pl = 0;
-  double bu, bv, bw, bsquared;
+  double bv, bw, bsquared;
 
 
   /* Going through every cell in the grid, work out the sound speed and take the
@@ -38,10 +38,12 @@ maxspeed(Array3D<zone> grid, double *maxspeed) {
       pz = grid[ii][jj][kk]_MOMZ;
       et = grid[ii][jj][kk]_ENER;
 
+      double bu;
       bu = grid[ii][jj][kk]_B_X;
       bv = grid[ii][jj][kk]_B_Y;
       bw = grid[ii][jj][kk]_B_Z;
 
+      double ri = 0;
       ri = 1.0 / rl;
       ul = px * ri;
       vl = py * ri;

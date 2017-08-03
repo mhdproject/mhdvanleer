@@ -9,12 +9,13 @@ locate(double x, const double *xx, int *j, int n) {
 //    monotonic, either increasing or decreasing. J=0 or J=N is
 //     returned to indicate that X is out of range.
 
-  unsigned long ju, jm, jl;
+  unsigned long ju, jl;
   int ascnd;
   jl = 0;
   ju = (unsigned long) (n + 1);
   ascnd = (xx[n] > xx[1]);
   while (ju - jl > 1) {
+    unsigned long jm;
     jm = (ju + jl) >> 1;
     if (x > xx[jm] == ascnd) {
       jl = jm;

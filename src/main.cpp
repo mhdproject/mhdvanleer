@@ -44,10 +44,6 @@ main(int argc, char **argv) {
   double maxtime = 0.0;
   double *maximumspeed = &max_speed;
   double time = 0.0;
-  double delta_t;
-  double dtodx;
-  double del;
-  double delh;
   double cfl = 0.80;
   zone maxvar;
   zone minvar;
@@ -182,6 +178,10 @@ main(int argc, char **argv) {
     /* Determine a value for time advance and courant number based on the
      * maximum wave speed */
 
+    double delta_t;
+    double dtodx;
+    double del;
+    double delh;
     del = cfl / *maximumspeed;
     delh = 0.5 * del;
     delta_t = del * delta_x;

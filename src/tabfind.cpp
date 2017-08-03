@@ -12,7 +12,7 @@ tabfind(double temperature, double *rate, double *atomic_temp_tab) {
       -22.1, -22.23, -22.34, -22.41, -22.44
   };
   int j = 0;
-  double temperature1, temperature2, L1, L2, del_temperature, delL;
+  double temperature2, L1, L2, del_temperature, delL;
   for (j = 0; j < 50; j++) {
     cooling_tab[j] = cooling_tab[j] + 22.0;    // removing 10^-22 factor
   }
@@ -22,6 +22,7 @@ tabfind(double temperature, double *rate, double *atomic_temp_tab) {
   if (j == 49) {
     *rate = cooling_tab[j];
   } else {
+    double temperature1;
     temperature1 = atomic_temp_tab[j];
     temperature2 = atomic_temp_tab[j + 1];
     del_temperature = temperature2 - temperature1;
