@@ -46,8 +46,8 @@ int Eigen::eigenvectors(const double *sta, double **lev, double **rev, double **
   double pie = 3.14159;
 
   int k = 0;
-  Array2D<double> MI(7, 7);
-  Array2D<double> M(7, 7);
+  double MI[7][7];
+  double M[7][7];
   rho = sta[0];
   rhoi = 1 / rho;
   sqrt_rho = sqrt(rho);
