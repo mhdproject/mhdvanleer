@@ -210,11 +210,22 @@ int Updater::update(Array3D<zone> NewGrid,
   // yFlux[i][j].getvar(5) i,j+05
 
 
+/*
   Array2D < double >emf (nx, ny);
   Array2D < double >Bxpos (nx, ny);
   Array2D < double >Bypos (nx, ny);
   Array2D < double >Bxneg (nx, ny);
   Array2D < double >Byneg (nx, ny);
+*/
+
+
+
+  multi_array<double, 2>  emf(extents[nx][ny]);
+  multi_array<double, 2>  Bxpos(extents[nx][ny]);
+  multi_array<double, 2>  Bypos(extents[nx][ny]);
+  multi_array<double, 2>  Bxneg(extents[nx][ny]);
+  multi_array<double, 2>  Byneg(extents[nx][ny]);
+
 
   double bx, by, bz, b2;
 

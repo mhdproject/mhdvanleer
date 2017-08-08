@@ -51,4 +51,5 @@ typedef struct {
   double cooling;
 } zone;
 
+typedef boost::multi_array<double, 2> array_2d;
 #endif //  GLOBAL_VARIABLES

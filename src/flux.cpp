@@ -3,8 +3,6 @@
 #undef VANLEER
 #define SECOND_ORDER_SPACE
 //#undef SECOND_ORDER_SPACE
-int ctop(double *c, double *p);
-int ptoc(double *p, double *c);
 int
 FluxCalc::flux(Array3D<zone> oldgrid,
                double *InterfaceFlux,
@@ -23,12 +21,19 @@ FluxCalc::flux(Array3D<zone> oldgrid,
   double *leftstate;
   double *rightstate;
 
-  double pll[ne];
-  double plm[ne];
-  double plr[ne];
-  double prr[ne];
-  double leftprim[ne];
-  double rightprim[ne];
+  double *pll;
+  double *plm;
+  double *plr;
+  double *prr;
+  double *leftprim;
+  double *rightprim;
+
+  pll = new double[ne];
+  plm = new double[ne];
+  plr = new double[ne];
+  prr = new double[ne];
+  leftprim = new double[ne];
+  rightprim = new double[ne];
 
   leftstate = new double[ne];
   rightstate = new double[ne];
@@ -258,16 +263,21 @@ FluxCalc::flux(Array3D<zone> oldgrid,
 
 #endif /* ROE */
 
-
   delete[] leftstate;
   delete[] rightstate;
+  delete[] pll;
+  delete[] plm;
+  delete[] plr;
+  delete[] prr;
+  delete[] leftprim;
+  delete[] rightprim;
 
   return 0;
 
 }
 
 int
-ptoc(double *p, double *c) {
+FluxCalc::ptoc(double *p, double *c) {
   double rho;
   double velx, vely, velz, velx2, vely2, velz2, ke, pressure;
   double bx, by, bz, bsquared;
@@ -329,7 +339,7 @@ ptoc(double *p, double *c) {
 }
 
 int
-ctop(double *c, double *p) {
+FluxCalc::ctop(double *c, double *p) {
   double rho, rhoi;
   double px;
   double py, pz, et, velx, vely, velz, velx2, vely2, velz2, ke, pressure;

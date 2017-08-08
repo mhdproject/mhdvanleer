@@ -227,7 +227,7 @@ riemann(double *leftstate, double *rightstate, double *roe_flux, double *res_sta
   av_state[6] = bv_rl;
   av_state[7] = bw_rl;
 
-  /* Allocte memory for eigenvectors */
+  /* Allocate memory for eigenvectors */
   Array2D<double> levec(7, 7);
   Array2D<double> revec(7, 7);
   Array2D<double> levc(7, 7);

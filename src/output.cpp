@@ -19,6 +19,7 @@ FileWriter::output(Array3D<zone> grid, int time, const char *filename) {
   hsize_t dimsf[2];        /* dataset dimensions */
   herr_t status;
   double data[nx][ny];
+  //array_2d data(boost::extents[nx][ny]);
   const char *names[] =
       {"Density", "Velx", "Vely", "Velz", "Energy", "Bx", "By", "Bz"};
   int ll = 0;
