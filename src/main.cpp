@@ -7,6 +7,7 @@
 #define SHOCKTUBE
 #endif
 
+
 #define VERBOSE_OUTPUT
 //#define DEBUG_HALFSTEP
 #define SECOND_ORDER_TIME
