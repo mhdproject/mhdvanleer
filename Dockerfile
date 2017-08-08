@@ -2,14 +2,14 @@ FROM ubuntu:17.10
 MAINTAINER Gareth Murphy <garethcmurphy@gmail.com>
 RUN apt-get update && apt-get install -y --no-install-recommends  \
   ca-certificates=20161130+nmu1 \
-  cmake \
-  g++=4:6.3.0-2ubuntu2 \
-  git=1:2.11.0-4 \
-  libboost-all-dev=1.62.0.1  \
-  libhdf5-serial-dev=1.10.0-patch1+docs-3 \
-  make=4.1-9.1 \
-  python3 \
-  vim \
+  cmake=3.9\*   \
+  g++=4:6.3\* \
+  git=1:2.11\* \
+  libboost-all-dev=1.62\*  \
+  libhdf5-serial-dev=1.10\* \
+  make=4.1\* \
+  python3=3.6\*  \
+  vim=2:8.0\* \
   && apt-get clean \
    && rm -rf /var/lib/apt/lists/*
 COPY . /usr/src/myapp

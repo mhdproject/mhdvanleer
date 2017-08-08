@@ -6,6 +6,9 @@
 #include <cmath>
 #include <ctime>
 
+#include "boost/multi_array.hpp"
+
+
 #define USE_HDF5 1
 
 #ifdef HAVE_LIBMPICH

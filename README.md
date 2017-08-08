@@ -30,7 +30,7 @@ cmake (minimum 3.1)
 g++, tested with v6.3, older versions may work
 ctest
 Google Test
-hdf5, v1.8
+hdf5, v1.10
 ```
 
 ### Installing
