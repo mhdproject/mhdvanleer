@@ -3,7 +3,11 @@
 #define DEBUG_EV
 #undef DEBUG_HLLD
 int
-Hlld::solver(const double *leftstate, const double *rightstate, double *fhlld) {
+Hlld::solver(
+    const double *leftstate,
+    const double *rightstate,
+    double *fhlld
+) {
 
   ofstream outFile;
 
