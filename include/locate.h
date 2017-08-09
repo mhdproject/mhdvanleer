@@ -1,3 +1,10 @@
-#include "global.h"
+#ifndef LOCATOR_CLASS
+#define LOCATOR_CLASS
 
-void locate(double x, const double *xx, int *j, int n);
+#include "global.h"
+class Locator {
+ public:
+  void locate(double x, const double *xx, int *j, int n);
+};
+#endif
+

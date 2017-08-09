@@ -12,26 +12,15 @@ int Updater::update(Array3D<zone> NewGrid,
                     double delta,
                     int ii,
                     int jj) {
-  int hh = 0;
-  int kk = 0;
 
   double rho, rhoi;
-  double px;
-  double py;
-  double pz;
-  double ke;
 
   int idir = 1;
 
   //      double fx2[ne],fx1[ne];
 //      double fy2[ne],fy1[ne];
   double d[2];
-  double v2;
 
-  double *fx1;
-  double *fx2;
-  double *fy1;
-  double *fy2;
 
   if (idir == 1) {
     d[0] = 1;
@@ -46,8 +35,13 @@ int Updater::update(Array3D<zone> NewGrid,
 #endif /* TWODIM */
   {
     for (ii = 2; ii < nx - 2; ii++) {
+      int kk = 0;
 
 //      cout << "upd: " << jj << endl;
+      double *fx1;
+      double *fx2;
+      double *fy1;
+      double *fy2;
 #ifdef ROE
       fx2 = xflux[ii + 1][jj][kk].array;
       fx1 = xflux[ii][jj][kk].array;
@@ -65,6 +59,7 @@ int Updater::update(Array3D<zone> NewGrid,
         exit(0);
       }
 
+      int hh = 0;
       for (hh = 0; hh < ne; hh++) {
         NewGrid[ii][jj][kk].array[hh] = oldg[ii][jj][kk].array[hh]
             - delta * (fx2[hh] - fx1[hh]);
@@ -108,7 +103,8 @@ int Updater::update(Array3D<zone> NewGrid,
       coolvar[3] = oldg[ii][jj][kk] _ENER;
 
   int status = 0;
-      status = cooling (coolvar, &Lcooling, dt);
+      RadiativeCooling cool;
+      status = cool.cooling (coolvar, &Lcooling, dt);
   assert(status == 0);
       NewGrid[ii][jj][kk] _ENER = NewGrid[ii][jj][kk] _ENER + Lcooling;
       NewGrid[ii][jj][kk] _COOLING = Lcooling;
@@ -174,6 +170,10 @@ int Updater::update(Array3D<zone> NewGrid,
       */
 #endif
       rho = NewGrid[ii][jj][kk]_MASS;
+      double px;
+      double py;
+      double pz;
+      double ke;
       px = NewGrid[ii][jj][kk]_MOMX;
       py = NewGrid[ii][jj][kk]_MOMY;
       pz = NewGrid[ii][jj][kk]_MOMZ;
@@ -186,6 +186,7 @@ int Updater::update(Array3D<zone> NewGrid,
       double vx = px * rhoi;
       double vy = py * rhoi;
       double vz = pz * rhoi;
+      double v2;
       v2 = vx * vx + vy * vy + vz * vz;
       double b2 = bx * bx + by * by + bz * bz;
       ke = 0.5 * rho * v2;

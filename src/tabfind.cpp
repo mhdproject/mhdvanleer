@@ -17,7 +17,8 @@ tabfind(double temperature, double *rate, double *atomic_temp_tab) {
     cooling_tab[j] = cooling_tab[j] + 22.0;    // removing 10^-22 factor
   }
 
-  locate(temperature, atomic_temp_tab, &j, 50);    //  temperature is between j and j+1
+  Locator loc;
+  loc.locate(temperature, atomic_temp_tab, &j, 50);    //  temperature is between j and j+1
 //      write(*,*) 'tab j', j
   if (j == 49) {
     *rate = cooling_tab[j];

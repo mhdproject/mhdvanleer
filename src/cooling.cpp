@@ -11,7 +11,7 @@ double atomic_temp_tab[50] = {
 };
 
 int
-cooling(const double *zone, double *Lcooling, double dt) {
+RadiativeCooling::cooling(const double *zone, double *Lcooling, double dt) {
 
   double gammam1 = gammag - 1;
   double rhoi, px, py, et, ke;
