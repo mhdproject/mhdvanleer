@@ -25,9 +25,10 @@ cooling(const double *zone, double *Lcooling, double dt) {
   double mpi = 1.0 / mp;
   double nt = 0;
 
-  double rate = 0, eloss, nt2, de, w, y, subdt;
+  double rate = 0, nt2, de,  y, subdt;
+  double  eloss;
   double molrate = 0;
-  double lowest_temperature, subttot, elosstot;
+  double lowest_temperature, subttot ;
   double e_init;
   int firststep;
   int counter;
@@ -126,6 +127,7 @@ cooling(const double *zone, double *Lcooling, double dt) {
   counter = 0;
   // Substepping
   while (subttot < dt && temperature > lowest_temperature) {
+    double w,  elosstot;
     w = dt - subttot;
     y = 0.05 * et / abs(eloss);    //    max timestep for 5% change in e
     subdt = (min)(w, y);

@@ -16,8 +16,6 @@ FluxCalc::flux(Array3D<zone> oldgrid,
   int hh = 0;
   int status;
 
-  double left;
-
   double *leftstate;
   double *rightstate;
 
@@ -105,6 +103,7 @@ FluxCalc::flux(Array3D<zone> oldgrid,
       double slope2;
       double mid;
       double right;
+      double left;
 //               left  = oldgrid[ii - 2 * d[0]][jj - 2 * d[1]][kk].array[hh];
 //               mid   = oldgrid[ii -     d[0]][jj - d[1]][kk].array[hh];
 //               right = oldgrid[ii           ][jj][kk].array[hh];
@@ -251,11 +250,11 @@ FluxCalc::flux(Array3D<zone> oldgrid,
   double    v1 = oldgrid[ii    ][jj + 1][0] _MOMY/oldgrid[ii    ][jj + 1][0] _MASS;
   double    v2 = oldgrid[ii    ][jj - 1][0] _MOMY/oldgrid[ii    ][jj - 1][0] _MASS;
   double    divv = 0.5 * (u1 - u2 +v1 -v2);
-  double    delu = 0;
 
 
    for (hh=0 ; hh<ne ; hh++)
    {
+  double    delu = 0;
    delu=(oldgrid[ii][jj][0].array[hh]-oldgrid[ii -d[0]][jj -d[1] ][0].array[hh] );
   InterfaceFlux[hh]=InterfaceFlux[hh]+ dtodx*0.1*i(min)(0.0,divv)*delu;
    }
