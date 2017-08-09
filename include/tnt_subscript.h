@@ -38,9 +38,8 @@
 #define TNT_SUBSCRIPT_TYPE int
 #endif
 
-namespace TNT
-{
-    typedef TNT_SUBSCRIPT_TYPE Subscript;
+namespace TNT {
+typedef TNT_SUBSCRIPT_TYPE Subscript;
 } /* namespace TNT */
 
 

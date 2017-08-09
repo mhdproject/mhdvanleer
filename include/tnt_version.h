@@ -31,9 +31,5 @@
 #define TNT_SUBMINOR_VERSION '6'
 #define TNT_VERSION_STRING "1.2.6"
 
-
-
-
-
 #endif
 // TNT_VERSION_H
