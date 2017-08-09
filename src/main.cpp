@@ -130,10 +130,10 @@ main(int argc, char **argv) {
   } else if (probtype == "Jet") {
     InitialJet Init;
     if (argc > 1) {
-      status = Init.setup(argv[1], grid, &maxstep, &cfl);
+      status = Init.setup(argv[1], grid, &maxstep);
       assert(status == 0);
     } else {
-      status = Init.setup("input/input.jet", grid, &maxstep, &cfl);
+      status = Init.setup("input/input.jet", grid, &maxstep);
       assert(status == 0);
     }
   } else if (probtype == "Blast") {

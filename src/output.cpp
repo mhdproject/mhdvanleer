@@ -52,8 +52,6 @@ FileWriter::output(Array3D<zone> grid, int time, const char *filename) {
   string str_output_filename;
   string str_input_filename;
 
-  double mp = 1.67262158;
-
   s.clear();
   s.width(5);
   s.fill('0');

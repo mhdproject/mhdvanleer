@@ -4,6 +4,7 @@
 int Eigen::eigenvectors(const double *sta, double **lev, double **rev, double **lec,
                         double **rec, double dvy, double dvz) {
 
+  double gammag = 1.666666666666667;
   double gammam1 = gammag - 1;
   double gammam1i = 1 / gammam1;
   pie = boost::math::constants::pi<double>();
@@ -399,6 +400,7 @@ int Eigen::eigenvectors(const double *sta, double **lev, double **rev, double **
 }
 
 int Eigen::eigenvalues(const double *sta, double *eigenval) {
+  double gammag = 1.666666666666667;
   double rho = 0;
   double rhoi = 0;
   double u = 0;

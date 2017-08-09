@@ -86,7 +86,6 @@ set(SRC_FILES
         ${PROJECT_SOURCE_DIR}/src/initialise_jet.cpp
         ${PROJECT_SOURCE_DIR}/src/locate.cpp
         ${PROJECT_SOURCE_DIR}/src/log.cpp
-        ${PROJECT_SOURCE_DIR}/src/main.cpp
         ${PROJECT_SOURCE_DIR}/src/maxspeed.cpp
         ${PROJECT_SOURCE_DIR}/src/molcool.cpp
         ${PROJECT_SOURCE_DIR}/src/output.cpp

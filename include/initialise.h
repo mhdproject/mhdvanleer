@@ -6,7 +6,7 @@ int initialise(const char *filename, Array3D<zone> grid);
 class InitialJet {
 
  public:
-  int setup(const char *filename, Array3D<zone> grid, int *, double *);
+  int setup(const char *filename, Array3D<zone> grid, int *);
 };
 
 class InitialBlast {
