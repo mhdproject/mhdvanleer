@@ -1,2 +1,9 @@
+
+#ifndef MAX_SPEED_CLASS
+#define MAX_SPEED_CLASS
 #include "global.h"
-int maxspeed(Array3D<zone> grid, double *maxspeed);
+class MaxSpeed {
+ public:
+  int maxspeed(Array3D<zone> grid, double *maxspeed);
+};
+#endif

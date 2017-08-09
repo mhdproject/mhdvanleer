@@ -164,6 +164,7 @@ main(int argc, char **argv) {
   FileWriter writer;
   status = writer.output(grid, 0, "out_2d_");
   assert(status == 0);
+  MaxSpeed max_speed1;
   for (timestep = 1; timestep < maxstep; timestep++) {
     for (int k = 0; k < ne; k++) {
       maxvar.array[k] = 0.;
@@ -173,7 +174,7 @@ main(int argc, char **argv) {
     *maximumspeed = 0;
     /* Determine the maximum wave speed for use in
      * the time step */
-    status = maxspeed(grid, maximumspeed);
+    status = max_speed1.maxspeed(grid, maximumspeed);
     assert(status == 0);
 
     /* Determine a value for time advance and courant number based on the
@@ -226,7 +227,8 @@ main(int argc, char **argv) {
 //        }
 
     /* Boundary Conditions */
-    status = boundary(gridh, inject_jet);
+    BoundaryCondition bound;
+    status = bound.boundary(gridh, inject_jet);
     assert(status == 0);
     /* End Boundary Conditions */
 #ifdef DEBUG_HALFSTEP
@@ -322,7 +324,7 @@ main(int argc, char **argv) {
     grid = gridn.copy ();
 #endif
     /* Boundary Conditions */
-    status = boundary(grid, inject_jet);
+    status = bound.boundary(grid, inject_jet);
     assert(status == 0);
     /* End Boundary Conditions */
 

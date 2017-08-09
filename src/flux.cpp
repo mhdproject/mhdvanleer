@@ -11,20 +11,7 @@ FluxCalc::flux(Array3D<zone> oldgrid,
                int jj,
                int idir,
                int second) {
-  int d[2];
-  int kk = 0;
-  int hh = 0;
-  int status;
 
-  double *leftstate;
-  double *rightstate;
-
-  double *pll;
-  double *plm;
-  double *plr;
-  double *prr;
-  double *leftprim;
-  double *rightprim;
 
   pll = new double[ne];
   plm = new double[ne];

@@ -1,6 +1,6 @@
 #include "maxspeed.h"
 int
-maxspeed(Array3D<zone> grid, double *maxspeed) {
+MaxSpeed::maxspeed(Array3D<zone> grid, double *maxspeed) {
   int ii = 0;
   int jj = 0;
   int kk = 0;

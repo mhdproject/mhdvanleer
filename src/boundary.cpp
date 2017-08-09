@@ -1,7 +1,7 @@
 #include "boundary.h"
 
 int
-boundary(Array3D<zone> gridb, int inject_jet) {
+BoundaryCondition::boundary(Array3D<zone> gridb, int inject_jet) {
   int jj = 0;
   int kk = 0;
   int hh = 0;
