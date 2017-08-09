@@ -139,10 +139,10 @@ main(int argc, char **argv) {
   } else if (probtype == "Blast") {
     InitialBlast Init;
     if (argc > 1) {
-      status = Init.setup(argv[1], grid, &maxstep);
+      status = Init.setup(argv[1], grid);
       assert(status == 0);
     } else {
-      status = Init.setup("input/input.jet", grid, &maxstep);
+      status = Init.setup("input/input.jet", grid);
       assert(status == 0);
     }
   }
@@ -180,13 +180,11 @@ main(int argc, char **argv) {
      * maximum wave speed */
 
     double delta_t;
-    double dtodx;
     double del;
     double delh;
     del = cfl / *maximumspeed;
     delh = 0.5 * del;
     delta_t = del * delta_x;
-    dtodx = 1.0 / *maximumspeed;
     time = time + delta_t;
     print_debug_info(timestep, maximumspeed, time, delta_t, del);
 

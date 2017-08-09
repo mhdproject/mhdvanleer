@@ -1,6 +1,6 @@
 #include "log.h"
 int
-log(Array3D<zone> grid, Array3D<zone> fx, double timestep, double maximumspeed, double time, double del) {
+Logger::log(Array3D<zone> grid, Array3D<zone> fx, double timestep, double maximumspeed, double time, double del) {
 
   int ii = 0;
   int jj = 0;
@@ -8,16 +8,6 @@ log(Array3D<zone> grid, Array3D<zone> fx, double timestep, double maximumspeed, 
 
   ofstream logfile;
 
-  double py;
-  double et;
-  double ri;
-  double rl;
-  double ul;
-  double vl;
-  double ke;
-  double pl;
-  double al;
-  double gammam1 = gammag - 1;
 
   logfile.open("logfile.txt", ios::app);
   logfile << "Timestep=" << setiosflags(ios::fixed) << timestep;
@@ -75,8 +65,19 @@ log(Array3D<zone> grid, Array3D<zone> fx, double timestep, double maximumspeed, 
         << "\t" << fx[ii + 1][jj][kk]_ENER
         << "\t" << fx[ii][jj][kk]_ENER << endl;
 
-    rl = grid[ii][jj][kk]_MASS;
     double px;
+    double py;
+    double et;
+    double ri;
+    double rl;
+    double ul;
+    double vl;
+    double ke;
+    double pl;
+    double al;
+
+    double gammam1 = gammag - 1;
+    rl = grid[ii][jj][kk]_MASS;
     px = grid[ii][jj][kk]_MOMX;
     py = grid[ii][jj][kk]_MOMY;
     et = grid[ii][jj][kk]_ENER;

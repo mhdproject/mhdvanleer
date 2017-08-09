@@ -52,7 +52,6 @@ FileWriter::output(Array3D<zone> grid, int time, const char *filename) {
   string str_output_filename;
   string str_input_filename;
 
-  double ki = 24296.3696;
   double mp = 1.67262158;
 
   s.clear();
@@ -146,8 +145,6 @@ FileWriter::output(Array3D<zone> grid, int time, const char *filename) {
       pressure = et - ke - 0.5 * bsquared;
       pressure = pressure * gammam1;
       double mpi = 1.0 / mp;
-      double nt = 0;
-      nt = 2 * mpi * rl;
 
       data[ii][jj] = pressure;
     }

@@ -15,7 +15,7 @@ cooling(const double *zone, double *Lcooling, double dt) {
 
   double gammam1 = gammag - 1;
   double rhoi, px, py, et, ke;
-  double rho, velx, vely, pressure, vsnd;
+  double rho, velx, vely, pressure;
   double velx2;
   double vely2;
   double temperature;
@@ -73,7 +73,6 @@ cooling(const double *zone, double *Lcooling, double dt) {
   ke = 0.5 * rho * (velx2 + vely2);
   pressure = et - ke;
   pressure = pressure * (gammam1);
-  vsnd = gammag;
 
   nt = 2 * mpi * rho;
   nt2 = nt * nt;

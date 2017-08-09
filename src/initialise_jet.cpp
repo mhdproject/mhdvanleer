@@ -24,10 +24,10 @@ int InitFactory::make_init(string probtype, int argc, Array3D<zone> grid, int ma
   } else if (probtype == "Blast") {
     InitialBlast Init;
     if (argc > 1) {
-      status = Init.setup(argv[1], grid, &maxstep);
+      status = Init.setup(argv[1], grid);
       assert(status == 0);
     } else {
-      status = Init.setup("input/input.jet", grid, &maxstep);
+      status = Init.setup("input/input.jet", grid);
       assert(status == 0);
     }
   }
@@ -194,7 +194,7 @@ InitialJet::setup(const char *filename, Array3D<zone> grid, int *maxstep,
   return 0;
 }
 int
-InitialBlast::setup(const char *filename, Array3D<zone> grid, int *maxstep) {
+InitialBlast::setup(const char *filename, Array3D<zone> grid) {
   int ii = 0;
   int jj = 0;
   int kk = 0;

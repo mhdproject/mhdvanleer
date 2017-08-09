@@ -2,8 +2,13 @@
 #define SERIOUS_LOGGING
 #undef SERIOUS_LOGGING
 int
-roe(double *leftstate, double *rightstate, double *roeflux, double *maxspeed,
-    int iii, int jjj, int timestep, int idir) {
+Roe::roe(const double *leftstate,
+         const double *rightstate,
+         double *roeflux,
+         int iii,
+         int jjj,
+         int timestep,
+         int idir) {
 
   ofstream outFile;
   int ii, jj;

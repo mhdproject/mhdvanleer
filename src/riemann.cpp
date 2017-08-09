@@ -8,7 +8,7 @@
 currently no entropy fix is in place 
 */
 int
-riemann(double *leftstate, double *rightstate, double *roe_flux, double *res_state, int time_step, int idir) {
+riemann(double *leftstate, double *rightstate, double *roe_flux, double *res_state, int idir) {
 
   ofstream outFile;
   char outfilename[50] = "output/riemann.log";

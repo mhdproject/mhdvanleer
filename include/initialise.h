@@ -10,7 +10,7 @@ class InitialJet {
 class InitialBlast {
 
  public:
-  int setup(const char *filename, Array3D<zone> grid, int *);
+  int setup(const char *filename, Array3D<zone> grid);
 };
 
 class InitFactory {
