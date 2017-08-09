@@ -8,7 +8,15 @@ log(Array3D<zone> grid, Array3D<zone> fx, double timestep, double maximumspeed, 
 
   ofstream logfile;
 
-  double px, py, et, ri, rl, ul, vl, ke, pl, al;
+  double py;
+  double et;
+  double ri;
+  double rl;
+  double ul;
+  double vl;
+  double ke;
+  double pl;
+  double al;
   double gammam1 = gammag - 1;
 
   logfile.open("logfile.txt", ios::app);
@@ -68,6 +76,7 @@ log(Array3D<zone> grid, Array3D<zone> fx, double timestep, double maximumspeed, 
         << "\t" << fx[ii][jj][kk]_ENER << endl;
 
     rl = grid[ii][jj][kk]_MASS;
+    double px;
     px = grid[ii][jj][kk]_MOMX;
     py = grid[ii][jj][kk]_MOMY;
     et = grid[ii][jj][kk]_ENER;
