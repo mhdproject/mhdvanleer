@@ -15,6 +15,11 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libhdf5-serial-dev   libboost-all-dev
 
+install:
+  # C++14
+  - sudo apt-get install -qq g++-6
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
+
 script:
   - mkdir build
   - cd build
