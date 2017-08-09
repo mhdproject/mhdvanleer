@@ -1,8 +1,4 @@
 #include "global.h"
-#include "vanleer.h"
-#include "roe.h"
-#include "riemann.h"
-#include "vanleer_fvsplit.h"
 
 class FluxCalc {
  public:

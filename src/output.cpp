@@ -144,7 +144,6 @@ FileWriter::output(Array3D<zone> grid, int time, const char *filename) {
       bsquared = bx * bx + by * by + bz * bz;
       pressure = et - ke - 0.5 * bsquared;
       pressure = pressure * gammam1;
-      double mpi = 1.0 / mp;
 
       data[ii][jj] = pressure;
     }

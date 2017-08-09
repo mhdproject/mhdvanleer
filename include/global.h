@@ -28,6 +28,8 @@ using namespace std;
 #include "sgn.h"
 #include "eigenvectors.h"
 #include "hlld.h"
+#include "roe.h"
+#include "vanleer.h"
 extern int nx;
 extern int ny;
 extern int ne;

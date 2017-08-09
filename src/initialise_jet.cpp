@@ -31,6 +31,7 @@ int InitFactory::make_init(string probtype, int argc, Array3D<zone> grid, int ma
       assert(status == 0);
     }
   }
+  return 0;
 }
 int
 InitialJet::setup(const char *filename, Array3D<zone> grid, int *maxstep,

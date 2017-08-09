@@ -1,14 +1,8 @@
-#include "roe.h"
+#include "global.h"
 #define SERIOUS_LOGGING
 #undef SERIOUS_LOGGING
 int
-Roe::roe(const double *leftstate,
-         const double *rightstate,
-         double *roeflux,
-         int iii,
-         int jjj,
-         int timestep,
-         int idir) {
+Roe::roe(const double *leftstate, const double *rightstate, double *roeflux, int iii, int jjj, int idir) {
 
   ofstream outFile;
   int ii, jj;
