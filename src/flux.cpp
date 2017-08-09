@@ -181,7 +181,7 @@ FluxCalc::flux(Array3D<zone> oldgrid,
   }
 
 
-//status = riemann (leftstate, rightstate, InterfaceFlux, ResolvedState, timestep, &unused, idir);
+//status = solver (leftstate, rightstate, InterfaceFlux, ResolvedState, timestep, &unused, idir);
   Hlld hlld;
   status = hlld.solver(leftprim, rightprim, iflux);
   assert(status == 0);

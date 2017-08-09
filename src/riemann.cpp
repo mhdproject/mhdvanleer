@@ -11,7 +11,7 @@ int
 riemann(double *leftstate, double *rightstate, double *roe_flux, double *res_state, int idir) {
 
   ofstream outFile;
-  char outfilename[50] = "output/riemann.log";
+  char outfilename[50] = "output/solver.log";
 
   int ii = 0;
   int jj = 0;
@@ -145,7 +145,7 @@ riemann(double *leftstate, double *rightstate, double *roe_flux, double *res_sta
   pl = pl - (double) 0.5 * (rl * v2) - 0.5 * bsquared;
   pl = pl * gammam1;
   if (pl < 0) {
-    cout << "riemann:Negative pressure in roe solver!" << pl << endl;
+    cout << "solver:Negative pressure in roe solver!" << pl << endl;
     cout
         << " rl " << rl
         << " ul " << ul
@@ -164,7 +164,7 @@ riemann(double *leftstate, double *rightstate, double *roe_flux, double *res_sta
   pr = pr - (double) 0.5 * (rr * v2) - 0.5 * bsquared;
   pr = pr * gammam1;
   if (pr < 0) {
-    cout << "riemann:Negative pressure in roe solver!" << pr << endl;
+    cout << "solver:Negative pressure in roe solver!" << pr << endl;
     cout
         << " rr " << rr
         << " ur " << ur

@@ -4,32 +4,19 @@
 int
 Roe::roe(const double *leftstate, const double *rightstate, double *roeflux, int iii, int jjj, int idir) {
 
-  ofstream outFile;
-  int ii, jj;
-  int d[2];
-
   double gammai = 1.0 / gammag;
   double gammam1 = gammag - 1;
   double gammam1i = 1.0 / gammam1;
-  double rr, ri, px, py, et, ke;
-  double rl, ul, vl, pl, hl, al;
-  double ur, vr, pr, hr, ar;
-  double rho_rl, url, vrl, prl, arl, hrl;
-  double kx = 0, ky = 0;
-  double rho_i_2_c = 0;
-  double delta_p;
-  double delta_v;
-  double delta_u;
-  double delta_rho;
-  double lambda[ne];
-  double cc[ne];
-  double eigenwt[ne];
-  double rev[ne][ne];
-  double lres_state_prim[ne];
-  double rres_state_prim[ne];
-  double delta_w[ne];
-  double rflux[ne];
-  double lflux[ne];
+  double rev[8][8];
+
+  lambda = new double[ne];
+  cc = new double[ne];
+  eigenwt = new double[ne];
+  lres_state_prim = new double[ne];
+  rres_state_prim = new double[ne];
+  delta_w = new double[ne];
+  rflux = new double[ne];
+  lflux = new double[ne];
 
 //  cout << " Roe solve" << endl;
   if (idir == 1) {
@@ -350,6 +337,15 @@ Roe::roe(const double *leftstate, const double *rightstate, double *roeflux, int
 //                              }
 
 #endif /* SERIOUS_LOGGING */
+
+  delete[] lambda;
+  delete[] cc;
+  delete[] eigenwt;
+  delete[] lres_state_prim;
+  delete[] rres_state_prim;
+  delete[] delta_w;
+  delete[] rflux;
+  delete[] lflux;
 
   return 0;
 
