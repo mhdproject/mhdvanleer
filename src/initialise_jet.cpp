@@ -1,6 +1,6 @@
 #include "initialise.h"
 
-int InitFactory::make_init(string probtype, int argc, Array3D<zone> grid, int maxstep, double cfl, char **argv) {
+int InitFactory::make_init(string probtype, int argc, Array3D<zone> grid, int maxstep, char **argv) {
   int status;
   if (probtype == "Shock") {
     if (argc > 1) {
@@ -15,10 +15,10 @@ int InitFactory::make_init(string probtype, int argc, Array3D<zone> grid, int ma
   } else if (probtype == "Jet") {
     InitialJet Init;
     if (argc > 1) {
-      status = Init.setup(argv[1], grid, &maxstep);
+      status = Init.setup(argv[1], grid);
       assert(status == 0);
     } else {
-      status = Init.setup("input/input.jet", grid, &maxstep);
+      status = Init.setup("input/input.jet", grid);
       assert(status == 0);
     }
   } else if (probtype == "Blast") {
@@ -34,7 +34,7 @@ int InitFactory::make_init(string probtype, int argc, Array3D<zone> grid, int ma
   return 0;
 }
 int
-InitialJet::setup(const char *filename, Array3D<zone> grid, int *maxstep) {
+InitialJet::setup(const char *filename, Array3D<zone> grid) {
   int ii = 0;
   int jj = 0;
   int kk = 0;

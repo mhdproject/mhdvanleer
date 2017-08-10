@@ -263,44 +263,4 @@ void FileWriter::write_general_file(ofstream &gout, const string &str_input_file
 
 #ifdef USE_HDF5
 
-int
-write_data_to_hdf5_file(int nx, int ny, double **data, hid_t file) {
-
-  hid_t dataset;        /* file and dataset handles */
-  hid_t datatype, dataspace;    /* handles */
-  hsize_t dimsf[2];        /* dataset dimensions */
-  herr_t status;
-
-  dimsf[0] = (hsize_t) nx;
-  dimsf[1] = (hsize_t) ny;
-  dataspace = H5Screate_simple(RANK, dimsf, nullptr);
-  /*
-   * Define datatype for the data in the file.
-   * We will store little endian DOUBLE numbers.
-   */
-  datatype = H5Tcopy(H5T_NATIVE_DOUBLE);
-  status = H5Tset_order(datatype, H5T_ORDER_LE);
-  assert(status == 0);
-  /*
-   * Create a new dataset within the file using defined dataspace and
-   * datatype and default dataset creation properties.
-   */
-  dataset = H5Dcreate(file, "Temperature", datatype, dataspace, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
-
-  /*
-   * Write the data to the dataset using default transfer properties.
-   */
-  status = H5Dwrite(dataset, H5T_NATIVE_DOUBLE, H5S_ALL, H5S_ALL,
-                    H5P_DEFAULT, data);
-  assert(status == 0);
-
-  /*
-   * Close/release resources.
-   */
-  H5Sclose(dataspace);
-  H5Tclose(datatype);
-  H5Dclose(dataset);
-
-  return 0;
-}
 #endif /* HDF5 or not  */
