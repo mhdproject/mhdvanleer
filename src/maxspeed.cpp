@@ -21,6 +21,8 @@ MaxSpeed::maxspeed(Array3D<zone> grid, double *maxspeed) {
     {
       double px = 0, py = 0, pz = 0, et = 0, ke = 0;
       double rl = 0, ul = 0, vl = 0, wl, pl = 0;
+      double ri = 0;
+      double bu;
       double bv, bw, bsquared;
       double calfven2 = 0;
       double cfast = 0;
@@ -38,12 +40,10 @@ MaxSpeed::maxspeed(Array3D<zone> grid, double *maxspeed) {
       pz = grid[ii][jj][kk]_MOMZ;
       et = grid[ii][jj][kk]_ENER;
 
-      double bu;
       bu = grid[ii][jj][kk]_B_X;
       bv = grid[ii][jj][kk]_B_Y;
       bw = grid[ii][jj][kk]_B_Z;
 
-      double ri = 0;
       ri = 1.0 / rl;
       ul = px * ri;
       vl = py * ri;

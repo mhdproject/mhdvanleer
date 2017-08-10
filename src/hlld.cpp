@@ -11,6 +11,7 @@ Hlld::solver(
 
   ofstream outFile;
 
+  double gammag = 1.666666666666667;
   double rl = leftstate[0];
   double ul = leftstate[1];
   double vl = leftstate[2];
