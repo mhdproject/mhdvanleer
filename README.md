@@ -4,12 +4,14 @@ Simulating magnetised gas dynamics using shock capturing
 
 ## Status
 
-[![Build Status](https://travis-ci.org/garethcmurphy/mhdvanleer.svg?branch=master)](https://travis-ci.org/garethcmurphy/mhdvanleer)
+[![Build Status](https://travis-ci.org/mhdproject/mhdvanleer.svg?branch=master)](https://travis-ci.org/mhdproject/mhdvanleer)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b7d2877bde0435d897f31e8c50497e6)](https://www.codacy.com/app/garethcmurphy/mhdvanleer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=garethcmurphy/mhdvanleer&amp;utm_campaign=Badge_Grade)
 
+[![Github file size](https://img.shields.io/github/size/webcaetano/craft/build/phaser-craft.min.js.svg)]()
 
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 
 ## Getting Started
 
