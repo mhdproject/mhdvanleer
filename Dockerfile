@@ -1,10 +1,10 @@
 FROM ubuntu:17.10
 MAINTAINER Gareth Murphy <garethcmurphy@gmail.com>
 RUN apt-get update && apt-get install -y --no-install-recommends  \
-  ca-certificates=20161130+nmu1 \
+  ca-certificates \
   cmake=3.9\*   \
-  g++=4:6.3\* \
-  git=1:2.11\* \
+  g++ \
+  git \
   libboost-all-dev=1.62\*  \
   libhdf5-serial-dev=1.10\* \
   make=4.1\* \
