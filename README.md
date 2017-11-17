@@ -37,19 +37,17 @@ hdf5, v1.10
 
 A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
-
+First build the Docker container and tag it:
 ```
-docker build -t mhd .
+docker build --tag mhd .
 ```
-
-And repeat
+Then run the container
 
 ```
 docker run -it mhd /bin/bash 
 ```
 
-You can use 
+For visualisation, you can use 
 ```
 python3 ../see.py 
 ```
@@ -72,13 +70,11 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 
-## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mhdproject/mhdvanleer/tags). 
 
 ## Authors
 
