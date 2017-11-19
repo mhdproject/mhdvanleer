@@ -5,9 +5,7 @@ Simulating magnetised gas dynamics using shock capturing
 ## Status
 
 [![Build Status](https://travis-ci.org/mhdproject/mhdvanleer.svg?branch=master)](https://travis-ci.org/mhdproject/mhdvanleer)
-
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b7d2877bde0435d897f31e8c50497e6)](https://www.codacy.com/app/garethcmurphy/mhdvanleer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=garethcmurphy/mhdvanleer&amp;utm_campaign=Badge_Grade)
-
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 
@@ -55,7 +53,7 @@ to plot a file
 
 ## Running the tests
 
-Google Test/ctest platform is used
+Google Test is automatically downloaded. The test runner is ctest.
 
 ```
 ctest -VV
@@ -71,6 +69,7 @@ Add additional notes about how to deploy this on a live system
 
 
 
+[cmake](https://cmake.org/)
 
 ## Versioning
 
