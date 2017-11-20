@@ -1,0 +1,626 @@
+\hypertarget{classRiemann}{}\section{Riemann Class Reference}
+\label{classRiemann}\index{Riemann@{Riemann}}
+
+
+{\ttfamily \#include $<$riemann.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classRiemann_ac605a365149f83e6c27c3d5980d2e42f}{solver} (double $\ast$leftstate, double $\ast$rightstate, double $\ast$roeflux, double $\ast$res\+\_\+state, int idir)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ofstream \hyperlink{classRiemann_a9656634a42300884c7f97b4ca5bd3645}{out\+File}
+\item 
+char \hyperlink{classRiemann_a80144acbc28f1d38e813f3912bf2e336}{outfilename} \mbox{[}50\mbox{]} = \char`\"{}output/solver.\+log\char`\"{}
+\item 
+int \hyperlink{classRiemann_a2cebab2f34878e07cbf609a6528aea88}{ii} = 0
+\item 
+int \hyperlink{classRiemann_a704fc2f4433b345feef019aa74a9e6d9}{jj} = 0
+\item 
+int \hyperlink{classRiemann_ad155872df64f6464e75672b0fd263f94}{kk} = 0
+\item 
+double \hyperlink{classRiemann_abd51303fe8ed0c0b4585ad25d1cced84}{av\+\_\+state} \mbox{[}8\mbox{]}
+\item 
+double \hyperlink{classRiemann_a98036eb3323318e58411037d55097c4a}{cslow} = 0
+\item 
+double \hyperlink{classRiemann_a52b1266fdc1e91bcb49dbbef307ab885}{cslow2} = 0
+\item 
+double \hyperlink{classRiemann_a7f09440591b61458a2b03db835557fc3}{calfven} = 0
+\item 
+double \hyperlink{classRiemann_a469ea9321f7b885685611aeaef06858b}{calfven2} = 0
+\item 
+double \hyperlink{classRiemann_a17e6848dda93ccb5330f94ca46e386b8}{cfast} = 0
+\item 
+double \hyperlink{classRiemann_ab6927a0076cd1a7ba710310364b92a1b}{cfast2} = 0
+\item 
+double \hyperlink{classRiemann_aeda4880984271a0847725c2aec01b496}{bsquared} = 0
+\item 
+double \hyperlink{classRiemann_a16fcc1621ba3949c6541fc7c42d3af7f}{rho\+\_\+rl} = 0
+\item 
+double \hyperlink{classRiemann_a44cf94d6988534e5e05bf34b52800553}{u\+\_\+rl} = 0
+\item 
+double \hyperlink{classRiemann_a1770759fdc03b69a3f7ffd53d325db74}{v\+\_\+rl} = 0
+\item 
+double \hyperlink{classRiemann_a0c306a29f08c6eb4814723fb2778224c}{w\+\_\+rl} = 0
+\item 
+double \hyperlink{classRiemann_acc72f10af19015784ef3b24b4f816651}{p\+\_\+rl} = 0
+\item 
+double \hyperlink{classRiemann_a83f1429336f5f23f125d97586d915669}{bu\+\_\+rl} = 0
+\item 
+double \hyperlink{classRiemann_afec414f0ed2e00806f66e3788bffa5bc}{bv\+\_\+rl} = 0
+\item 
+double \hyperlink{classRiemann_a495ec1a2fa4ec5ff276d11acf850b95f}{bw\+\_\+rl} = 0
+\item 
+double \hyperlink{classRiemann_a5075d160fbae78a0c6204385033f6891}{lambda} \mbox{[}7\mbox{]}
+\item 
+double \hyperlink{classRiemann_a96f646a8bc32309955dc55b81d209d3f}{lstate} \mbox{[}7\mbox{]}
+\item 
+double \hyperlink{classRiemann_a46044bb74c7273a552a16425b1ae4cb3}{rstate} \mbox{[}7\mbox{]}
+\item 
+double \hyperlink{classRiemann_a6fa975d17342f29096d3e11402b543be}{lrsp} \mbox{[}7\mbox{]}
+\item 
+double \hyperlink{classRiemann_adaf0219875f862407cddf578d361967c}{rrsp} \mbox{[}7\mbox{]}
+\item 
+double \hyperlink{classRiemann_a195eba0f8d56795aa8749baaba946d20}{eigenwt} \mbox{[}7\mbox{]}
+\item 
+double \hyperlink{classRiemann_a780005bbc3c529834bd7a1bc436528a2}{rho} = 0
+\item 
+double \hyperlink{classRiemann_a8997d6d8d411e369d4fd2a377335236e}{mass} = 0
+\item 
+double \hyperlink{classRiemann_a61a0bda4853dafde0aeb9501760e160e}{rhoi} = 0
+\item 
+double \hyperlink{classRiemann_a5c0e2b1271b3274db9fe756480cc4013}{u} = 0
+\item 
+double \hyperlink{classRiemann_a0d7d0e062aa88a8451187cc93420285a}{v} = 0
+\item 
+double \hyperlink{classRiemann_ac190f84c73f0feb3de1c841166037d39}{w} = 0
+\item 
+double \hyperlink{classRiemann_ae4c1b11cff0db529233ab87b0e333de5}{bu} = 0
+\item 
+double \hyperlink{classRiemann_ae2cd07b9d426b2e8346fa523a2691117}{bv} = 0
+\item 
+double \hyperlink{classRiemann_ad58f9d90cbfb3f6aad77e605ae771b25}{bw} = 0
+\item 
+double \hyperlink{classRiemann_ad5cdb1fbb2149bcbdbfea4591d235412}{p} = 0
+\item 
+double \hyperlink{classRiemann_a047523b191dec91d1903326106e2df57}{csound2} = 0
+\item 
+double \hyperlink{classRiemann_a70786d482bb4e5a4643411cd256c8bc9}{term} = 0
+\item 
+double \hyperlink{classRiemann_a743ea6480b351511ce62ac4161bcaadc}{a\+\_\+star2} = 0
+\item 
+double \hyperlink{classRiemann_a90e80239e22cc2fa3bc2924fadb27001}{kinetic} = 0
+\item 
+double \hyperlink{classRiemann_ae942c6053a769d20c4adfd20781b3173}{p\+\_\+magnetic} = 0
+\item 
+double \hyperlink{classRiemann_a4db4bb758058ec35523e82c67042869d}{internal\+\_\+energy} = 0
+\item 
+double \hyperlink{classRiemann_a970f6cf189521abd99aa533591c3bf91}{energy} = 0
+\item 
+double \hyperlink{classRiemann_a4ceda02ed2bdd7e95a9c9f928888adeb}{v2} = 0
+\item 
+double \hyperlink{classRiemann_ac4b46c77d0006ae00dbe7d388f77adef}{vdotb} = 0
+\item 
+double \hyperlink{classRiemann_af41d4b339856cbe04f5d50284821a027}{cc} \mbox{[}7\mbox{]}
+\item 
+double \hyperlink{classRiemann_a49d6107d6ceae20cb49257d6e69068d2}{dvy} = 0
+\item 
+double \hyperlink{classRiemann_aa8ab20be9a3ff9fbf8b9941112da8ca7}{dvz} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file riemann.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRiemann_ac605a365149f83e6c27c3d5980d2e42f}\label{classRiemann_ac605a365149f83e6c27c3d5980d2e42f}} 
+\index{Riemann@{Riemann}!solver@{solver}}
+\index{solver@{solver}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{solver()}{solver()}}
+{\footnotesize\ttfamily int Riemann\+::solver (\begin{DoxyParamCaption}\item[{double $\ast$}]{leftstate,  }\item[{double $\ast$}]{rightstate,  }\item[{double $\ast$}]{roeflux,  }\item[{double $\ast$}]{res\+\_\+state,  }\item[{int}]{idir }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classRiemann_a743ea6480b351511ce62ac4161bcaadc}\label{classRiemann_a743ea6480b351511ce62ac4161bcaadc}} 
+\index{Riemann@{Riemann}!a\+\_\+star2@{a\+\_\+star2}}
+\index{a\+\_\+star2@{a\+\_\+star2}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{a\+\_\+star2}{a\_star2}}
+{\footnotesize\ttfamily double Riemann\+::a\+\_\+star2 = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 50 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_abd51303fe8ed0c0b4585ad25d1cced84}\label{classRiemann_abd51303fe8ed0c0b4585ad25d1cced84}} 
+\index{Riemann@{Riemann}!av\+\_\+state@{av\+\_\+state}}
+\index{av\+\_\+state@{av\+\_\+state}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{av\+\_\+state}{av\_state}}
+{\footnotesize\ttfamily double Riemann\+::av\+\_\+state\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 13 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_aeda4880984271a0847725c2aec01b496}\label{classRiemann_aeda4880984271a0847725c2aec01b496}} 
+\index{Riemann@{Riemann}!bsquared@{bsquared}}
+\index{bsquared@{bsquared}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{bsquared}{bsquared}}
+{\footnotesize\ttfamily double Riemann\+::bsquared = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_ae4c1b11cff0db529233ab87b0e333de5}\label{classRiemann_ae4c1b11cff0db529233ab87b0e333de5}} 
+\index{Riemann@{Riemann}!bu@{bu}}
+\index{bu@{bu}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{bu}{bu}}
+{\footnotesize\ttfamily double Riemann\+::bu = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 44 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a83f1429336f5f23f125d97586d915669}\label{classRiemann_a83f1429336f5f23f125d97586d915669}} 
+\index{Riemann@{Riemann}!bu\+\_\+rl@{bu\+\_\+rl}}
+\index{bu\+\_\+rl@{bu\+\_\+rl}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{bu\+\_\+rl}{bu\_rl}}
+{\footnotesize\ttfamily double Riemann\+::bu\+\_\+rl = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_ae2cd07b9d426b2e8346fa523a2691117}\label{classRiemann_ae2cd07b9d426b2e8346fa523a2691117}} 
+\index{Riemann@{Riemann}!bv@{bv}}
+\index{bv@{bv}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{bv}{bv}}
+{\footnotesize\ttfamily double Riemann\+::bv = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 45 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_afec414f0ed2e00806f66e3788bffa5bc}\label{classRiemann_afec414f0ed2e00806f66e3788bffa5bc}} 
+\index{Riemann@{Riemann}!bv\+\_\+rl@{bv\+\_\+rl}}
+\index{bv\+\_\+rl@{bv\+\_\+rl}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{bv\+\_\+rl}{bv\_rl}}
+{\footnotesize\ttfamily double Riemann\+::bv\+\_\+rl = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_ad58f9d90cbfb3f6aad77e605ae771b25}\label{classRiemann_ad58f9d90cbfb3f6aad77e605ae771b25}} 
+\index{Riemann@{Riemann}!bw@{bw}}
+\index{bw@{bw}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{bw}{bw}}
+{\footnotesize\ttfamily double Riemann\+::bw = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 46 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a495ec1a2fa4ec5ff276d11acf850b95f}\label{classRiemann_a495ec1a2fa4ec5ff276d11acf850b95f}} 
+\index{Riemann@{Riemann}!bw\+\_\+rl@{bw\+\_\+rl}}
+\index{bw\+\_\+rl@{bw\+\_\+rl}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{bw\+\_\+rl}{bw\_rl}}
+{\footnotesize\ttfamily double Riemann\+::bw\+\_\+rl = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a7f09440591b61458a2b03db835557fc3}\label{classRiemann_a7f09440591b61458a2b03db835557fc3}} 
+\index{Riemann@{Riemann}!calfven@{calfven}}
+\index{calfven@{calfven}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{calfven}{calfven}}
+{\footnotesize\ttfamily double Riemann\+::calfven = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 16 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a469ea9321f7b885685611aeaef06858b}\label{classRiemann_a469ea9321f7b885685611aeaef06858b}} 
+\index{Riemann@{Riemann}!calfven2@{calfven2}}
+\index{calfven2@{calfven2}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{calfven2}{calfven2}}
+{\footnotesize\ttfamily double Riemann\+::calfven2 = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 17 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_af41d4b339856cbe04f5d50284821a027}\label{classRiemann_af41d4b339856cbe04f5d50284821a027}} 
+\index{Riemann@{Riemann}!cc@{cc}}
+\index{cc@{cc}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{cc}{cc}}
+{\footnotesize\ttfamily double Riemann\+::cc\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 58 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a17e6848dda93ccb5330f94ca46e386b8}\label{classRiemann_a17e6848dda93ccb5330f94ca46e386b8}} 
+\index{Riemann@{Riemann}!cfast@{cfast}}
+\index{cfast@{cfast}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{cfast}{cfast}}
+{\footnotesize\ttfamily double Riemann\+::cfast = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_ab6927a0076cd1a7ba710310364b92a1b}\label{classRiemann_ab6927a0076cd1a7ba710310364b92a1b}} 
+\index{Riemann@{Riemann}!cfast2@{cfast2}}
+\index{cfast2@{cfast2}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{cfast2}{cfast2}}
+{\footnotesize\ttfamily double Riemann\+::cfast2 = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a98036eb3323318e58411037d55097c4a}\label{classRiemann_a98036eb3323318e58411037d55097c4a}} 
+\index{Riemann@{Riemann}!cslow@{cslow}}
+\index{cslow@{cslow}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{cslow}{cslow}}
+{\footnotesize\ttfamily double Riemann\+::cslow = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a52b1266fdc1e91bcb49dbbef307ab885}\label{classRiemann_a52b1266fdc1e91bcb49dbbef307ab885}} 
+\index{Riemann@{Riemann}!cslow2@{cslow2}}
+\index{cslow2@{cslow2}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{cslow2}{cslow2}}
+{\footnotesize\ttfamily double Riemann\+::cslow2 = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a047523b191dec91d1903326106e2df57}\label{classRiemann_a047523b191dec91d1903326106e2df57}} 
+\index{Riemann@{Riemann}!csound2@{csound2}}
+\index{csound2@{csound2}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{csound2}{csound2}}
+{\footnotesize\ttfamily double Riemann\+::csound2 = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 48 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a49d6107d6ceae20cb49257d6e69068d2}\label{classRiemann_a49d6107d6ceae20cb49257d6e69068d2}} 
+\index{Riemann@{Riemann}!dvy@{dvy}}
+\index{dvy@{dvy}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{dvy}{dvy}}
+{\footnotesize\ttfamily double Riemann\+::dvy = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_aa8ab20be9a3ff9fbf8b9941112da8ca7}\label{classRiemann_aa8ab20be9a3ff9fbf8b9941112da8ca7}} 
+\index{Riemann@{Riemann}!dvz@{dvz}}
+\index{dvz@{dvz}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{dvz}{dvz}}
+{\footnotesize\ttfamily double Riemann\+::dvz = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a195eba0f8d56795aa8749baaba946d20}\label{classRiemann_a195eba0f8d56795aa8749baaba946d20}} 
+\index{Riemann@{Riemann}!eigenwt@{eigenwt}}
+\index{eigenwt@{eigenwt}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{eigenwt}{eigenwt}}
+{\footnotesize\ttfamily double Riemann\+::eigenwt\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a970f6cf189521abd99aa533591c3bf91}\label{classRiemann_a970f6cf189521abd99aa533591c3bf91}} 
+\index{Riemann@{Riemann}!energy@{energy}}
+\index{energy@{energy}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{energy}{energy}}
+{\footnotesize\ttfamily double Riemann\+::energy = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 54 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a2cebab2f34878e07cbf609a6528aea88}\label{classRiemann_a2cebab2f34878e07cbf609a6528aea88}} 
+\index{Riemann@{Riemann}!ii@{ii}}
+\index{ii@{ii}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{ii}{ii}}
+{\footnotesize\ttfamily int Riemann\+::ii = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 9 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a4db4bb758058ec35523e82c67042869d}\label{classRiemann_a4db4bb758058ec35523e82c67042869d}} 
+\index{Riemann@{Riemann}!internal\+\_\+energy@{internal\+\_\+energy}}
+\index{internal\+\_\+energy@{internal\+\_\+energy}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{internal\+\_\+energy}{internal\_energy}}
+{\footnotesize\ttfamily double Riemann\+::internal\+\_\+energy = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 53 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a704fc2f4433b345feef019aa74a9e6d9}\label{classRiemann_a704fc2f4433b345feef019aa74a9e6d9}} 
+\index{Riemann@{Riemann}!jj@{jj}}
+\index{jj@{jj}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{jj}{jj}}
+{\footnotesize\ttfamily int Riemann\+::jj = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a90e80239e22cc2fa3bc2924fadb27001}\label{classRiemann_a90e80239e22cc2fa3bc2924fadb27001}} 
+\index{Riemann@{Riemann}!kinetic@{kinetic}}
+\index{kinetic@{kinetic}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{kinetic}{kinetic}}
+{\footnotesize\ttfamily double Riemann\+::kinetic = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 51 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_ad155872df64f6464e75672b0fd263f94}\label{classRiemann_ad155872df64f6464e75672b0fd263f94}} 
+\index{Riemann@{Riemann}!kk@{kk}}
+\index{kk@{kk}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{kk}{kk}}
+{\footnotesize\ttfamily int Riemann\+::kk = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a5075d160fbae78a0c6204385033f6891}\label{classRiemann_a5075d160fbae78a0c6204385033f6891}} 
+\index{Riemann@{Riemann}!lambda@{lambda}}
+\index{lambda@{lambda}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{lambda}{lambda}}
+{\footnotesize\ttfamily double Riemann\+::lambda\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 31 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a6fa975d17342f29096d3e11402b543be}\label{classRiemann_a6fa975d17342f29096d3e11402b543be}} 
+\index{Riemann@{Riemann}!lrsp@{lrsp}}
+\index{lrsp@{lrsp}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{lrsp}{lrsp}}
+{\footnotesize\ttfamily double Riemann\+::lrsp\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a96f646a8bc32309955dc55b81d209d3f}\label{classRiemann_a96f646a8bc32309955dc55b81d209d3f}} 
+\index{Riemann@{Riemann}!lstate@{lstate}}
+\index{lstate@{lstate}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{lstate}{lstate}}
+{\footnotesize\ttfamily double Riemann\+::lstate\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 32 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a8997d6d8d411e369d4fd2a377335236e}\label{classRiemann_a8997d6d8d411e369d4fd2a377335236e}} 
+\index{Riemann@{Riemann}!mass@{mass}}
+\index{mass@{mass}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{mass}{mass}}
+{\footnotesize\ttfamily double Riemann\+::mass = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a9656634a42300884c7f97b4ca5bd3645}\label{classRiemann_a9656634a42300884c7f97b4ca5bd3645}} 
+\index{Riemann@{Riemann}!out\+File@{out\+File}}
+\index{out\+File@{out\+File}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{out\+File}{outFile}}
+{\footnotesize\ttfamily ofstream Riemann\+::out\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 6 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a80144acbc28f1d38e813f3912bf2e336}\label{classRiemann_a80144acbc28f1d38e813f3912bf2e336}} 
+\index{Riemann@{Riemann}!outfilename@{outfilename}}
+\index{outfilename@{outfilename}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{outfilename}{outfilename}}
+{\footnotesize\ttfamily char Riemann\+::outfilename\mbox{[}50\mbox{]} = \char`\"{}output/solver.\+log\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 7 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_ad5cdb1fbb2149bcbdbfea4591d235412}\label{classRiemann_ad5cdb1fbb2149bcbdbfea4591d235412}} 
+\index{Riemann@{Riemann}!p@{p}}
+\index{p@{p}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily double Riemann\+::p = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 47 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_ae942c6053a769d20c4adfd20781b3173}\label{classRiemann_ae942c6053a769d20c4adfd20781b3173}} 
+\index{Riemann@{Riemann}!p\+\_\+magnetic@{p\+\_\+magnetic}}
+\index{p\+\_\+magnetic@{p\+\_\+magnetic}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{p\+\_\+magnetic}{p\_magnetic}}
+{\footnotesize\ttfamily double Riemann\+::p\+\_\+magnetic = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 52 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_acc72f10af19015784ef3b24b4f816651}\label{classRiemann_acc72f10af19015784ef3b24b4f816651}} 
+\index{Riemann@{Riemann}!p\+\_\+rl@{p\+\_\+rl}}
+\index{p\+\_\+rl@{p\+\_\+rl}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{p\+\_\+rl}{p\_rl}}
+{\footnotesize\ttfamily double Riemann\+::p\+\_\+rl = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a780005bbc3c529834bd7a1bc436528a2}\label{classRiemann_a780005bbc3c529834bd7a1bc436528a2}} 
+\index{Riemann@{Riemann}!rho@{rho}}
+\index{rho@{rho}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{rho}{rho}}
+{\footnotesize\ttfamily double Riemann\+::rho = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a16fcc1621ba3949c6541fc7c42d3af7f}\label{classRiemann_a16fcc1621ba3949c6541fc7c42d3af7f}} 
+\index{Riemann@{Riemann}!rho\+\_\+rl@{rho\+\_\+rl}}
+\index{rho\+\_\+rl@{rho\+\_\+rl}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{rho\+\_\+rl}{rho\_rl}}
+{\footnotesize\ttfamily double Riemann\+::rho\+\_\+rl = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a61a0bda4853dafde0aeb9501760e160e}\label{classRiemann_a61a0bda4853dafde0aeb9501760e160e}} 
+\index{Riemann@{Riemann}!rhoi@{rhoi}}
+\index{rhoi@{rhoi}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{rhoi}{rhoi}}
+{\footnotesize\ttfamily double Riemann\+::rhoi = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_adaf0219875f862407cddf578d361967c}\label{classRiemann_adaf0219875f862407cddf578d361967c}} 
+\index{Riemann@{Riemann}!rrsp@{rrsp}}
+\index{rrsp@{rrsp}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{rrsp}{rrsp}}
+{\footnotesize\ttfamily double Riemann\+::rrsp\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a46044bb74c7273a552a16425b1ae4cb3}\label{classRiemann_a46044bb74c7273a552a16425b1ae4cb3}} 
+\index{Riemann@{Riemann}!rstate@{rstate}}
+\index{rstate@{rstate}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{rstate}{rstate}}
+{\footnotesize\ttfamily double Riemann\+::rstate\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 33 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a70786d482bb4e5a4643411cd256c8bc9}\label{classRiemann_a70786d482bb4e5a4643411cd256c8bc9}} 
+\index{Riemann@{Riemann}!term@{term}}
+\index{term@{term}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{term}{term}}
+{\footnotesize\ttfamily double Riemann\+::term = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 49 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a5c0e2b1271b3274db9fe756480cc4013}\label{classRiemann_a5c0e2b1271b3274db9fe756480cc4013}} 
+\index{Riemann@{Riemann}!u@{u}}
+\index{u@{u}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{u}{u}}
+{\footnotesize\ttfamily double Riemann\+::u = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a44cf94d6988534e5e05bf34b52800553}\label{classRiemann_a44cf94d6988534e5e05bf34b52800553}} 
+\index{Riemann@{Riemann}!u\+\_\+rl@{u\+\_\+rl}}
+\index{u\+\_\+rl@{u\+\_\+rl}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{u\+\_\+rl}{u\_rl}}
+{\footnotesize\ttfamily double Riemann\+::u\+\_\+rl = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 23 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a0d7d0e062aa88a8451187cc93420285a}\label{classRiemann_a0d7d0e062aa88a8451187cc93420285a}} 
+\index{Riemann@{Riemann}!v@{v}}
+\index{v@{v}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily double Riemann\+::v = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 42 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a4ceda02ed2bdd7e95a9c9f928888adeb}\label{classRiemann_a4ceda02ed2bdd7e95a9c9f928888adeb}} 
+\index{Riemann@{Riemann}!v2@{v2}}
+\index{v2@{v2}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{v2}{v2}}
+{\footnotesize\ttfamily double Riemann\+::v2 = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 55 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a1770759fdc03b69a3f7ffd53d325db74}\label{classRiemann_a1770759fdc03b69a3f7ffd53d325db74}} 
+\index{Riemann@{Riemann}!v\+\_\+rl@{v\+\_\+rl}}
+\index{v\+\_\+rl@{v\+\_\+rl}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{v\+\_\+rl}{v\_rl}}
+{\footnotesize\ttfamily double Riemann\+::v\+\_\+rl = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 24 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_ac4b46c77d0006ae00dbe7d388f77adef}\label{classRiemann_ac4b46c77d0006ae00dbe7d388f77adef}} 
+\index{Riemann@{Riemann}!vdotb@{vdotb}}
+\index{vdotb@{vdotb}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{vdotb}{vdotb}}
+{\footnotesize\ttfamily double Riemann\+::vdotb = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 56 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_ac190f84c73f0feb3de1c841166037d39}\label{classRiemann_ac190f84c73f0feb3de1c841166037d39}} 
+\index{Riemann@{Riemann}!w@{w}}
+\index{w@{w}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily double Riemann\+::w = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file riemann.\+h.
+
+\mbox{\Hypertarget{classRiemann_a0c306a29f08c6eb4814723fb2778224c}\label{classRiemann_a0c306a29f08c6eb4814723fb2778224c}} 
+\index{Riemann@{Riemann}!w\+\_\+rl@{w\+\_\+rl}}
+\index{w\+\_\+rl@{w\+\_\+rl}!Riemann@{Riemann}}
+\subsubsection{\texorpdfstring{w\+\_\+rl}{w\_rl}}
+{\footnotesize\ttfamily double Riemann\+::w\+\_\+rl = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 25 of file riemann.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{riemann_8h}{riemann.\+h}\end{DoxyCompactItemize}

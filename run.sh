@@ -1,2 +1,3 @@
+#!/usr/bin/env bash
 docker build --tag mhd .
-docker run -v build:/usr/src/app/build -it mhd
+docker run -v ${HOME}/test/mhdvanleer/build:/usr/src/myapp/build -it mhd

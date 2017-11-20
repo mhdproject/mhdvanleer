@@ -1,0 +1,380 @@
+\hypertarget{classTNT_1_1Array3D}{}\section{T\+NT\+:\+:Array3D$<$ T $>$ Class Template Reference}
+\label{classTNT_1_1Array3D}\index{T\+N\+T\+::\+Array3\+D$<$ T $>$@{T\+N\+T\+::\+Array3\+D$<$ T $>$}}
+
+
+{\ttfamily \#include $<$tnt\+\_\+array3d.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{classTNT_1_1Array3D_a51945370abf416e829e6a50bdb0af6d5}{value\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTNT_1_1Array3D_a94ceeeadc5904e9ec4069ef61394ff8e}{Array3D} ()
+\item 
+\hyperlink{classTNT_1_1Array3D_a3556263018d605d22ce74699f3898559}{Array3D} (int m, int n, int g)
+\item 
+\hyperlink{classTNT_1_1Array3D_a3e5d89a3999c39540a441aeebcd8edc4}{Array3D} (int m, int n, int g, T val)
+\item 
+\hyperlink{classTNT_1_1Array3D_a5830c3a1275b2498bdceb6502e63c28f}{Array3D} (int m, int n, int g, T $\ast$a)
+\item 
+\hyperlink{classTNT_1_1Array3D_ab759135a50b2705bfc1ca7455c426b0a}{operator T$\ast$$\ast$$\ast$} ()
+\item 
+\hyperlink{classTNT_1_1Array3D_a420ffed5ca81952d989afe406450a9b0}{operator const T $\ast$$\ast$$\ast$} ()
+\item 
+\hyperlink{classTNT_1_1Array3D_ae137326853df4e4cdcc52afff3f5d85a}{Array3D} (const \hyperlink{classTNT_1_1Array3D}{Array3D} \&A)
+\item 
+\hyperlink{classTNT_1_1Array3D}{Array3D} \& \hyperlink{classTNT_1_1Array3D_a405e5c9c24c7b3895533fa8f870f9bfd}{operator=} (const T \&a)
+\item 
+\hyperlink{classTNT_1_1Array3D}{Array3D} \& \hyperlink{classTNT_1_1Array3D_a13fa6cf87fcfc5847972569f325f9b56}{operator=} (const \hyperlink{classTNT_1_1Array3D}{Array3D} \&A)
+\item 
+\hyperlink{classTNT_1_1Array3D}{Array3D} \& \hyperlink{classTNT_1_1Array3D_aded40455c8a0b48c3c3d0688ea90180a}{ref} (const \hyperlink{classTNT_1_1Array3D}{Array3D} \&A)
+\item 
+\hyperlink{classTNT_1_1Array3D}{Array3D} \hyperlink{classTNT_1_1Array3D_a7f24fda8bf695184726a1b6d6bd31bbf}{copy} () const
+\item 
+\hyperlink{classTNT_1_1Array3D}{Array3D} \& \hyperlink{classTNT_1_1Array3D_ac9004a4cc385cbfc0d3b742efd605e1c}{inject} (const \hyperlink{classTNT_1_1Array3D}{Array3D} \&A)
+\item 
+T $\ast$$\ast$ \hyperlink{classTNT_1_1Array3D_aea9175ed3125b3061f3be0db72656518}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+const T $\ast$const  $\ast$ \hyperlink{classTNT_1_1Array3D_add71da16792b166caa02f3d085e86af6}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\item 
+int \hyperlink{classTNT_1_1Array3D_a5e232b8194cb0162f554702fa37ce1f6}{dim1} () const
+\item 
+int \hyperlink{classTNT_1_1Array3D_aa63126693cd5679e950430a48d530f4b}{dim2} () const
+\item 
+int \hyperlink{classTNT_1_1Array3D_a892ab246eb797350f54e9d4a7a9ab4ce}{dim3} () const
+\item 
+\hyperlink{classTNT_1_1Array3D_af22e1bc22155dc84168ae00f5f26258b}{$\sim$\+Array3D} ()
+\item 
+int \hyperlink{classTNT_1_1Array3D_a50bbefb0aa842c2d7208b67fb09bb0d9}{ref\+\_\+count} ()
+\item 
+\hyperlink{classTNT_1_1Array3D}{Array3D} \hyperlink{classTNT_1_1Array3D_a365b3f6c5eb41e5189b20b25d80aee98}{subarray} (int i0, int i1, int j0, int j1, int k0, int k1)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTNT_1_1Array1D}{Array1D}$<$ T $>$ \hyperlink{classTNT_1_1Array3D_aefb5480851ab24e2fcbf27b5597f8b1b}{data\+\_\+}
+\item 
+\hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $\ast$ $>$ \hyperlink{classTNT_1_1Array3D_ac436fdc7a50e50e37648a735e7eff893}{v\+\_\+}
+\item 
+int \hyperlink{classTNT_1_1Array3D_a92608cdff3277ba6169b84586d6239bb}{m\+\_\+}
+\item 
+int \hyperlink{classTNT_1_1Array3D_a09744b9ba04f2a36450b079dd16d1a0b}{n\+\_\+}
+\item 
+int \hyperlink{classTNT_1_1Array3D_a9de3f7ac51695d316851a2a67611d5d3}{g\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class T\+N\+T\+::\+Array3\+D$<$ T $>$}
+
+
+
+Definition at line 38 of file tnt\+\_\+array3d.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classTNT_1_1Array3D_a51945370abf416e829e6a50bdb0af6d5}\label{classTNT_1_1Array3D_a51945370abf416e829e6a50bdb0af6d5}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{value\+\_\+type}{value\_type}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+typedef T \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array3D_a51945370abf416e829e6a50bdb0af6d5}{value\+\_\+type}}
+
+
+
+Definition at line 52 of file tnt\+\_\+array3d.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTNT_1_1Array3D_a94ceeeadc5904e9ec4069ef61394ff8e}\label{classTNT_1_1Array3D_a94ceeeadc5904e9ec4069ef61394ff8e}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!Array3D@{Array3D}}
+\index{Array3D@{Array3D}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{Array3\+D()}{Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array3D}{Array3D} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 83 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a3556263018d605d22ce74699f3898559}\label{classTNT_1_1Array3D_a3556263018d605d22ce74699f3898559}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!Array3D@{Array3D}}
+\index{Array3D@{Array3D}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{Array3\+D()}{Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array3D}{Array3D} (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{g }\end{DoxyParamCaption})}
+
+
+
+Definition at line 94 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a3e5d89a3999c39540a441aeebcd8edc4}\label{classTNT_1_1Array3D_a3e5d89a3999c39540a441aeebcd8edc4}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!Array3D@{Array3D}}
+\index{Array3D@{Array3D}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{Array3\+D()}{Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array3D}{Array3D} (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{g,  }\item[{T}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 115 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a5830c3a1275b2498bdceb6502e63c28f}\label{classTNT_1_1Array3D_a5830c3a1275b2498bdceb6502e63c28f}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!Array3D@{Array3D}}
+\index{Array3D@{Array3D}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{Array3\+D()}{Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array3D}{Array3D} (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{g,  }\item[{T $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line 136 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_ae137326853df4e4cdcc52afff3f5d85a}\label{classTNT_1_1Array3D_ae137326853df4e4cdcc52afff3f5d85a}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!Array3D@{Array3D}}
+\index{Array3D@{Array3D}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{Array3\+D()}{Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array3D}{Array3D} (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 86 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_af22e1bc22155dc84168ae00f5f26258b}\label{classTNT_1_1Array3D_af22e1bc22155dc84168ae00f5f26258b}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!````~Array3D@{$\sim$\+Array3D}}
+\index{````~Array3D@{$\sim$\+Array3D}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{$\sim$\+Array3\+D()}{~Array3D()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::$\sim$\hyperlink{classTNT_1_1Array3D}{Array3D} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 244 of file tnt\+\_\+array3d.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTNT_1_1Array3D_a7f24fda8bf695184726a1b6d6bd31bbf}\label{classTNT_1_1Array3D_a7f24fda8bf695184726a1b6d6bd31bbf}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!copy@{copy}}
+\index{copy@{copy}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 184 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a5e232b8194cb0162f554702fa37ce1f6}\label{classTNT_1_1Array3D_a5e232b8194cb0162f554702fa37ce1f6}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!dim1@{dim1}}
+\index{dim1@{dim1}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{dim1()}{dim1()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::dim1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 233 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_aa63126693cd5679e950430a48d530f4b}\label{classTNT_1_1Array3D_aa63126693cd5679e950430a48d530f4b}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!dim2@{dim2}}
+\index{dim2@{dim2}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{dim2()}{dim2()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::dim2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 236 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a892ab246eb797350f54e9d4a7a9ab4ce}\label{classTNT_1_1Array3D_a892ab246eb797350f54e9d4a7a9ab4ce}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!dim3@{dim3}}
+\index{dim3@{dim3}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{dim3()}{dim3()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::dim3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 239 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_ac9004a4cc385cbfc0d3b742efd605e1c}\label{classTNT_1_1Array3D_ac9004a4cc385cbfc0d3b742efd605e1c}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!inject@{inject}}
+\index{inject@{inject}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{inject()}{inject()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \& \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::inject (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Definition at line 197 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a420ffed5ca81952d989afe406450a9b0}\label{classTNT_1_1Array3D_a420ffed5ca81952d989afe406450a9b0}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!operator const T $\ast$$\ast$$\ast$@{operator const T $\ast$$\ast$$\ast$}}
+\index{operator const T $\ast$$\ast$$\ast$@{operator const T $\ast$$\ast$$\ast$}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{operator const T $\ast$$\ast$$\ast$()}{operator const T ***()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::operator const T $\ast$$\ast$$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 254 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_ab759135a50b2705bfc1ca7455c426b0a}\label{classTNT_1_1Array3D_ab759135a50b2705bfc1ca7455c426b0a}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!operator T$\ast$$\ast$$\ast$@{operator T$\ast$$\ast$$\ast$}}
+\index{operator T$\ast$$\ast$$\ast$@{operator T$\ast$$\ast$$\ast$}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{operator T$\ast$$\ast$$\ast$()}{operator T***()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::operator T$\ast$$\ast$$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 247 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a405e5c9c24c7b3895533fa8f870f9bfd}\label{classTNT_1_1Array3D_a405e5c9c24c7b3895533fa8f870f9bfd}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \& \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const T \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 173 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a13fa6cf87fcfc5847972569f325f9b56}\label{classTNT_1_1Array3D_a13fa6cf87fcfc5847972569f325f9b56}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \& \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 226 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_aea9175ed3125b3061f3be0db72656518}\label{classTNT_1_1Array3D_aea9175ed3125b3061f3be0db72656518}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T $\ast$$\ast$ \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 157 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_add71da16792b166caa02f3d085e86af6}\label{classTNT_1_1Array3D_add71da16792b166caa02f3d085e86af6}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const T $\ast$const  $\ast$ \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 169 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_aded40455c8a0b48c3c3d0688ea90180a}\label{classTNT_1_1Array3D_aded40455c8a0b48c3c3d0688ea90180a}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!ref@{ref}}
+\index{ref@{ref}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{ref()}{ref()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \& \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::ref (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 212 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a50bbefb0aa842c2d7208b67fb09bb0d9}\label{classTNT_1_1Array3D_a50bbefb0aa842c2d7208b67fb09bb0d9}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!ref\+\_\+count@{ref\+\_\+count}}
+\index{ref\+\_\+count@{ref\+\_\+count}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{ref\+\_\+count()}{ref\_count()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::ref\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 77 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a365b3f6c5eb41e5189b20b25d80aee98}\label{classTNT_1_1Array3D_a365b3f6c5eb41e5189b20b25d80aee98}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!subarray@{subarray}}
+\index{subarray@{subarray}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{subarray()}{subarray()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array3D}{Array3D}$<$ T $>$ \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::subarray (\begin{DoxyParamCaption}\item[{int}]{i0,  }\item[{int}]{i1,  }\item[{int}]{j0,  }\item[{int}]{j1,  }\item[{int}]{k0,  }\item[{int}]{k1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 261 of file tnt\+\_\+array3d.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTNT_1_1Array3D_aefb5480851ab24e2fcbf27b5597f8b1b}\label{classTNT_1_1Array3D_aefb5480851ab24e2fcbf27b5597f8b1b}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!data\+\_\+@{data\+\_\+}}
+\index{data\+\_\+@{data\+\_\+}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{data\+\_\+}{data\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1Array1D}{Array1D}$<$T$>$ \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::data\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a9de3f7ac51695d316851a2a67611d5d3}\label{classTNT_1_1Array3D_a9de3f7ac51695d316851a2a67611d5d3}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!g\+\_\+@{g\+\_\+}}
+\index{g\+\_\+@{g\+\_\+}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{g\+\_\+}{g\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::g\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 47 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a92608cdff3277ba6169b84586d6239bb}\label{classTNT_1_1Array3D_a92608cdff3277ba6169b84586d6239bb}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!m\+\_\+@{m\+\_\+}}
+\index{m\+\_\+@{m\+\_\+}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{m\+\_\+}{m\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::m\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 45 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_a09744b9ba04f2a36450b079dd16d1a0b}\label{classTNT_1_1Array3D_a09744b9ba04f2a36450b079dd16d1a0b}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!n\+\_\+@{n\+\_\+}}
+\index{n\+\_\+@{n\+\_\+}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{n\+\_\+}{n\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::n\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 46 of file tnt\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array3D_ac436fdc7a50e50e37648a735e7eff893}\label{classTNT_1_1Array3D_ac436fdc7a50e50e37648a735e7eff893}} 
+\index{T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}!v\+\_\+@{v\+\_\+}}
+\index{v\+\_\+@{v\+\_\+}!T\+N\+T\+::\+Array3D@{T\+N\+T\+::\+Array3D}}
+\subsubsection{\texorpdfstring{v\+\_\+}{v\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1Array2D}{Array2D}$<$T$\ast$$>$ \hyperlink{classTNT_1_1Array3D}{T\+N\+T\+::\+Array3D}$<$ T $>$\+::v\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 44 of file tnt\+\_\+array3d.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tnt__array3d_8h}{tnt\+\_\+array3d.\+h}\end{DoxyCompactItemize}

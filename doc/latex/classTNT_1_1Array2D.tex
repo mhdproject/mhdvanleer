@@ -1,0 +1,384 @@
+\hypertarget{classTNT_1_1Array2D}{}\section{T\+NT\+:\+:Array2D$<$ T $>$ Class Template Reference}
+\label{classTNT_1_1Array2D}\index{T\+N\+T\+::\+Array2\+D$<$ T $>$@{T\+N\+T\+::\+Array2\+D$<$ T $>$}}
+
+
+{\ttfamily \#include $<$tnt\+\_\+array2d.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{classTNT_1_1Array2D_a4b8dd8e113fb40e26d44bc2f7a45cb44}{value\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTNT_1_1Array2D_ab01d5e4b88c04d9e4906e7ea069f9dc0}{Array2D} ()
+\item 
+\hyperlink{classTNT_1_1Array2D_a80990fd85f6c04956a247d43d23a6af4}{Array2D} (int m, int n)
+\item 
+\hyperlink{classTNT_1_1Array2D_a7447ecfb709ce78db3c78ff21104f6f2}{Array2D} (int m, int n, T $\ast$a)
+\item 
+\hyperlink{classTNT_1_1Array2D_a0bbed4288ef81ee0c9baabf69c824191}{Array2D} (int m, int n, const T \&a)
+\item 
+\hyperlink{classTNT_1_1Array2D_a065e795f6f2486ca7ea0bca09200dbd4}{Array2D} (const \hyperlink{classTNT_1_1Array2D}{Array2D} \&A)
+\item 
+\hyperlink{classTNT_1_1Array2D_ab0edc94ba076bb743ace676d7717260c}{operator T$\ast$$\ast$} ()
+\item 
+\hyperlink{classTNT_1_1Array2D_a38bf24494047929cb39c89b5c9c516f7}{operator const T $\ast$$\ast$} ()
+\item 
+\hyperlink{classTNT_1_1Array2D}{Array2D} \& \hyperlink{classTNT_1_1Array2D_af14c53b4b3977ab8ecb34da61e5a6e4c}{operator=} (const T \&a)
+\item 
+\hyperlink{classTNT_1_1Array2D}{Array2D} \& \hyperlink{classTNT_1_1Array2D_a291213171560381b270246be0bbe75c0}{operator=} (const \hyperlink{classTNT_1_1Array2D}{Array2D} \&A)
+\item 
+\hyperlink{classTNT_1_1Array2D}{Array2D} \& \hyperlink{classTNT_1_1Array2D_a45629cdcb71db56e68c61721ebd6e1cf}{ref} (const \hyperlink{classTNT_1_1Array2D}{Array2D} \&A)
+\item 
+\hyperlink{classTNT_1_1Array2D}{Array2D} \hyperlink{classTNT_1_1Array2D_a19bbe91d984c88b68ab5d7e53be9e177}{copy} () const
+\item 
+\hyperlink{classTNT_1_1Array2D}{Array2D} \& \hyperlink{classTNT_1_1Array2D_a24f86f6bf4fd6436946c82e55a12af24}{inject} (const \hyperlink{classTNT_1_1Array2D}{Array2D} \&A)
+\item 
+T $\ast$ \hyperlink{classTNT_1_1Array2D_a472e0ff84ff7767033dc847a7a9c34cd}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+const T $\ast$ \hyperlink{classTNT_1_1Array2D_ac1394cbc900adcec3233ff231d9eea4a}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\item 
+int \hyperlink{classTNT_1_1Array2D_a84da0cfbe21a838fc85e1bac304e57ba}{dim1} () const
+\item 
+int \hyperlink{classTNT_1_1Array2D_adb4020fe0eb3cd695080a9c56a1d7c5c}{dim2} () const
+\item 
+\hyperlink{classTNT_1_1Array2D_a87c0133fa83755104b75631cfa4d6ab7}{$\sim$\+Array2D} ()
+\item 
+int \hyperlink{classTNT_1_1Array2D_a1669732a1a744a212c0c23b0cbafb1f1}{ref\+\_\+count} ()
+\item 
+int \hyperlink{classTNT_1_1Array2D_adb80c979d57de1fc4422a683703027b9}{ref\+\_\+count\+\_\+data} ()
+\item 
+int \hyperlink{classTNT_1_1Array2D_a8f4e8eca39d733e01642f35df5b4484b}{ref\+\_\+count\+\_\+dim1} ()
+\item 
+\hyperlink{classTNT_1_1Array2D}{Array2D} \hyperlink{classTNT_1_1Array2D_accf36569414a2570497d2a3f9fe68f52}{subarray} (int i0, int i1, int j0, int j1)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTNT_1_1Array1D}{Array1D}$<$ T $>$ \hyperlink{classTNT_1_1Array2D_afb5d79a6c51d8d27121a982aaff4bc47}{data\+\_\+}
+\item 
+\hyperlink{classTNT_1_1Array1D}{Array1D}$<$ T $\ast$ $>$ \hyperlink{classTNT_1_1Array2D_a7752a958a6c55bd094ce2c987aa78546}{v\+\_\+}
+\item 
+int \hyperlink{classTNT_1_1Array2D_ad866fbd5cb16df751ebf9e4eea6f2f22}{m\+\_\+}
+\item 
+int \hyperlink{classTNT_1_1Array2D_a4a182694802765bdb358f9737ab922b1}{n\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class T\+N\+T\+::\+Array2\+D$<$ T $>$}
+
+
+
+Definition at line 36 of file tnt\+\_\+array2d.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classTNT_1_1Array2D_a4b8dd8e113fb40e26d44bc2f7a45cb44}\label{classTNT_1_1Array2D_a4b8dd8e113fb40e26d44bc2f7a45cb44}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{value\+\_\+type}{value\_type}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+typedef T \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array2D_a4b8dd8e113fb40e26d44bc2f7a45cb44}{value\+\_\+type}}
+
+
+
+Definition at line 47 of file tnt\+\_\+array2d.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTNT_1_1Array2D_ab01d5e4b88c04d9e4906e7ea069f9dc0}\label{classTNT_1_1Array2D_ab01d5e4b88c04d9e4906e7ea069f9dc0}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!Array2D@{Array2D}}
+\index{Array2D@{Array2D}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{Array2\+D()}{Array2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array2D}{Array2D} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a80990fd85f6c04956a247d43d23a6af4}\label{classTNT_1_1Array2D_a80990fd85f6c04956a247d43d23a6af4}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!Array2D@{Array2D}}
+\index{Array2D@{Array2D}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{Array2\+D()}{Array2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array2D}{Array2D} (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 84 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a7447ecfb709ce78db3c78ff21104f6f2}\label{classTNT_1_1Array2D_a7447ecfb709ce78db3c78ff21104f6f2}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!Array2D@{Array2D}}
+\index{Array2D@{Array2D}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{Array2\+D()}{Array2D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array2D}{Array2D} (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n,  }\item[{T $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line 108 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a0bbed4288ef81ee0c9baabf69c824191}\label{classTNT_1_1Array2D_a0bbed4288ef81ee0c9baabf69c824191}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!Array2D@{Array2D}}
+\index{Array2D@{Array2D}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{Array2\+D()}{Array2D()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array2D}{Array2D} (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n,  }\item[{const T \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a065e795f6f2486ca7ea0bca09200dbd4}\label{classTNT_1_1Array2D_a065e795f6f2486ca7ea0bca09200dbd4}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!Array2D@{Array2D}}
+\index{Array2D@{Array2D}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{Array2\+D()}{Array2D()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::\hyperlink{classTNT_1_1Array2D}{Array2D} (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 80 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a87c0133fa83755104b75631cfa4d6ab7}\label{classTNT_1_1Array2D_a87c0133fa83755104b75631cfa4d6ab7}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!````~Array2D@{$\sim$\+Array2D}}
+\index{````~Array2D@{$\sim$\+Array2D}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{$\sim$\+Array2\+D()}{~Array2D()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::$\sim$\hyperlink{classTNT_1_1Array2D}{Array2D} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 196 of file tnt\+\_\+array2d.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTNT_1_1Array2D_a19bbe91d984c88b68ab5d7e53be9e177}\label{classTNT_1_1Array2D_a19bbe91d984c88b68ab5d7e53be9e177}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!copy@{copy}}
+\index{copy@{copy}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 152 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a84da0cfbe21a838fc85e1bac304e57ba}\label{classTNT_1_1Array2D_a84da0cfbe21a838fc85e1bac304e57ba}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!dim1@{dim1}}
+\index{dim1@{dim1}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{dim1()}{dim1()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::dim1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 190 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_adb4020fe0eb3cd695080a9c56a1d7c5c}\label{classTNT_1_1Array2D_adb4020fe0eb3cd695080a9c56a1d7c5c}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!dim2@{dim2}}
+\index{dim2@{dim2}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{dim2()}{dim2()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::dim2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 193 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a24f86f6bf4fd6436946c82e55a12af24}\label{classTNT_1_1Array2D_a24f86f6bf4fd6436946c82e55a12af24}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!inject@{inject}}
+\index{inject@{inject}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{inject()}{inject()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \& \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::inject (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Definition at line 163 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a38bf24494047929cb39c89b5c9c516f7}\label{classTNT_1_1Array2D_a38bf24494047929cb39c89b5c9c516f7}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!operator const T $\ast$$\ast$@{operator const T $\ast$$\ast$}}
+\index{operator const T $\ast$$\ast$@{operator const T $\ast$$\ast$}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{operator const T $\ast$$\ast$()}{operator const T **()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::operator const T $\ast$$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 203 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_ab0edc94ba076bb743ace676d7717260c}\label{classTNT_1_1Array2D_ab0edc94ba076bb743ace676d7717260c}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!operator T$\ast$$\ast$@{operator T$\ast$$\ast$}}
+\index{operator T$\ast$$\ast$@{operator T$\ast$$\ast$}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{operator T$\ast$$\ast$()}{operator T**()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::operator T$\ast$$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 199 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_af14c53b4b3977ab8ecb34da61e5a6e4c}\label{classTNT_1_1Array2D_af14c53b4b3977ab8ecb34da61e5a6e4c}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \& \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const T \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 142 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a291213171560381b270246be0bbe75c0}\label{classTNT_1_1Array2D_a291213171560381b270246be0bbe75c0}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \& \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 185 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a472e0ff84ff7767033dc847a7a9c34cd}\label{classTNT_1_1Array2D_a472e0ff84ff7767033dc847a7a9c34cd}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T $\ast$ \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 120 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_ac1394cbc900adcec3233ff231d9eea4a}\label{classTNT_1_1Array2D_ac1394cbc900adcec3233ff231d9eea4a}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const T $\ast$ \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 131 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a45629cdcb71db56e68c61721ebd6e1cf}\label{classTNT_1_1Array2D_a45629cdcb71db56e68c61721ebd6e1cf}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!ref@{ref}}
+\index{ref@{ref}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{ref()}{ref()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \& \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::ref (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 173 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a1669732a1a744a212c0c23b0cbafb1f1}\label{classTNT_1_1Array2D_a1669732a1a744a212c0c23b0cbafb1f1}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!ref\+\_\+count@{ref\+\_\+count}}
+\index{ref\+\_\+count@{ref\+\_\+count}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{ref\+\_\+count()}{ref\_count()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::ref\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 240 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_adb80c979d57de1fc4422a683703027b9}\label{classTNT_1_1Array2D_adb80c979d57de1fc4422a683703027b9}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!ref\+\_\+count\+\_\+data@{ref\+\_\+count\+\_\+data}}
+\index{ref\+\_\+count\+\_\+data@{ref\+\_\+count\+\_\+data}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{ref\+\_\+count\+\_\+data()}{ref\_count\_data()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::ref\+\_\+count\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 245 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a8f4e8eca39d733e01642f35df5b4484b}\label{classTNT_1_1Array2D_a8f4e8eca39d733e01642f35df5b4484b}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!ref\+\_\+count\+\_\+dim1@{ref\+\_\+count\+\_\+dim1}}
+\index{ref\+\_\+count\+\_\+dim1@{ref\+\_\+count\+\_\+dim1}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{ref\+\_\+count\+\_\+dim1()}{ref\_count\_dim1()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::ref\+\_\+count\+\_\+dim1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 250 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_accf36569414a2570497d2a3f9fe68f52}\label{classTNT_1_1Array2D_accf36569414a2570497d2a3f9fe68f52}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!subarray@{subarray}}
+\index{subarray@{subarray}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{subarray()}{subarray()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Array2D}{Array2D}$<$ T $>$ \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::subarray (\begin{DoxyParamCaption}\item[{int}]{i0,  }\item[{int}]{i1,  }\item[{int}]{j0,  }\item[{int}]{j1 }\end{DoxyParamCaption})}
+
+
+
+Create a new view to a subarray defined by the boundaries \mbox{[}i0\mbox{]}\mbox{[}i0\mbox{]} and \mbox{[}i1\mbox{]}\mbox{[}j1\mbox{]}. 
+
+The size of the subarray is (i1-\/i0) by (j1-\/j0). If either of these lengths are zero or negative, the subarray view is null. 
+
+Definition at line 216 of file tnt\+\_\+array2d.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTNT_1_1Array2D_afb5d79a6c51d8d27121a982aaff4bc47}\label{classTNT_1_1Array2D_afb5d79a6c51d8d27121a982aaff4bc47}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!data\+\_\+@{data\+\_\+}}
+\index{data\+\_\+@{data\+\_\+}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{data\+\_\+}{data\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1Array1D}{Array1D}$<$T$>$ \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::data\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_ad866fbd5cb16df751ebf9e4eea6f2f22}\label{classTNT_1_1Array2D_ad866fbd5cb16df751ebf9e4eea6f2f22}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!m\+\_\+@{m\+\_\+}}
+\index{m\+\_\+@{m\+\_\+}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{m\+\_\+}{m\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::m\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 42 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a4a182694802765bdb358f9737ab922b1}\label{classTNT_1_1Array2D_a4a182694802765bdb358f9737ab922b1}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!n\+\_\+@{n\+\_\+}}
+\index{n\+\_\+@{n\+\_\+}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{n\+\_\+}{n\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::n\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file tnt\+\_\+array2d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Array2D_a7752a958a6c55bd094ce2c987aa78546}\label{classTNT_1_1Array2D_a7752a958a6c55bd094ce2c987aa78546}} 
+\index{T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}!v\+\_\+@{v\+\_\+}}
+\index{v\+\_\+@{v\+\_\+}!T\+N\+T\+::\+Array2D@{T\+N\+T\+::\+Array2D}}
+\subsubsection{\texorpdfstring{v\+\_\+}{v\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1Array1D}{Array1D}$<$T $\ast$$>$ \hyperlink{classTNT_1_1Array2D}{T\+N\+T\+::\+Array2D}$<$ T $>$\+::v\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file tnt\+\_\+array2d.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tnt__array2d_8h}{tnt\+\_\+array2d.\+h}\end{DoxyCompactItemize}

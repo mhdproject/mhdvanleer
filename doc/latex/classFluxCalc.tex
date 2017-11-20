@@ -1,0 +1,198 @@
+\hypertarget{classFluxCalc}{}\section{Flux\+Calc Class Reference}
+\label{classFluxCalc}\index{Flux\+Calc@{Flux\+Calc}}
+
+
+{\ttfamily \#include $<$flux.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classFluxCalc_ae1b566f7c632d2dcb123e77d2c89bf5c}{flux} (\hyperlink{classTNT_1_1Array3D}{Array3D}$<$ \hyperlink{structzone}{zone} $>$ grid, double $\ast$fp, double $\ast$fn, int iii, int jjj, int idir, int second)
+\item 
+int \hyperlink{classFluxCalc_a9c9df42bed3b97586bc268cfee3965c7}{ctop} (double $\ast$c, double $\ast$p)
+\item 
+int \hyperlink{classFluxCalc_af23d3c12de11a7090fa043479c523c11}{ptoc} (double $\ast$p, double $\ast$c)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classFluxCalc_ac44e4140213abf567f65bc8dcc40f27e}{d} \mbox{[}2\mbox{]}
+\item 
+int \hyperlink{classFluxCalc_a8503243c4a069efba273a5d711354f22}{kk} = 0
+\item 
+int \hyperlink{classFluxCalc_ad38bd04c6117848ca7059b3de8dec73e}{hh} = 0
+\item 
+int \hyperlink{classFluxCalc_a787e2be1064214bc02417c2c073fd6f8}{status}
+\item 
+double $\ast$ \hyperlink{classFluxCalc_a1d56aedeacd9b9868563f8345045d9df}{leftstate}
+\item 
+double $\ast$ \hyperlink{classFluxCalc_a5077f5c79d4a3b689f2b18bded131b17}{rightstate}
+\item 
+double $\ast$ \hyperlink{classFluxCalc_ac7b46a7fb4c9b8ebcb5fbfb6bba8c7e7}{pll}
+\item 
+double $\ast$ \hyperlink{classFluxCalc_aa6810dc21bde1993624ea0d3fe15b4a3}{plm}
+\item 
+double $\ast$ \hyperlink{classFluxCalc_a36875143a7a7c560b17570c77624514e}{plr}
+\item 
+double $\ast$ \hyperlink{classFluxCalc_ab4e7e09c84cf9dfc26961e60209ff4ff}{prr}
+\item 
+double $\ast$ \hyperlink{classFluxCalc_a3b1c047203afcc878dbfe19a3110a1c9}{leftprim}
+\item 
+double $\ast$ \hyperlink{classFluxCalc_a0e74db71f1a8b5172816b4cd5505e6b8}{rightprim}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file flux.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFluxCalc_a9c9df42bed3b97586bc268cfee3965c7}\label{classFluxCalc_a9c9df42bed3b97586bc268cfee3965c7}} 
+\index{Flux\+Calc@{Flux\+Calc}!ctop@{ctop}}
+\index{ctop@{ctop}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{ctop()}{ctop()}}
+{\footnotesize\ttfamily int Flux\+Calc\+::ctop (\begin{DoxyParamCaption}\item[{double $\ast$}]{c,  }\item[{double $\ast$}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classFluxCalc_ae1b566f7c632d2dcb123e77d2c89bf5c}\label{classFluxCalc_ae1b566f7c632d2dcb123e77d2c89bf5c}} 
+\index{Flux\+Calc@{Flux\+Calc}!flux@{flux}}
+\index{flux@{flux}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{flux()}{flux()}}
+{\footnotesize\ttfamily int Flux\+Calc\+::flux (\begin{DoxyParamCaption}\item[{\hyperlink{classTNT_1_1Array3D}{Array3D}$<$ \hyperlink{structzone}{zone} $>$}]{grid,  }\item[{double $\ast$}]{fp,  }\item[{double $\ast$}]{fn,  }\item[{int}]{iii,  }\item[{int}]{jjj,  }\item[{int}]{idir,  }\item[{int}]{second }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classFluxCalc_af23d3c12de11a7090fa043479c523c11}\label{classFluxCalc_af23d3c12de11a7090fa043479c523c11}} 
+\index{Flux\+Calc@{Flux\+Calc}!ptoc@{ptoc}}
+\index{ptoc@{ptoc}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{ptoc()}{ptoc()}}
+{\footnotesize\ttfamily int Flux\+Calc\+::ptoc (\begin{DoxyParamCaption}\item[{double $\ast$}]{p,  }\item[{double $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classFluxCalc_ac44e4140213abf567f65bc8dcc40f27e}\label{classFluxCalc_ac44e4140213abf567f65bc8dcc40f27e}} 
+\index{Flux\+Calc@{Flux\+Calc}!d@{d}}
+\index{d@{d}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily int Flux\+Calc\+::d\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 6 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_ad38bd04c6117848ca7059b3de8dec73e}\label{classFluxCalc_ad38bd04c6117848ca7059b3de8dec73e}} 
+\index{Flux\+Calc@{Flux\+Calc}!hh@{hh}}
+\index{hh@{hh}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{hh}{hh}}
+{\footnotesize\ttfamily int Flux\+Calc\+::hh = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 8 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_a8503243c4a069efba273a5d711354f22}\label{classFluxCalc_a8503243c4a069efba273a5d711354f22}} 
+\index{Flux\+Calc@{Flux\+Calc}!kk@{kk}}
+\index{kk@{kk}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{kk}{kk}}
+{\footnotesize\ttfamily int Flux\+Calc\+::kk = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 7 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_a3b1c047203afcc878dbfe19a3110a1c9}\label{classFluxCalc_a3b1c047203afcc878dbfe19a3110a1c9}} 
+\index{Flux\+Calc@{Flux\+Calc}!leftprim@{leftprim}}
+\index{leftprim@{leftprim}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{leftprim}{leftprim}}
+{\footnotesize\ttfamily double$\ast$ Flux\+Calc\+::leftprim\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_a1d56aedeacd9b9868563f8345045d9df}\label{classFluxCalc_a1d56aedeacd9b9868563f8345045d9df}} 
+\index{Flux\+Calc@{Flux\+Calc}!leftstate@{leftstate}}
+\index{leftstate@{leftstate}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{leftstate}{leftstate}}
+{\footnotesize\ttfamily double$\ast$ Flux\+Calc\+::leftstate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_ac7b46a7fb4c9b8ebcb5fbfb6bba8c7e7}\label{classFluxCalc_ac7b46a7fb4c9b8ebcb5fbfb6bba8c7e7}} 
+\index{Flux\+Calc@{Flux\+Calc}!pll@{pll}}
+\index{pll@{pll}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{pll}{pll}}
+{\footnotesize\ttfamily double$\ast$ Flux\+Calc\+::pll\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_aa6810dc21bde1993624ea0d3fe15b4a3}\label{classFluxCalc_aa6810dc21bde1993624ea0d3fe15b4a3}} 
+\index{Flux\+Calc@{Flux\+Calc}!plm@{plm}}
+\index{plm@{plm}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{plm}{plm}}
+{\footnotesize\ttfamily double$\ast$ Flux\+Calc\+::plm\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_a36875143a7a7c560b17570c77624514e}\label{classFluxCalc_a36875143a7a7c560b17570c77624514e}} 
+\index{Flux\+Calc@{Flux\+Calc}!plr@{plr}}
+\index{plr@{plr}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{plr}{plr}}
+{\footnotesize\ttfamily double$\ast$ Flux\+Calc\+::plr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 16 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_ab4e7e09c84cf9dfc26961e60209ff4ff}\label{classFluxCalc_ab4e7e09c84cf9dfc26961e60209ff4ff}} 
+\index{Flux\+Calc@{Flux\+Calc}!prr@{prr}}
+\index{prr@{prr}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{prr}{prr}}
+{\footnotesize\ttfamily double$\ast$ Flux\+Calc\+::prr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 17 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_a0e74db71f1a8b5172816b4cd5505e6b8}\label{classFluxCalc_a0e74db71f1a8b5172816b4cd5505e6b8}} 
+\index{Flux\+Calc@{Flux\+Calc}!rightprim@{rightprim}}
+\index{rightprim@{rightprim}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{rightprim}{rightprim}}
+{\footnotesize\ttfamily double$\ast$ Flux\+Calc\+::rightprim\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_a5077f5c79d4a3b689f2b18bded131b17}\label{classFluxCalc_a5077f5c79d4a3b689f2b18bded131b17}} 
+\index{Flux\+Calc@{Flux\+Calc}!rightstate@{rightstate}}
+\index{rightstate@{rightstate}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{rightstate}{rightstate}}
+{\footnotesize\ttfamily double$\ast$ Flux\+Calc\+::rightstate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 12 of file flux.\+h.
+
+\mbox{\Hypertarget{classFluxCalc_a787e2be1064214bc02417c2c073fd6f8}\label{classFluxCalc_a787e2be1064214bc02417c2c073fd6f8}} 
+\index{Flux\+Calc@{Flux\+Calc}!status@{status}}
+\index{status@{status}!Flux\+Calc@{Flux\+Calc}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily int Flux\+Calc\+::status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 9 of file flux.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{flux_8h}{flux.\+h}\end{DoxyCompactItemize}

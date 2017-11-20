@@ -1,0 +1,341 @@
+\hypertarget{classTNT_1_1Fortran__Array3D}{}\section{T\+NT\+:\+:Fortran\+\_\+\+Array3D$<$ T $>$ Class Template Reference}
+\label{classTNT_1_1Fortran__Array3D}\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3\+D$<$ T $>$@{T\+N\+T\+::\+Fortran\+\_\+\+Array3\+D$<$ T $>$}}
+
+
+{\ttfamily \#include $<$tnt\+\_\+fortran\+\_\+array3d.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{classTNT_1_1Fortran__Array3D_ac63354327521c0974bb45a9b02a9ff40}{value\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D_a21a80db962738ae9b44f900a67a12d9d}{Fortran\+\_\+\+Array3D} ()
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D_ae21aebe248a70f8aebb02019ca234018}{Fortran\+\_\+\+Array3D} (int m, int n, int k)
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D_afc769243d26ea77ee409b50b61ae8e6a}{Fortran\+\_\+\+Array3D} (int m, int n, int k, T $\ast$a)
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D_af2ef9c1ce37546da4f2e63ec2ac33537}{Fortran\+\_\+\+Array3D} (int m, int n, int k, const T \&a)
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D_a80a98d39df23c4b3a59c7952387c07c8}{Fortran\+\_\+\+Array3D} (const \hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} \&A)
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} \& \hyperlink{classTNT_1_1Fortran__Array3D_afb4adfeb473778f57769bca704245aa5}{operator=} (const T \&a)
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} \& \hyperlink{classTNT_1_1Fortran__Array3D_a64f8785f3d81e07cb2df6e1bd7eefde5}{operator=} (const \hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} \&A)
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} \& \hyperlink{classTNT_1_1Fortran__Array3D_a344143d5f036e6bc72d111b83b577ed5}{ref} (const \hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} \&A)
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} \hyperlink{classTNT_1_1Fortran__Array3D_a8c611d5f5c178ba17716bc55f4d6ef0e}{copy} () const
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} \& \hyperlink{classTNT_1_1Fortran__Array3D_aa2b78e3242a7506843c10642fc289ce1}{inject} (const \hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} \&A)
+\item 
+T \& \hyperlink{classTNT_1_1Fortran__Array3D_a18c12002351d9b7ef7cd1b483ebb1c9f}{operator()} (int i, int j, int k)
+\item 
+const T \& \hyperlink{classTNT_1_1Fortran__Array3D_acd0ca0c6c51e43e14645abf3aba027c4}{operator()} (int i, int j, int k) const
+\item 
+int \hyperlink{classTNT_1_1Fortran__Array3D_a1dfd13ee1ae6a14718596441275b2e11}{dim1} () const
+\item 
+int \hyperlink{classTNT_1_1Fortran__Array3D_afbcc13764d51a8939626082d1d549786}{dim2} () const
+\item 
+int \hyperlink{classTNT_1_1Fortran__Array3D_a1c4989f3d7db053c3cb2f6f31fed3c09}{dim3} () const
+\item 
+int \hyperlink{classTNT_1_1Fortran__Array3D_a41a34fa9c1f35ac86273648bc8c9496f}{ref\+\_\+count} () const
+\item 
+\hyperlink{classTNT_1_1Fortran__Array3D_a9164c5369ef7b82b3c280dc9704527d9}{$\sim$\+Fortran\+\_\+\+Array3D} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTNT_1_1i__refvec}{i\+\_\+refvec}$<$ T $>$ \hyperlink{classTNT_1_1Fortran__Array3D_a105630010987f0da8a68203277e799bf}{v\+\_\+}
+\item 
+int \hyperlink{classTNT_1_1Fortran__Array3D_a3f4db2fe79a5f3c4b05c20c5763428f5}{m\+\_\+}
+\item 
+int \hyperlink{classTNT_1_1Fortran__Array3D_ae717b2430033857fea81f7b5d7d4d070}{n\+\_\+}
+\item 
+int \hyperlink{classTNT_1_1Fortran__Array3D_a574ac1622f63254922786524b3dda1fb}{k\+\_\+}
+\item 
+T $\ast$ \hyperlink{classTNT_1_1Fortran__Array3D_a1f4ad51040b91887d61f043cd1bf8b90}{data\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class T\+N\+T\+::\+Fortran\+\_\+\+Array3\+D$<$ T $>$}
+
+
+
+Definition at line 35 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_ac63354327521c0974bb45a9b02a9ff40}\label{classTNT_1_1Fortran__Array3D_ac63354327521c0974bb45a9b02a9ff40}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{value\+\_\+type}{value\_type}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+typedef T \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Fortran__Array3D_ac63354327521c0974bb45a9b02a9ff40}{value\+\_\+type}}
+
+
+
+Definition at line 47 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a21a80db962738ae9b44f900a67a12d9d}\label{classTNT_1_1Fortran__Array3D_a21a80db962738ae9b44f900a67a12d9d}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}}
+\index{Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{Fortran\+\_\+\+Array3\+D()}{Fortran\_Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_ae21aebe248a70f8aebb02019ca234018}\label{classTNT_1_1Fortran__Array3D_ae21aebe248a70f8aebb02019ca234018}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}}
+\index{Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{Fortran\+\_\+\+Array3\+D()}{Fortran\_Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_afc769243d26ea77ee409b50b61ae8e6a}\label{classTNT_1_1Fortran__Array3D_afc769243d26ea77ee409b50b61ae8e6a}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}}
+\index{Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{Fortran\+\_\+\+Array3\+D()}{Fortran\_Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{k,  }\item[{T $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line 88 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_af2ef9c1ce37546da4f2e63ec2ac33537}\label{classTNT_1_1Fortran__Array3D_af2ef9c1ce37546da4f2e63ec2ac33537}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}}
+\index{Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{Fortran\+\_\+\+Array3\+D()}{Fortran\_Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{k,  }\item[{const T \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a80a98d39df23c4b3a59c7952387c07c8}\label{classTNT_1_1Fortran__Array3D_a80a98d39df23c4b3a59c7952387c07c8}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}}
+\index{Fortran\+\_\+\+Array3D@{Fortran\+\_\+\+Array3D}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{Fortran\+\_\+\+Array3\+D()}{Fortran\_Array3D()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 73 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a9164c5369ef7b82b3c280dc9704527d9}\label{classTNT_1_1Fortran__Array3D_a9164c5369ef7b82b3c280dc9704527d9}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!````~Fortran\+\_\+\+Array3D@{$\sim$\+Fortran\+\_\+\+Array3D}}
+\index{````~Fortran\+\_\+\+Array3D@{$\sim$\+Fortran\+\_\+\+Array3D}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{$\sim$\+Fortran\+\_\+\+Array3\+D()}{~Fortran\_Array3D()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::$\sim$\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 184 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a8c611d5f5c178ba17716bc55f4d6ef0e}\label{classTNT_1_1Fortran__Array3D_a8c611d5f5c178ba17716bc55f4d6ef0e}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!copy@{copy}}
+\index{copy@{copy}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D}$<$ T $>$ \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 131 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a1dfd13ee1ae6a14718596441275b2e11}\label{classTNT_1_1Fortran__Array3D_a1dfd13ee1ae6a14718596441275b2e11}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!dim1@{dim1}}
+\index{dim1@{dim1}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{dim1()}{dim1()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::dim1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 170 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_afbcc13764d51a8939626082d1d549786}\label{classTNT_1_1Fortran__Array3D_afbcc13764d51a8939626082d1d549786}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!dim2@{dim2}}
+\index{dim2@{dim2}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{dim2()}{dim2()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::dim2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 173 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a1c4989f3d7db053c3cb2f6f31fed3c09}\label{classTNT_1_1Fortran__Array3D_a1c4989f3d7db053c3cb2f6f31fed3c09}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!dim3@{dim3}}
+\index{dim3@{dim3}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{dim3()}{dim3()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::dim3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 176 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_aa2b78e3242a7506843c10642fc289ce1}\label{classTNT_1_1Fortran__Array3D_aa2b78e3242a7506843c10642fc289ce1}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!inject@{inject}}
+\index{inject@{inject}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{inject()}{inject()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D}$<$ T $>$ \& \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::inject (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Definition at line 140 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a18c12002351d9b7ef7cd1b483ebb1c9f}\label{classTNT_1_1Fortran__Array3D_a18c12002351d9b7ef7cd1b483ebb1c9f}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!operator()@{operator()}}
+\index{operator()@{operator()}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 92 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_acd0ca0c6c51e43e14645abf3aba027c4}\label{classTNT_1_1Fortran__Array3D_acd0ca0c6c51e43e14645abf3aba027c4}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!operator()@{operator()}}
+\index{operator()@{operator()}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const T \& \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 107 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_afb4adfeb473778f57769bca704245aa5}\label{classTNT_1_1Fortran__Array3D_afb4adfeb473778f57769bca704245aa5}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D}$<$ T $>$ \& \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const T \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 121 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a64f8785f3d81e07cb2df6e1bd7eefde5}\label{classTNT_1_1Fortran__Array3D_a64f8785f3d81e07cb2df6e1bd7eefde5}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D}$<$ T $>$ \& \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 165 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a344143d5f036e6bc72d111b83b577ed5}\label{classTNT_1_1Fortran__Array3D_a344143d5f036e6bc72d111b83b577ed5}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!ref@{ref}}
+\index{ref@{ref}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{ref()}{ref()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D}$<$ T $>$ \& \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::ref (\begin{DoxyParamCaption}\item[{const \hyperlink{classTNT_1_1Fortran__Array3D}{Fortran\+\_\+\+Array3D}$<$ T $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 152 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a41a34fa9c1f35ac86273648bc8c9496f}\label{classTNT_1_1Fortran__Array3D_a41a34fa9c1f35ac86273648bc8c9496f}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!ref\+\_\+count@{ref\+\_\+count}}
+\index{ref\+\_\+count@{ref\+\_\+count}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{ref\+\_\+count()}{ref\_count()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::ref\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 179 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a1f4ad51040b91887d61f043cd1bf8b90}\label{classTNT_1_1Fortran__Array3D_a1f4ad51040b91887d61f043cd1bf8b90}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!data\+\_\+@{data\+\_\+}}
+\index{data\+\_\+@{data\+\_\+}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{data\+\_\+}{data\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+T$\ast$ \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::data\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a574ac1622f63254922786524b3dda1fb}\label{classTNT_1_1Fortran__Array3D_a574ac1622f63254922786524b3dda1fb}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!k\+\_\+@{k\+\_\+}}
+\index{k\+\_\+@{k\+\_\+}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{k\+\_\+}{k\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::k\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 42 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a3f4db2fe79a5f3c4b05c20c5763428f5}\label{classTNT_1_1Fortran__Array3D_a3f4db2fe79a5f3c4b05c20c5763428f5}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!m\+\_\+@{m\+\_\+}}
+\index{m\+\_\+@{m\+\_\+}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{m\+\_\+}{m\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::m\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_ae717b2430033857fea81f7b5d7d4d070}\label{classTNT_1_1Fortran__Array3D_ae717b2430033857fea81f7b5d7d4d070}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!n\+\_\+@{n\+\_\+}}
+\index{n\+\_\+@{n\+\_\+}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{n\+\_\+}{n\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::n\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+\mbox{\Hypertarget{classTNT_1_1Fortran__Array3D_a105630010987f0da8a68203277e799bf}\label{classTNT_1_1Fortran__Array3D_a105630010987f0da8a68203277e799bf}} 
+\index{T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}!v\+\_\+@{v\+\_\+}}
+\index{v\+\_\+@{v\+\_\+}!T\+N\+T\+::\+Fortran\+\_\+\+Array3D@{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}}
+\subsubsection{\texorpdfstring{v\+\_\+}{v\_}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classTNT_1_1i__refvec}{i\+\_\+refvec}$<$T$>$ \hyperlink{classTNT_1_1Fortran__Array3D}{T\+N\+T\+::\+Fortran\+\_\+\+Array3D}$<$ T $>$\+::v\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file tnt\+\_\+fortran\+\_\+array3d.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tnt__fortran__array3d_8h}{tnt\+\_\+fortran\+\_\+array3d.\+h}\end{DoxyCompactItemize}

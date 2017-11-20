@@ -1,0 +1,542 @@
+\hypertarget{classRoe}{}\section{Roe Class Reference}
+\label{classRoe}\index{Roe@{Roe}}
+
+
+{\ttfamily \#include $<$roe.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classRoe_aabc9084b5c735d7bdfdc88f3c7cfdc87}{roe} (const double $\ast$leftstate, const double $\ast$rightstate, double $\ast$flux, int iii, int jjj, int idir)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ofstream \hyperlink{classRoe_a0738570cd964a053cb95f219adc0ef1c}{out\+File}
+\item 
+int \hyperlink{classRoe_ae1d4f32b4c3d8e5d9d1225bec139fb71}{ii}
+\item 
+int \hyperlink{classRoe_a925c5191227cccf071e6e0b0ac198c67}{jj}
+\item 
+int \hyperlink{classRoe_a20a2e7114639c312295adad848a9ba06}{d} \mbox{[}2\mbox{]}
+\item 
+double \hyperlink{classRoe_a4c6b1752f3de01ed67d4bcb128bc9582}{rr}
+\item 
+double \hyperlink{classRoe_a8fc80cf00a5f985d55580becb9e7b2e3}{ri}
+\item 
+double \hyperlink{classRoe_a02cb59599c38a21472777e9de7f6f1ed}{px}
+\item 
+double \hyperlink{classRoe_a4d74b032fc909bf6b50989bacd908e03}{py}
+\item 
+double \hyperlink{classRoe_a088ea1d21e7f2a79a833c79de564fe97}{et}
+\item 
+double \hyperlink{classRoe_aa3b9084d2014f158b13820aab143ee7b}{ke}
+\item 
+double \hyperlink{classRoe_a5b749a16ae02029d4f9566251c7e6062}{rl}
+\item 
+double \hyperlink{classRoe_a296c4c3e1342d0f7a3b74db532d25da4}{ul}
+\item 
+double \hyperlink{classRoe_a9c7ca2b690bd235643559386ece348c1}{vl}
+\item 
+double \hyperlink{classRoe_a3c095fb6ac32aab0777a9438ae87ecb6}{pl}
+\item 
+double \hyperlink{classRoe_abdc3186ec87bc861a4082e6ca41a9d71}{hl}
+\item 
+double \hyperlink{classRoe_a3fe943eae01a90270cf6045fc4dfdcdf}{al}
+\item 
+double \hyperlink{classRoe_ab11ce73f25fa828140bea0f820a74844}{ur}
+\item 
+double \hyperlink{classRoe_a69d1aa7c0230640c1c0cc50061a6d1d2}{vr}
+\item 
+double \hyperlink{classRoe_a192ea3de117ed94fe04d244cb2174785}{pr}
+\item 
+double \hyperlink{classRoe_a835acb6a5f019b3a37b2a27367621e50}{hr}
+\item 
+double \hyperlink{classRoe_afcb0ba2c21329c19b0e463bb453b8ed9}{ar}
+\item 
+double \hyperlink{classRoe_a72c829cd1d89332456ed4f002143be27}{rho\+\_\+rl}
+\item 
+double \hyperlink{classRoe_affc96152da540e7b72c1fde648ad8ce5}{url}
+\item 
+double \hyperlink{classRoe_a993e6170348de395ca50fff9fbf4b64b}{vrl}
+\item 
+double \hyperlink{classRoe_a45fef8454e2149fda58bcd64ae4a9f58}{prl}
+\item 
+double \hyperlink{classRoe_a639c7fd0b084bc426d2a0f92cb63dae5}{arl}
+\item 
+double \hyperlink{classRoe_a94bffa136d267cf6d55ea8a733f0de5d}{hrl}
+\item 
+double \hyperlink{classRoe_acd00b091fb49655aa37348550daa0723}{kx} = 0
+\item 
+double \hyperlink{classRoe_a4b23fbf92c73f2ca7e1e5c5f95a53d4f}{ky} = 0
+\item 
+double \hyperlink{classRoe_ab3c69812a100c79b7f035dcd524766bf}{rho\+\_\+i\+\_\+2\+\_\+c} = 0
+\item 
+double \hyperlink{classRoe_a02e4884743f77b6b6739fa2dacefd33b}{delta\+\_\+p}
+\item 
+double \hyperlink{classRoe_a430b1d9011401ad7c5c7ca289f540a6c}{delta\+\_\+v}
+\item 
+double \hyperlink{classRoe_acfbc516a21100db263165a5af5f5d5e8}{delta\+\_\+u}
+\item 
+double \hyperlink{classRoe_ae55c922cabd317fc9f102eb81b75ffc6}{delta\+\_\+rho}
+\item 
+double $\ast$ \hyperlink{classRoe_a1c3867060e716158854f70de4cc06c9d}{lambda}
+\item 
+double $\ast$ \hyperlink{classRoe_a049920de1e32bbe641d180960b9ad49f}{cc}
+\item 
+double $\ast$ \hyperlink{classRoe_afa7d0be4970f24fb45116dcddadaa5e7}{eigenwt}
+\item 
+double $\ast$ \hyperlink{classRoe_a6be6f36272bcbd79babfeb9cc2392ed8}{lres\+\_\+state\+\_\+prim}
+\item 
+double $\ast$ \hyperlink{classRoe_a5337654ff25037aecb28c9607f8f655c}{rres\+\_\+state\+\_\+prim}
+\item 
+double $\ast$ \hyperlink{classRoe_ae5412109e368776acd7a87eba071a1ae}{delta\+\_\+w}
+\item 
+double $\ast$ \hyperlink{classRoe_a6cbeee3ca1cc97dc6ef80ccf2772654b}{rflux}
+\item 
+double $\ast$ \hyperlink{classRoe_a7fd79cc24015bad9c333fbd587625dd6}{lflux}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file roe.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRoe_aabc9084b5c735d7bdfdc88f3c7cfdc87}\label{classRoe_aabc9084b5c735d7bdfdc88f3c7cfdc87}} 
+\index{Roe@{Roe}!roe@{roe}}
+\index{roe@{roe}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{roe()}{roe()}}
+{\footnotesize\ttfamily int Roe\+::roe (\begin{DoxyParamCaption}\item[{const double $\ast$}]{leftstate,  }\item[{const double $\ast$}]{rightstate,  }\item[{double $\ast$}]{flux,  }\item[{int}]{iii,  }\item[{int}]{jjj,  }\item[{int}]{idir }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classRoe_a3fe943eae01a90270cf6045fc4dfdcdf}\label{classRoe_a3fe943eae01a90270cf6045fc4dfdcdf}} 
+\index{Roe@{Roe}!al@{al}}
+\index{al@{al}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{al}{al}}
+{\footnotesize\ttfamily double Roe\+::al\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_afcb0ba2c21329c19b0e463bb453b8ed9}\label{classRoe_afcb0ba2c21329c19b0e463bb453b8ed9}} 
+\index{Roe@{Roe}!ar@{ar}}
+\index{ar@{ar}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{ar}{ar}}
+{\footnotesize\ttfamily double Roe\+::ar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 12 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a639c7fd0b084bc426d2a0f92cb63dae5}\label{classRoe_a639c7fd0b084bc426d2a0f92cb63dae5}} 
+\index{Roe@{Roe}!arl@{arl}}
+\index{arl@{arl}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{arl}{arl}}
+{\footnotesize\ttfamily double Roe\+::arl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 13 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a049920de1e32bbe641d180960b9ad49f}\label{classRoe_a049920de1e32bbe641d180960b9ad49f}} 
+\index{Roe@{Roe}!cc@{cc}}
+\index{cc@{cc}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{cc}{cc}}
+{\footnotesize\ttfamily double$\ast$ Roe\+::cc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a20a2e7114639c312295adad848a9ba06}\label{classRoe_a20a2e7114639c312295adad848a9ba06}} 
+\index{Roe@{Roe}!d@{d}}
+\index{d@{d}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily int Roe\+::d\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 8 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a02e4884743f77b6b6739fa2dacefd33b}\label{classRoe_a02e4884743f77b6b6739fa2dacefd33b}} 
+\index{Roe@{Roe}!delta\+\_\+p@{delta\+\_\+p}}
+\index{delta\+\_\+p@{delta\+\_\+p}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{delta\+\_\+p}{delta\_p}}
+{\footnotesize\ttfamily double Roe\+::delta\+\_\+p\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 16 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_ae55c922cabd317fc9f102eb81b75ffc6}\label{classRoe_ae55c922cabd317fc9f102eb81b75ffc6}} 
+\index{Roe@{Roe}!delta\+\_\+rho@{delta\+\_\+rho}}
+\index{delta\+\_\+rho@{delta\+\_\+rho}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{delta\+\_\+rho}{delta\_rho}}
+{\footnotesize\ttfamily double Roe\+::delta\+\_\+rho\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_acfbc516a21100db263165a5af5f5d5e8}\label{classRoe_acfbc516a21100db263165a5af5f5d5e8}} 
+\index{Roe@{Roe}!delta\+\_\+u@{delta\+\_\+u}}
+\index{delta\+\_\+u@{delta\+\_\+u}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{delta\+\_\+u}{delta\_u}}
+{\footnotesize\ttfamily double Roe\+::delta\+\_\+u\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a430b1d9011401ad7c5c7ca289f540a6c}\label{classRoe_a430b1d9011401ad7c5c7ca289f540a6c}} 
+\index{Roe@{Roe}!delta\+\_\+v@{delta\+\_\+v}}
+\index{delta\+\_\+v@{delta\+\_\+v}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{delta\+\_\+v}{delta\_v}}
+{\footnotesize\ttfamily double Roe\+::delta\+\_\+v\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 17 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_ae5412109e368776acd7a87eba071a1ae}\label{classRoe_ae5412109e368776acd7a87eba071a1ae}} 
+\index{Roe@{Roe}!delta\+\_\+w@{delta\+\_\+w}}
+\index{delta\+\_\+w@{delta\+\_\+w}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{delta\+\_\+w}{delta\_w}}
+{\footnotesize\ttfamily double$\ast$ Roe\+::delta\+\_\+w\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_afa7d0be4970f24fb45116dcddadaa5e7}\label{classRoe_afa7d0be4970f24fb45116dcddadaa5e7}} 
+\index{Roe@{Roe}!eigenwt@{eigenwt}}
+\index{eigenwt@{eigenwt}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{eigenwt}{eigenwt}}
+{\footnotesize\ttfamily double$\ast$ Roe\+::eigenwt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 23 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a088ea1d21e7f2a79a833c79de564fe97}\label{classRoe_a088ea1d21e7f2a79a833c79de564fe97}} 
+\index{Roe@{Roe}!et@{et}}
+\index{et@{et}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{et}{et}}
+{\footnotesize\ttfamily double Roe\+::et\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_abdc3186ec87bc861a4082e6ca41a9d71}\label{classRoe_abdc3186ec87bc861a4082e6ca41a9d71}} 
+\index{Roe@{Roe}!hl@{hl}}
+\index{hl@{hl}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{hl}{hl}}
+{\footnotesize\ttfamily double Roe\+::hl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a835acb6a5f019b3a37b2a27367621e50}\label{classRoe_a835acb6a5f019b3a37b2a27367621e50}} 
+\index{Roe@{Roe}!hr@{hr}}
+\index{hr@{hr}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{hr}{hr}}
+{\footnotesize\ttfamily double Roe\+::hr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 12 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a94bffa136d267cf6d55ea8a733f0de5d}\label{classRoe_a94bffa136d267cf6d55ea8a733f0de5d}} 
+\index{Roe@{Roe}!hrl@{hrl}}
+\index{hrl@{hrl}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{hrl}{hrl}}
+{\footnotesize\ttfamily double Roe\+::hrl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 13 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_ae1d4f32b4c3d8e5d9d1225bec139fb71}\label{classRoe_ae1d4f32b4c3d8e5d9d1225bec139fb71}} 
+\index{Roe@{Roe}!ii@{ii}}
+\index{ii@{ii}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{ii}{ii}}
+{\footnotesize\ttfamily int Roe\+::ii\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 7 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a925c5191227cccf071e6e0b0ac198c67}\label{classRoe_a925c5191227cccf071e6e0b0ac198c67}} 
+\index{Roe@{Roe}!jj@{jj}}
+\index{jj@{jj}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{jj}{jj}}
+{\footnotesize\ttfamily int Roe\+::jj\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 7 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_aa3b9084d2014f158b13820aab143ee7b}\label{classRoe_aa3b9084d2014f158b13820aab143ee7b}} 
+\index{Roe@{Roe}!ke@{ke}}
+\index{ke@{ke}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{ke}{ke}}
+{\footnotesize\ttfamily double Roe\+::ke\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_acd00b091fb49655aa37348550daa0723}\label{classRoe_acd00b091fb49655aa37348550daa0723}} 
+\index{Roe@{Roe}!kx@{kx}}
+\index{kx@{kx}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{kx}{kx}}
+{\footnotesize\ttfamily double Roe\+::kx = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a4b23fbf92c73f2ca7e1e5c5f95a53d4f}\label{classRoe_a4b23fbf92c73f2ca7e1e5c5f95a53d4f}} 
+\index{Roe@{Roe}!ky@{ky}}
+\index{ky@{ky}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{ky}{ky}}
+{\footnotesize\ttfamily double Roe\+::ky = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a1c3867060e716158854f70de4cc06c9d}\label{classRoe_a1c3867060e716158854f70de4cc06c9d}} 
+\index{Roe@{Roe}!lambda@{lambda}}
+\index{lambda@{lambda}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{lambda}{lambda}}
+{\footnotesize\ttfamily double$\ast$ Roe\+::lambda\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a7fd79cc24015bad9c333fbd587625dd6}\label{classRoe_a7fd79cc24015bad9c333fbd587625dd6}} 
+\index{Roe@{Roe}!lflux@{lflux}}
+\index{lflux@{lflux}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{lflux}{lflux}}
+{\footnotesize\ttfamily double$\ast$ Roe\+::lflux\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a6be6f36272bcbd79babfeb9cc2392ed8}\label{classRoe_a6be6f36272bcbd79babfeb9cc2392ed8}} 
+\index{Roe@{Roe}!lres\+\_\+state\+\_\+prim@{lres\+\_\+state\+\_\+prim}}
+\index{lres\+\_\+state\+\_\+prim@{lres\+\_\+state\+\_\+prim}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{lres\+\_\+state\+\_\+prim}{lres\_state\_prim}}
+{\footnotesize\ttfamily double$\ast$ Roe\+::lres\+\_\+state\+\_\+prim\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 24 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a0738570cd964a053cb95f219adc0ef1c}\label{classRoe_a0738570cd964a053cb95f219adc0ef1c}} 
+\index{Roe@{Roe}!out\+File@{out\+File}}
+\index{out\+File@{out\+File}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{out\+File}{outFile}}
+{\footnotesize\ttfamily ofstream Roe\+::out\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 6 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a3c095fb6ac32aab0777a9438ae87ecb6}\label{classRoe_a3c095fb6ac32aab0777a9438ae87ecb6}} 
+\index{Roe@{Roe}!pl@{pl}}
+\index{pl@{pl}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{pl}{pl}}
+{\footnotesize\ttfamily double Roe\+::pl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a192ea3de117ed94fe04d244cb2174785}\label{classRoe_a192ea3de117ed94fe04d244cb2174785}} 
+\index{Roe@{Roe}!pr@{pr}}
+\index{pr@{pr}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{pr}{pr}}
+{\footnotesize\ttfamily double Roe\+::pr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 12 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a45fef8454e2149fda58bcd64ae4a9f58}\label{classRoe_a45fef8454e2149fda58bcd64ae4a9f58}} 
+\index{Roe@{Roe}!prl@{prl}}
+\index{prl@{prl}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{prl}{prl}}
+{\footnotesize\ttfamily double Roe\+::prl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 13 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a02cb59599c38a21472777e9de7f6f1ed}\label{classRoe_a02cb59599c38a21472777e9de7f6f1ed}} 
+\index{Roe@{Roe}!px@{px}}
+\index{px@{px}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{px}{px}}
+{\footnotesize\ttfamily double Roe\+::px\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a4d74b032fc909bf6b50989bacd908e03}\label{classRoe_a4d74b032fc909bf6b50989bacd908e03}} 
+\index{Roe@{Roe}!py@{py}}
+\index{py@{py}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{py}{py}}
+{\footnotesize\ttfamily double Roe\+::py\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a6cbeee3ca1cc97dc6ef80ccf2772654b}\label{classRoe_a6cbeee3ca1cc97dc6ef80ccf2772654b}} 
+\index{Roe@{Roe}!rflux@{rflux}}
+\index{rflux@{rflux}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{rflux}{rflux}}
+{\footnotesize\ttfamily double$\ast$ Roe\+::rflux\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_ab3c69812a100c79b7f035dcd524766bf}\label{classRoe_ab3c69812a100c79b7f035dcd524766bf}} 
+\index{Roe@{Roe}!rho\+\_\+i\+\_\+2\+\_\+c@{rho\+\_\+i\+\_\+2\+\_\+c}}
+\index{rho\+\_\+i\+\_\+2\+\_\+c@{rho\+\_\+i\+\_\+2\+\_\+c}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{rho\+\_\+i\+\_\+2\+\_\+c}{rho\_i\_2\_c}}
+{\footnotesize\ttfamily double Roe\+::rho\+\_\+i\+\_\+2\+\_\+c = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a72c829cd1d89332456ed4f002143be27}\label{classRoe_a72c829cd1d89332456ed4f002143be27}} 
+\index{Roe@{Roe}!rho\+\_\+rl@{rho\+\_\+rl}}
+\index{rho\+\_\+rl@{rho\+\_\+rl}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{rho\+\_\+rl}{rho\_rl}}
+{\footnotesize\ttfamily double Roe\+::rho\+\_\+rl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 13 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a8fc80cf00a5f985d55580becb9e7b2e3}\label{classRoe_a8fc80cf00a5f985d55580becb9e7b2e3}} 
+\index{Roe@{Roe}!ri@{ri}}
+\index{ri@{ri}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{ri}{ri}}
+{\footnotesize\ttfamily double Roe\+::ri\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a5b749a16ae02029d4f9566251c7e6062}\label{classRoe_a5b749a16ae02029d4f9566251c7e6062}} 
+\index{Roe@{Roe}!rl@{rl}}
+\index{rl@{rl}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{rl}{rl}}
+{\footnotesize\ttfamily double Roe\+::rl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a4c6b1752f3de01ed67d4bcb128bc9582}\label{classRoe_a4c6b1752f3de01ed67d4bcb128bc9582}} 
+\index{Roe@{Roe}!rr@{rr}}
+\index{rr@{rr}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{rr}{rr}}
+{\footnotesize\ttfamily double Roe\+::rr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a5337654ff25037aecb28c9607f8f655c}\label{classRoe_a5337654ff25037aecb28c9607f8f655c}} 
+\index{Roe@{Roe}!rres\+\_\+state\+\_\+prim@{rres\+\_\+state\+\_\+prim}}
+\index{rres\+\_\+state\+\_\+prim@{rres\+\_\+state\+\_\+prim}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{rres\+\_\+state\+\_\+prim}{rres\_state\_prim}}
+{\footnotesize\ttfamily double$\ast$ Roe\+::rres\+\_\+state\+\_\+prim\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 25 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a296c4c3e1342d0f7a3b74db532d25da4}\label{classRoe_a296c4c3e1342d0f7a3b74db532d25da4}} 
+\index{Roe@{Roe}!ul@{ul}}
+\index{ul@{ul}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{ul}{ul}}
+{\footnotesize\ttfamily double Roe\+::ul\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_ab11ce73f25fa828140bea0f820a74844}\label{classRoe_ab11ce73f25fa828140bea0f820a74844}} 
+\index{Roe@{Roe}!ur@{ur}}
+\index{ur@{ur}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{ur}{ur}}
+{\footnotesize\ttfamily double Roe\+::ur\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 12 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_affc96152da540e7b72c1fde648ad8ce5}\label{classRoe_affc96152da540e7b72c1fde648ad8ce5}} 
+\index{Roe@{Roe}!url@{url}}
+\index{url@{url}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily double Roe\+::url\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 13 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a9c7ca2b690bd235643559386ece348c1}\label{classRoe_a9c7ca2b690bd235643559386ece348c1}} 
+\index{Roe@{Roe}!vl@{vl}}
+\index{vl@{vl}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{vl}{vl}}
+{\footnotesize\ttfamily double Roe\+::vl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a69d1aa7c0230640c1c0cc50061a6d1d2}\label{classRoe_a69d1aa7c0230640c1c0cc50061a6d1d2}} 
+\index{Roe@{Roe}!vr@{vr}}
+\index{vr@{vr}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{vr}{vr}}
+{\footnotesize\ttfamily double Roe\+::vr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 12 of file roe.\+h.
+
+\mbox{\Hypertarget{classRoe_a993e6170348de395ca50fff9fbf4b64b}\label{classRoe_a993e6170348de395ca50fff9fbf4b64b}} 
+\index{Roe@{Roe}!vrl@{vrl}}
+\index{vrl@{vrl}!Roe@{Roe}}
+\subsubsection{\texorpdfstring{vrl}{vrl}}
+{\footnotesize\ttfamily double Roe\+::vrl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 13 of file roe.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{roe_8h}{roe.\+h}\end{DoxyCompactItemize}

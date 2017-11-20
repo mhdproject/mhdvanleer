@@ -1,0 +1,468 @@
+\hypertarget{classRadiativeCooling}{}\section{Radiative\+Cooling Class Reference}
+\label{classRadiativeCooling}\index{Radiative\+Cooling@{Radiative\+Cooling}}
+
+
+{\ttfamily \#include $<$cooling.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classRadiativeCooling_a5e4dbd5522e49baa82898ef742543e6d}{cooling} (const double $\ast$\hyperlink{structzone}{zone}, double $\ast$Lcooling, double dt)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classRadiativeCooling_afdedfb8ef0a890698e2523a9bdb02b09}{gammam1} = \hyperlink{global_8h_a637811bc2432fc76801f5ca1a91c712c}{gammag} -\/ 1
+\item 
+double \hyperlink{classRadiativeCooling_a25c90a272c6681f62227a6f72b30c56c}{rhoi}
+\item 
+double \hyperlink{classRadiativeCooling_a85ca1dbfd6e59c1e0cef1386ae8982b4}{px}
+\item 
+double \hyperlink{classRadiativeCooling_a77af20c4659490ae2f882b9ef677bf32}{py}
+\item 
+double \hyperlink{classRadiativeCooling_aaa8f4525410deec9da13727c6db5fc8d}{et}
+\item 
+double \hyperlink{classRadiativeCooling_aa5ba5ecd4e284ebfbdcbdc3eba3f5f37}{ke}
+\item 
+double \hyperlink{classRadiativeCooling_ade1992f469b421d9d10b7bd29d7317fd}{rho}
+\item 
+double \hyperlink{classRadiativeCooling_aeb1a93ea3d2b1729570945b7e1634cd4}{velx}
+\item 
+double \hyperlink{classRadiativeCooling_a2a0da94db29e146ed14e92a954cdeeff}{vely}
+\item 
+double \hyperlink{classRadiativeCooling_a0c52edb57f85fdc2567203a1ee74b924}{pressure}
+\item 
+double \hyperlink{classRadiativeCooling_a90dcec1dca847312cbad423517d3efd2}{velx2}
+\item 
+double \hyperlink{classRadiativeCooling_a75b752a6028b57c82d5c012603e6ef8a}{vely2}
+\item 
+double \hyperlink{classRadiativeCooling_ab2d5da72b2fa7ebf6f2dfbe3369bddc1}{temperature}
+\item 
+double \hyperlink{classRadiativeCooling_a8a1417b75577166c7730dfff9fd2390d}{ki} = 24296.\+3696
+\item 
+double \hyperlink{classRadiativeCooling_a73af212844c9db7d9ced561ce282c588}{mp} = 1.\+67262158
+\item 
+double \hyperlink{classRadiativeCooling_afeca5976d368a3e1bb3bff20feca3bce}{mpi} = 1.\+0 / \hyperlink{classRadiativeCooling_a73af212844c9db7d9ced561ce282c588}{mp}
+\item 
+double \hyperlink{classRadiativeCooling_aee7cd4b1371aec353beaa582dd869888}{nt} = 0
+\item 
+double \hyperlink{classRadiativeCooling_a1cf3e2d454fc10f9fccbb852ee695f00}{rate} = 0
+\item 
+double \hyperlink{classRadiativeCooling_a0260589b7ce87bbb1e6025d4401c4d51}{nt2}
+\item 
+double \hyperlink{classRadiativeCooling_a85248406628c182c53dd0b3008424252}{de}
+\item 
+double \hyperlink{classRadiativeCooling_ad65d0d684858b39a7a5868c82cefb3ef}{y}
+\item 
+double \hyperlink{classRadiativeCooling_ae90c185e4b9381e4efa366d139424094}{subdt}
+\item 
+double \hyperlink{classRadiativeCooling_a01860e9a61b8749cf7321a7874299cbf}{eloss}
+\item 
+double \hyperlink{classRadiativeCooling_a1965ec0557b30cb94a6b087077d6515c}{molrate} = 0
+\item 
+double \hyperlink{classRadiativeCooling_a92b6cd85ed9223ddd0f589b7893c6a34}{lowest\+\_\+temperature}
+\item 
+double \hyperlink{classRadiativeCooling_a5a988535d13728b0172af4b8d56f6d1e}{subttot}
+\item 
+double \hyperlink{classRadiativeCooling_a3ab20e52a22924d92b1e787738922e65}{e\+\_\+init}
+\item 
+int \hyperlink{classRadiativeCooling_a4265ab110120e91ec2ce6f67c7607265}{firststep}
+\item 
+int \hyperlink{classRadiativeCooling_afc01b8e960c5944ab6ab64d49ddd7c3d}{counter}
+\item 
+double \hyperlink{classRadiativeCooling_ad20df3317662e7a9a4efbd6d0f95da0d}{n\+H2}
+\item 
+double \hyperlink{classRadiativeCooling_ac1c50a85824b4384c49ba63fa20776fb}{nh}
+\item 
+double \hyperlink{classRadiativeCooling_ace98b0d81ac465183e8fd4313ad64c51}{chi}
+\item 
+double \hyperlink{classRadiativeCooling_add889979d656eaa44d7aae3360172279}{real\+\_\+temp}
+\item 
+int \hyperlink{classRadiativeCooling_a4704c62742e49819ebdc7d8e8be8568f}{rc} = 0
+\item 
+double \hyperlink{classRadiativeCooling_a69beea13540c13fe1a9e133388c5c943}{atomic\+\_\+temp\+\_\+tab} \mbox{[}50\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file cooling.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRadiativeCooling_a5e4dbd5522e49baa82898ef742543e6d}\label{classRadiativeCooling_a5e4dbd5522e49baa82898ef742543e6d}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!cooling@{cooling}}
+\index{cooling@{cooling}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{cooling()}{cooling()}}
+{\footnotesize\ttfamily int Radiative\+Cooling\+::cooling (\begin{DoxyParamCaption}\item[{const double $\ast$}]{zone,  }\item[{double $\ast$}]{Lcooling,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classRadiativeCooling_a69beea13540c13fe1a9e133388c5c943}\label{classRadiativeCooling_a69beea13540c13fe1a9e133388c5c943}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!atomic\+\_\+temp\+\_\+tab@{atomic\+\_\+temp\+\_\+tab}}
+\index{atomic\+\_\+temp\+\_\+tab@{atomic\+\_\+temp\+\_\+tab}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{atomic\+\_\+temp\+\_\+tab}{atomic\_temp\_tab}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::atomic\+\_\+temp\+\_\+tab\mbox{[}50\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+      4.04, 4.08, 4.12, 4.17, 4.21, 4.25, 4.3, 4.34, 4.38, 4.44, 4.48, 4.53,
+      4.58, 4.62, 4.67, 4.71, 4.77, 4.82, 4.88, 4.93, 4.98, 5.04, 5.09, 5.14,
+      5.2, 5.25, 5.3, 5.36, 5.41, 5.46, 5.51, 5.57, 5.62, 5.67, 5.73, 5.78,
+      5.83, 5.88, 5.94, 5.99, 6.04, 6.09, 6.14, 6.2, 6.25, 6.3, 6.35, 6.4,
+      6.45, 6.5
+  \}
+\end{DoxyCode}
+
+
+Definition at line 32 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_ace98b0d81ac465183e8fd4313ad64c51}\label{classRadiativeCooling_ace98b0d81ac465183e8fd4313ad64c51}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!chi@{chi}}
+\index{chi@{chi}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{chi}{chi}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::chi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_afc01b8e960c5944ab6ab64d49ddd7c3d}\label{classRadiativeCooling_afc01b8e960c5944ab6ab64d49ddd7c3d}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!counter@{counter}}
+\index{counter@{counter}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily int Radiative\+Cooling\+::counter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 25 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a85248406628c182c53dd0b3008424252}\label{classRadiativeCooling_a85248406628c182c53dd0b3008424252}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!de@{de}}
+\index{de@{de}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{de}{de}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::de\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a3ab20e52a22924d92b1e787738922e65}\label{classRadiativeCooling_a3ab20e52a22924d92b1e787738922e65}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!e\+\_\+init@{e\+\_\+init}}
+\index{e\+\_\+init@{e\+\_\+init}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{e\+\_\+init}{e\_init}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::e\+\_\+init\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 23 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a01860e9a61b8749cf7321a7874299cbf}\label{classRadiativeCooling_a01860e9a61b8749cf7321a7874299cbf}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!eloss@{eloss}}
+\index{eloss@{eloss}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{eloss}{eloss}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::eloss\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_aaa8f4525410deec9da13727c6db5fc8d}\label{classRadiativeCooling_aaa8f4525410deec9da13727c6db5fc8d}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!et@{et}}
+\index{et@{et}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{et}{et}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::et\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 8 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a4265ab110120e91ec2ce6f67c7607265}\label{classRadiativeCooling_a4265ab110120e91ec2ce6f67c7607265}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!firststep@{firststep}}
+\index{firststep@{firststep}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{firststep}{firststep}}
+{\footnotesize\ttfamily int Radiative\+Cooling\+::firststep\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 24 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_afdedfb8ef0a890698e2523a9bdb02b09}\label{classRadiativeCooling_afdedfb8ef0a890698e2523a9bdb02b09}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!gammam1@{gammam1}}
+\index{gammam1@{gammam1}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{gammam1}{gammam1}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::gammam1 = \hyperlink{global_8h_a637811bc2432fc76801f5ca1a91c712c}{gammag} -\/ 1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 7 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_aa5ba5ecd4e284ebfbdcbdc3eba3f5f37}\label{classRadiativeCooling_aa5ba5ecd4e284ebfbdcbdc3eba3f5f37}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!ke@{ke}}
+\index{ke@{ke}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{ke}{ke}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::ke\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 8 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a8a1417b75577166c7730dfff9fd2390d}\label{classRadiativeCooling_a8a1417b75577166c7730dfff9fd2390d}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!ki@{ki}}
+\index{ki@{ki}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{ki}{ki}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::ki = 24296.\+3696\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a92b6cd85ed9223ddd0f589b7893c6a34}\label{classRadiativeCooling_a92b6cd85ed9223ddd0f589b7893c6a34}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!lowest\+\_\+temperature@{lowest\+\_\+temperature}}
+\index{lowest\+\_\+temperature@{lowest\+\_\+temperature}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{lowest\+\_\+temperature}{lowest\_temperature}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::lowest\+\_\+temperature\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a1965ec0557b30cb94a6b087077d6515c}\label{classRadiativeCooling_a1965ec0557b30cb94a6b087077d6515c}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!molrate@{molrate}}
+\index{molrate@{molrate}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{molrate}{molrate}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::molrate = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a73af212844c9db7d9ced561ce282c588}\label{classRadiativeCooling_a73af212844c9db7d9ced561ce282c588}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!mp@{mp}}
+\index{mp@{mp}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{mp}{mp}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::mp = 1.\+67262158\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_afeca5976d368a3e1bb3bff20feca3bce}\label{classRadiativeCooling_afeca5976d368a3e1bb3bff20feca3bce}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!mpi@{mpi}}
+\index{mpi@{mpi}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{mpi}{mpi}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::mpi = 1.\+0 / \hyperlink{classRadiativeCooling_a73af212844c9db7d9ced561ce282c588}{mp}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 16 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_ac1c50a85824b4384c49ba63fa20776fb}\label{classRadiativeCooling_ac1c50a85824b4384c49ba63fa20776fb}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!nh@{nh}}
+\index{nh@{nh}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{nh}{nh}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::nh\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_ad20df3317662e7a9a4efbd6d0f95da0d}\label{classRadiativeCooling_ad20df3317662e7a9a4efbd6d0f95da0d}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!n\+H2@{n\+H2}}
+\index{n\+H2@{n\+H2}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{n\+H2}{nH2}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::n\+H2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_aee7cd4b1371aec353beaa582dd869888}\label{classRadiativeCooling_aee7cd4b1371aec353beaa582dd869888}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!nt@{nt}}
+\index{nt@{nt}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{nt}{nt}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::nt = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 17 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a0260589b7ce87bbb1e6025d4401c4d51}\label{classRadiativeCooling_a0260589b7ce87bbb1e6025d4401c4d51}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!nt2@{nt2}}
+\index{nt2@{nt2}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{nt2}{nt2}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::nt2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a0c52edb57f85fdc2567203a1ee74b924}\label{classRadiativeCooling_a0c52edb57f85fdc2567203a1ee74b924}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!pressure@{pressure}}
+\index{pressure@{pressure}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{pressure}{pressure}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::pressure\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 9 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a85ca1dbfd6e59c1e0cef1386ae8982b4}\label{classRadiativeCooling_a85ca1dbfd6e59c1e0cef1386ae8982b4}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!px@{px}}
+\index{px@{px}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{px}{px}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::px\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 8 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a77af20c4659490ae2f882b9ef677bf32}\label{classRadiativeCooling_a77af20c4659490ae2f882b9ef677bf32}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!py@{py}}
+\index{py@{py}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{py}{py}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::py\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 8 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a1cf3e2d454fc10f9fccbb852ee695f00}\label{classRadiativeCooling_a1cf3e2d454fc10f9fccbb852ee695f00}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!rate@{rate}}
+\index{rate@{rate}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{rate}{rate}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::rate = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a4704c62742e49819ebdc7d8e8be8568f}\label{classRadiativeCooling_a4704c62742e49819ebdc7d8e8be8568f}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!rc@{rc}}
+\index{rc@{rc}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{rc}{rc}}
+{\footnotesize\ttfamily int Radiative\+Cooling\+::rc = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_add889979d656eaa44d7aae3360172279}\label{classRadiativeCooling_add889979d656eaa44d7aae3360172279}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!real\+\_\+temp@{real\+\_\+temp}}
+\index{real\+\_\+temp@{real\+\_\+temp}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{real\+\_\+temp}{real\_temp}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::real\+\_\+temp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_ade1992f469b421d9d10b7bd29d7317fd}\label{classRadiativeCooling_ade1992f469b421d9d10b7bd29d7317fd}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!rho@{rho}}
+\index{rho@{rho}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{rho}{rho}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::rho\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 9 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a25c90a272c6681f62227a6f72b30c56c}\label{classRadiativeCooling_a25c90a272c6681f62227a6f72b30c56c}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!rhoi@{rhoi}}
+\index{rhoi@{rhoi}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{rhoi}{rhoi}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::rhoi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 8 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_ae90c185e4b9381e4efa366d139424094}\label{classRadiativeCooling_ae90c185e4b9381e4efa366d139424094}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!subdt@{subdt}}
+\index{subdt@{subdt}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{subdt}{subdt}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::subdt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a5a988535d13728b0172af4b8d56f6d1e}\label{classRadiativeCooling_a5a988535d13728b0172af4b8d56f6d1e}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!subttot@{subttot}}
+\index{subttot@{subttot}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{subttot}{subttot}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::subttot\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_ab2d5da72b2fa7ebf6f2dfbe3369bddc1}\label{classRadiativeCooling_ab2d5da72b2fa7ebf6f2dfbe3369bddc1}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!temperature@{temperature}}
+\index{temperature@{temperature}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{temperature}{temperature}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::temperature\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 12 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_aeb1a93ea3d2b1729570945b7e1634cd4}\label{classRadiativeCooling_aeb1a93ea3d2b1729570945b7e1634cd4}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!velx@{velx}}
+\index{velx@{velx}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{velx}{velx}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::velx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 9 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a90dcec1dca847312cbad423517d3efd2}\label{classRadiativeCooling_a90dcec1dca847312cbad423517d3efd2}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!velx2@{velx2}}
+\index{velx2@{velx2}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{velx2}{velx2}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::velx2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a2a0da94db29e146ed14e92a954cdeeff}\label{classRadiativeCooling_a2a0da94db29e146ed14e92a954cdeeff}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!vely@{vely}}
+\index{vely@{vely}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{vely}{vely}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::vely\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 9 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_a75b752a6028b57c82d5c012603e6ef8a}\label{classRadiativeCooling_a75b752a6028b57c82d5c012603e6ef8a}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!vely2@{vely2}}
+\index{vely2@{vely2}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{vely2}{vely2}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::vely2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 11 of file cooling.\+h.
+
+\mbox{\Hypertarget{classRadiativeCooling_ad65d0d684858b39a7a5868c82cefb3ef}\label{classRadiativeCooling_ad65d0d684858b39a7a5868c82cefb3ef}} 
+\index{Radiative\+Cooling@{Radiative\+Cooling}!y@{y}}
+\index{y@{y}!Radiative\+Cooling@{Radiative\+Cooling}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily double Radiative\+Cooling\+::y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file cooling.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{cooling_8h}{cooling.\+h}\end{DoxyCompactItemize}
