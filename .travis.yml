@@ -21,12 +21,10 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 
 script:
-  - stage: build
   - mkdir build
   - cd build
   - cmake ..
   - cmake --build .
-  - stage: test
   - ctest -VV
 
 after_success:
