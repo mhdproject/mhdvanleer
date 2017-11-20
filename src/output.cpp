@@ -18,6 +18,12 @@ FileWriter::output(Array3D<zone> grid, int time, const char *filename) {
   hid_t datatype, dataspace;    /* handles */
   hsize_t dimsf[2];        /* dataset dimensions */
   herr_t status;
+  typedef boost::multi_array<double, 2> array_type;
+  typedef array_type::index index;
+  array_type data2(boost::extents[nx][ny]);
+
+
+
   double data[nx][ny];
   //array_2d data(boost::extents[nx][ny]);
   const char *names[] =
